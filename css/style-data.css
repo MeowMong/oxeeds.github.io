@@ -175,7 +175,7 @@ body {
 
 /*mengedit warna colomn 1 table class kelulusan*/
 .kelulusan .content .timing .table tr:nth-child(1) td.data {
-    background-color: #c11325;
+    background-color: green;
 }
 
 /*mengedit warna text colomn 1 table class kelulusan*/
@@ -197,7 +197,7 @@ body {
 }
 
 .timing .table tr:nth-child(1) td.data {
-    background-color: #c11325;
+    background-color: green;
 }
 
 .timing .table tr td.data {
