@@ -49,8 +49,7 @@ body {
 /*Data menu*/
 .menu {
     padding: 80px 0px;
-    background-color: #c11325;
-    background-image: url(/img/data/merah.jpg);
+    background-image: url(/images/ijotua.jpg);
 }
 
 .menu .content {
@@ -130,7 +129,7 @@ body {
 /*mengedit background class kelulusan*/
 .kelulusan {
     padding: 80px 0px;
-    background-image: url(/img/data/merah.jpg);
+    background-image: url(/images/ijotua.jpg);
 }
 
 /*mengedit posisi table class kelulusan*/
@@ -258,7 +257,7 @@ body {
 
 .contact {
     padding: 80px 0px;
-    background-image: url(/img/data/merah.jpg);
+    background-image: url(/images/ijotua.jpg);
 }
 
 .contact .content {
