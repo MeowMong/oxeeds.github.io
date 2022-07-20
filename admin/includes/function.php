@@ -7,17 +7,6 @@ function query($query){
     return mysqli_query($connection, $query);
 }
 
-function query2($query)
-{
-    global $connection;
-    $result = mysqli_query($connection, $query);
-    $rows = [];
-    while ($row = mysqli_fetch_assoc($result)) {
-        $rows[] = $row;
-    }
-    return $rows;
-}
-
 function confirmQuery($result){
     global $connection;
     if(!$result){
@@ -70,15 +59,6 @@ function getCountComments(){
     $count = mysqli_fetch_array($query);
     $result = $count['total_comments'];
     return $result;
-}
-
-function cari($keyword){
-    $query = "SELECT * FROM berita 
-            INNER JOIN category_berita ON category_berita.id_category_berita = berita.berita_category_id
-            WHERE berita.berita_title LIKE '%$keyword%' OR
-            berita.berita_description LIKE '%$keyword%' OR
-            berita.berita_author LIKE '%$keyword%' ";
-    return query2($query);
 }
 //============= END DASHBOARD HELPER =============// 
 ?>
