@@ -29,35 +29,36 @@ function redirect($url){
 
 //============= DASHBOARD HELPER =============// 
 
-function getCountPosts(){
-    $query = query("SELECT COUNT('*') AS 'total_artikel' FROM posts");
+function getSumAlumni(){
+    $query = query("SELECT SUM(jumlah_lulusan) AS 'total_alumni' FROM alumni");
     confirmQuery($query);
     $count = mysqli_fetch_array($query);
-    $result = $count['total_artikel'];
+    $result = $count['total_alumni'];
     return $result;
 }
 
-function getCountCategory(){
-    $query = query("SELECT COUNT('*') AS 'total_category' FROM category");
+function getSumAlumniLanjut(){
+    $query = query("SELECT SUM(jumlah_lanjut) AS 'total_alumni_lanjut' FROM alumni");
     confirmQuery($query);
     $count = mysqli_fetch_array($query);
-    $result = $count['total_category'];
+    $result = $count['total_alumni_lanjut'];
     return $result;
 }
 
-function getCountComments(){
+function getCountGuru(){
+    $query = query("SELECT COUNT('*') AS 'total_guru' FROM guru_karyawan");
+    confirmQuery($query);
+    $count = mysqli_fetch_array($query);
+    $result = $count['total_guru'];
+    return $result;
+}
+
+function getCountComments()
+{
     $query = query("SELECT COUNT('*') AS 'total_comments' FROM comments");
     confirmQuery($query);
     $count = mysqli_fetch_array($query);
     $result = $count['total_comments'];
-    return $result;
-}
-
-function getCountUsers(){
-    $query = query("SELECT COUNT('*') AS 'total_users' FROM users");
-    confirmQuery($query);
-    $count = mysqli_fetch_array($query);
-    $result = $count['total_users'];
     return $result;
 }
 

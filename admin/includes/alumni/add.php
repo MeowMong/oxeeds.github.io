@@ -1,19 +1,19 @@
-<?php 
-    if(isset($_POST['add_artikel'])){
-        $post_category_id = escape($_POST['post_category_id']);
-        $post_title = escape($_POST['post_title']);
-        $post_description = escape($_POST['post_description']);
+<?php
+if (isset($_POST['add_artikel'])) {
+    $post_category_id = escape($_POST['post_category_id']);
+    $post_title = escape($_POST['post_title']);
+    $post_description = escape($_POST['post_description']);
 
-        $post_image = $_FILES['post_image']['name'];
-        $post_image_tmp = $_FILES['post_image']['tmp_name'];
+    $post_image = $_FILES['post_image']['name'];
+    $post_image_tmp = $_FILES['post_image']['tmp_name'];
 
-        move_uploaded_file($post_image_tmp,"../img/$post_image");
+    move_uploaded_file($post_image_tmp, "../img/$post_image");
 
-        $query = query("INSERT INTO posts(post_category_id, post_title, post_image, post_description, post_date)
+    $query = query("INSERT INTO posts(post_category_id, post_title, post_image, post_description, post_date)
                         VALUES('$post_category_id','$post_title','$post_image','$post_description',now())");
-        confirmQuery($query);
-        redirect('artikel.php');
-    }
+    confirmQuery($query);
+    redirect('sekolah.php');
+}
 ?>
 
 <div class="container">
@@ -33,11 +33,11 @@
                             <select class="form-control" name="post_category_id">
                                 <option>Pilih Kategori</option>
                                 <?php
-                                    $query = query("SELECT * FROM category");
-                                    confirmQuery($query);
-                                    while($item = mysqli_fetch_assoc($query)){
+                                $query = query("SELECT * FROM category");
+                                confirmQuery($query);
+                                while ($item = mysqli_fetch_assoc($query)) {
                                 ?>
-                                <option value="<?php echo $item['id_category'] ?>"><?php echo $item['category_name'] ?></option>
+                                    <option value="<?php echo $item['id_category'] ?>"><?php echo $item['category_name'] ?></option>
                                 <?php } ?>
                             </select>
                         </div>

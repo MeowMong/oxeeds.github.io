@@ -17,11 +17,11 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Posts</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Alumni</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= getSumAlumni() ?></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                            <i class="fas fa-user-graduate fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -34,11 +34,11 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Category</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">2</div>
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Alumni Lanjut</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= getSumAlumniLanjut() ?></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                            <i class="fas fa-graduation-cap fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -51,15 +51,15 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Comments</div>
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Guru</div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">3</div>
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= getCountGuru() ?></div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                            <i class="fas fa-chalkboard-teacher fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Users</div>
+                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Comments</div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">4</div>
@@ -80,7 +80,7 @@
                             </div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                            <i class="fas fa-comments fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>

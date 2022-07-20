@@ -1,6 +1,7 @@
 <?php
 ob_start();
 ?>
+
 <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -54,12 +55,12 @@ ob_start();
                         <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
                         <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
                     </svg>
-                    <span>Artikel</span>
+                    <span>Berita</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="artikel.php">View Artikel</a>
-                        <a class="collapse-item" href="artikel.php?page=add">Add Artikel</a>
+                        <a class="collapse-item" href="berita.php">Lihat Berita</a>
+                        <a class="collapse-item" href="berita.php?page=add">Tambah Berita</a>
                     </div>
                 </div>
             </li>
@@ -96,12 +97,30 @@ ob_start();
                         <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z" />
                         <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
                     </svg>
-                    <span>User</span>
+                    <span>Users</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="utilities-animation.html">View Users</a>
-                        <a class="collapse-item" href="utilities-other.html">Add User</a>
+                        <a class="collapse-item" href="utilities-animation.html">Lihat Users</a>
+                        <a class="collapse-item" href="utilities-other.html">Tambah Users</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - User Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAlumni" aria-expanded="true" aria-controls="collapseAlumni">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                        <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z" />
+                        <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+                    </svg>
+                    <span>Alumni</span>
+                </a>
+                <div id="collapseAlumni" class="collapse" aria-labelledby="headingAlumni" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="utilities-animation.html">Lihat Alumni</a>
+                        <a class="collapse-item" href="utilities-other.html">Tambah Alumni</a>
                     </div>
                 </div>
             </li>

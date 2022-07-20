@@ -11,14 +11,14 @@
 
     switch($page){
         case 'add':
-            include 'includes/artikel/add.php';
+            include 'includes/berita/add.php';
             break;
         case 'edit':
-            include 'includes/artikel/edit.php';
+            include 'includes/berita/edit.php';
             break;
 
         default:
-        include 'includes/artikel/view.php';
+        include 'includes/berita/view.php';
         break;
     }
 
