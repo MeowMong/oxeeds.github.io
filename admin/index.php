@@ -1,5 +1,5 @@
-<?php include 'includes/admin_header.php' ?>
-<?php include 'includes/admin_navigation.php' ?>
+<?php include 'includes/admin_header.php'; ?>
+<?php include 'includes/admin_navigation.php'; ?>
 
 <div class="container-fluid">
     <div class="row">
@@ -91,5 +91,4 @@
     <!-- End Content Row -->
 
 </div>
-
-<?php include 'includes/admin_footer.php' ?>
+<?php include 'includes/admin_footer.php'; ?>
