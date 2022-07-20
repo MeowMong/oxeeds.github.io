@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <form method="post">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="post_title" placeholder="Masukan judul artikel anda.....">
+                            <input type="text" class="form-control" name="berita_title" placeholder="Masukan judul berita anda....." autofocus>
                             <span class="input-group-btn">
                                 <button class="btn btn-dark" name="cariArtikel" type="submit">
                                     Cari Berita
@@ -29,47 +29,47 @@
         $berita_title = escape($_POST['berita_title']);
 
         $query = query("SELECT * FROM berita 
-                        INNER JOIN category_berita 
-                        ON category_berita.id_category_berita = berita.berita_category_id
-                        WHERE berita.berita_title 
-                        LIKE '%berita_title%' ");
+                        INNER JOIN category_berita ON category_berita.id_category_berita = berita.berita_category_id
+                        WHERE berita.berita_title LIKE '%$berita_title%' OR
+                        berita.berita_description LIKE '%$berita_title%' OR
+                        berita.berita_author LIKE '%$berita_title%'");
+        confirmQuery($query);
         echo '<div class="row">
                     <div class="col-md-12">
                         <a href="berita.php" class="btn btn-secondary">Kembali</a>
                     </div>
                 </div>';
-        echo '<div class="row">';
-        while ($row = mysqli_fetch_array($query)) {
+        echo '<div class="row mt-5">';
+            while ($row = mysqli_fetch_array($query)) {
     ?>
             <!-- Blog Entries Column -->
             <div class="col-md-4 mb-5">
                 <!-- Blog Post -->
                 <div class="card mb-4 border-0 shadow-lg">
-                    <img class="card-img-top" src="../img/<?php echo $row['berita_image'] ?>" alt="Card image cap">
+                    <img class="card-img-top" src="../img/<?= $row['berita_image'] ?>" alt="Card image cap">
                     <div class="card-body">
-                        <span class="badge badge-primary"><?php echo $row['category_name'] ?></span> / <span><?= $row['berita_author'] ?></span>
-                        <h2 class="card-title"><?php echo $row['berita_title'] ?></h2>
+                        <span class="badge badge-primary"><?= $row['category_name'] ?></span> / <span><?= $row['berita_author'] ?></span>
+                        <h2 class="card-title"><?= $row['berita_title'] ?></h2>
                         <div class="btn-group" role="group">
                             <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Action
                             </button>
                             <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                <a target="blank" class="dropdown-item" href="../post_artikel.php?read_more=<?php echo $row['id_berita'] ?>">View Artikel</a>
-                                <a class="dropdown-item" href="berita.php?delete=<?php echo $row['id_berita'] ?>">Delete Artikel</a>
-                                <a class="dropdown-item" href="berita.php?page=edit&p_id=<?php echo $row['id_berita'] ?>">Edit Artikel</a>
+                                <a target="blank" class="dropdown-item" href="../post_artikel.php?read_more=<?= $row['id_berita'] ?>">View Artikel</a>
+                                <a class="dropdown-item" href="berita.php?delete=<?= $row['id_berita'] ?>">Delete Artikel</a>
+                                <a class="dropdown-item" href="berita.php?page=edit&p_id=<?= $row['id_berita'] ?>">Edit Artikel</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card-footer text-muted">
-                    Posted on <?php echo $row['berita_date'] ?> by
+                    Posted on <?= $row['berita_date'] ?> by
                     <a href="#">Start Bootstrap</a>
                 </div>
             </div>
         <?php }
         echo '</div>';
     } else { ?>
-
         <div class="row">
             <?php
             $query = query("SELECT * FROM berita INNER JOIN category_berita ON category_berita.id_category_berita=berita.berita_category_id");
@@ -80,24 +80,24 @@
                 <div class="col-md-4 mb-5">
                     <!-- Blog Post -->
                     <div class="card mb-4 border-0 shadow-lg">
-                        <img class="card-img-top" src="../img/<?php echo $row['berita_image'] ?>" alt="Card image cap">
+                        <img class="card-img-top" src="../img/<?= $row['berita_image'] ?>" alt="Card image cap">
                         <div class="card-body">
-                            <span class="badge badge-primary"><?php echo $row['category_name'] ?></span> / <span><?= $row['berita_author'] ?></span>
-                            <h2 class="card-title"><?php echo $row['berita_title'] ?></h2>
+                            <span class="badge badge-primary"><?= $row['category_name'] ?></span> / <span><?= $row['berita_author'] ?></span>
+                            <h2 class="card-title"><?= $row['berita_title'] ?></h2>
                             <div class="btn-group" role="group">
                                 <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Action
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                    <a target="blank" class="dropdown-item" href="../post_artikel.php?read_more=<?php echo $row['id_berita'] ?>">View Artikel</a>
-                                    <a class="dropdown-item" href="berita.php?delete=<?php echo $row['id_berita'] ?>">Delete Artikel</a>
-                                    <a class="dropdown-item" href="berita.php?page=edit&id_b=<?php echo $row['id_berita'] ?>">Edit Artikel</a>
+                                    <a target="blank" class="dropdown-item" href="../post_artikel.php?read_more=<?= $row['id_berita'] ?>">View Artikel</a>
+                                    <a class="dropdown-item" href="berita.php?delete=<?= $row['id_berita'] ?>">Delete Artikel</a>
+                                    <a class="dropdown-item" href="berita.php?page=edit&id_b=<?= $row['id_berita'] ?>">Edit Artikel</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer text-muted">
-                        Posted on <?php echo $row['berita_date'] ?> by
+                        Posted on <?= $row['berita_date'] ?> by
                         <a href="#">Start Bootstrap</a>
                     </div>
                 </div>
