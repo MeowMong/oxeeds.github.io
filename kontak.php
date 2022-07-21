@@ -15,6 +15,12 @@ $gambar_carr    = "";
 $judul_carr     = "";
 $isi_carr       = "";
 
+// Kontak
+$id_pesan       = "";
+$nama           = "";
+$kontak         = "";
+$isi_pesan      = "";
+
 $sukses         = "";
 $error          = "";
 
@@ -69,7 +75,7 @@ $error          = "";
             <div class="collapse navbar-collapse justify-content-start" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item mx-2">
-                        <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                        <a class="nav-link" aria-current="page" href="#">Beranda</a>
                     </li>
                     <li class="nav-item dropdown mx-2">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -117,7 +123,7 @@ $error          = "";
                         <a class="nav-link" href="#">Berita</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="kontak.php">Kontak</a>
+                        <a class="nav-link active" href="kontak.php">Kontak</a>
                     </li>
                 </ul>
             </div>
@@ -179,95 +185,57 @@ $error          = "";
         </div>
     </section>
 
-    <!-- Main -->
+    <!-- Default box -->
     <main class="container">
         <hr class="my-5">
-        <section class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-1">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-header">
-                                Featured
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
-                            </ul>
-                        </div>
-                    </div>
+        <hr class="my-5">
+        <div class="card text-black">
+            <?php
+            // CREATE
+            if (isset($_POST['simpan_data'])) {
+                $nama           = $_POST['nama'];
+                $kontak         = $_POST['kontak'];
+                $isi_pesan      = $_POST['isi_pesan'];
 
-                    <div id="ibu" class="col-md-10">
-                        <?php
-                        $sql2   = "SELECT * FROM sambutan";
-                        $q2     = mysqli_query($koneksi, $sql2);
-                        while ($r2 = mysqli_fetch_array($q2)) {
-                            $id_sambutan    = $r2['id_sambutan'];
-                            $nama_penyambut = $r2['nama'];
-                            $status         = $r2['status'];
-                            $isi_sambutan   = $r2['isi_sambutan'];
-                            $tanggal_sambut = $r2['tanggal'];
-                        }
-                        ?>
-                        <div class="card" style="max-width: 4000px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="assets/images/ibu-Andjar.png" class="img-fluid rounded-start" alt="..." height="100">
-                                </div>
-                                <div class="col-md-8 text-dark">
-                                    <div class="card-body">
-                                        <!-- <hr class="my-4"> -->
-                                        <h4 class="card-title fw-bold my-3 mx-5">Sambutan Kepala Sekolah</h4>
-                                        <blockquote class="blockquote">
-                                            <p class="card-text mx-5 blockquote justify"><?php echo $isi_sambutan ?></p>
-                                            <footer class="card-text mx-5"><small class="text-muted blockquote-footer"><?php echo $nama_penyambut ?></small></footer>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                if ($nama || $kontak || $isi_pesan) {
+                    // Simpan data
+                    $sql1   = "INSERT INTO berita(judul_berita, isi, pengarang, img) VALUES ('$judul_berita', '$isi', '$pengarang', '$img')";
+                    $q1     = mysqli_query($koneksi, $sql1);
+                }
+            }
+            ?>
+            <div class="card-body row">
+                <div class="col-5 text-center d-flex align-items-center justify-content-center">
+                    <div class="">
+                        <h2>SDN 1 <br><strong>Purwokerto Kulon</strong></h2>
+                        <p class="lead mb-5">Jln. DI Panjaitan Gang Karangbaru III No.50 Kecamatan Purwokerto Selatan Kabupan Banyumas
+                        </p>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="form-group">
+                        <label for="nama">Nama Anda</label>
+                        <input type="text" class="form-control" id="nama" name="nama">
+                    </div>
+                    <div class="form-group">
+                        <label for="kontak">E-Mail / Nomor Telepon</label>
+                        <input type="text" class="form-control" id="kontak" name="kontak">
+                    </div>
+                    <div class="form-group">
+                        <label for="isi_pesan">Pesan</label>
+                        <textarea class="form-control" rows="2" id="isi_pesan" name="isi_pesan"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" name="simpan_data" class="btn btn-primary">Kirim pesan</button>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- CardBox Sambutan Kepala Sekolah -->
-
-        <!-- Visi & Misi -->
-        <hr class="my-5">
-        <hr class="my-5">
-        <section id="visi" class="content">
-            <div id="visi">
-                <h1 class="fw-bold">Visi :</h1>
-                <p>Terwujudnya Siswa yang Beriman, Berakhlak Mulia, Cerdas, Terampil, dan Mandiri</p>
-            </div>
-
-            <div id="misi">
-                <h1 class="fw-bold">Misi :</h1>
-                <p class="justify-content">Untuk mencapai visi sebagai sekolah yang terdepan, terbaik, dan terpercaya, perlu dilakukan suatu misi berupa kegiatan jangka panjang dengan arah yang jelas dan sistematis. Berikut misi Sekolah Dasar Negeri 1 Purwokerto Kulon yang dirumuskan berdasarkan visi sekolah, yaitu:</p>
-                <?php
-                $sql3   = "SELECT * FROM misi";
-                $q3     = mysqli_query($koneksi, $sql3);
-                $index3  = 1;
-                while ($r3 = mysqli_fetch_array($q3)) {
-                    $id_misi    = $r3['id_misi'];
-                    $isi_misi   = $r3['isi_Misi'];
-                ?>
-                    <tr>
-                        <th><?php echo $index3++ ?>. </th>
-                        <td><?php echo $isi_misi ?><br></td>
-                    </tr>
-                <?php
-                }
-                ?>
-            </div>
-        </section>
+        </div>
     </main>
-    <!-- Footer -->
 
+    <!-- Footer -->
     <footer class="main-footer marginme container justify-content-end">
         <strong>Copyright &copy; 2014-2022 SDN 1 Purwokerto Kulon.</strong> All rights reserved.
-
     </footer>
 
     <!-- Bootstrap CSS -->
