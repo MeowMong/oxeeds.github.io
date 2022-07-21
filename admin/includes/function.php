@@ -3,20 +3,20 @@
 //============= DATABASE HELPER =============// 
 
 function query($query){
-    global $connection;
-    return mysqli_query($connection, $query);
+    global $koneksi;
+    return mysqli_query($koneksi, $query);
 }
 
 function confirmQuery($result){
-    global $connection;
+    global $koneksi;
     if(!$result){
-        die('QUERY FAILED ' . mysqli_error($connection));
+        die('QUERY FAILED ' . mysqli_error($koneksi));
     }
 }
 
 function escape($value){
-    global $connection;
-    return mysqli_real_escape_string($connection, $value);
+    global $koneksi;
+    return mysqli_real_escape_string($koneksi, $value);
 }
 
 function redirect($url){
@@ -53,8 +53,8 @@ function getCountGuru(){
     return $result;
 }
 
-function getCountComments(){
-    $query = query("SELECT COUNT('*') AS 'total_comments' FROM comments");
+function getCountKomentarBerita(){
+    $query = query("SELECT COUNT('*') AS 'total_comments' FROM komentar_berita");
     confirmQuery($query);
     $count = mysqli_fetch_array($query);
     $result = $count['total_comments'];
