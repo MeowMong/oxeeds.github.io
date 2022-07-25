@@ -260,14 +260,26 @@ if (isset($_POST['simpan_eks_kul'])) {
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
+                                    <a href="profil.php" class="nav-link">
+                                        <i class="fas fa-search nav-icon"></i>
+                                        <p>Lihat Ekskul</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="eks_kul.php" class="nav-link active">
                                         <i class="fas fa-edit nav-icon"></i>
                                         <p>Edit Ekskul</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-search nav-icon"></i>
+                                    <a href="profil.php" class="nav-link">
+                                        <i class="fas fa-search nav-icon"></i>
+                                        <p>Lihat Fasilitas</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="fasilitas.php" class="nav-link">
+                                        <i class="far fa-edit nav-icon"></i>
                                         <p>Edit Fasilitas</p>
                                     </a>
                                 </li>

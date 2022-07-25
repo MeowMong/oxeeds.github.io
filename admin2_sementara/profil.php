@@ -9,74 +9,19 @@ if (!$koneksi) {
     die("Tidak dapat terhubung ke database");
 }
 
-$id_ekskul      = "";
-$nama_ekskul    = ""; 
-$nama_pembina   = "";
-$sukses         = "";
-$error          = "";
+$nama_ekskul  = "";
+$nama_pembina  = "";
+$id_fasilitas    = "";
+$nama_fasilitas  = ""; 
+$tahun_masuk     = "";
+$gambar          = "";
+$keterangan      = "";
+$sukses       = "";
+$error        = "";
 
-// EDIT
-if (isset($_GET['op'])) {
-    $op = $_GET['op'];
-} else {
-    $op = "";
-}
-
-// EDIT
-if ($op == 'edit') {
-    $id_ekskul  = $_GET['id_ekskul'];
-    $sql1       = "SELECT * FROM eks_kul WHERE id_ekskul = '$id_ekskul'";
-    $q1         = mysqli_query($koneksi, $sql1);
-    $r1         = mysqli_fetch_array($q1);
-    $nama_ekskul       = $r1['nama_ekskul']; 
-    $nama_pembina      = $r1['nama_pembina']; 
-
-    if ($id_ekskul == '') {
-        $error = "Data tidak ditemukan";
-    }
-}
-
-// DELETE
-if ($op == 'delete') {
-    $id_ekskul      = $_GET['id_ekskul'];
-    $sql1   = "DELETE FROM eks_kul WHERE id_ekskul = '$id_ekskul'";
-    $q1     = mysqli_query($koneksi, $sql1);
-    if ($q1) {
-        $sukses     = "Menghapus data BERHASIL!";
-    } else {
-        $error      = "GAGAL menghapus data!";
-    }
-}
-
-// CREATE
-if (isset($_POST['simpan_eks_kul'])) {
-    $nama_ekskul       = $_POST['nama_ekskul']; 
-    $nama_pembina      = $_POST['nama_pembina']; 
-    if ($nama_ekskul || $nama_pembina) {
-        // Simpan edit
-        if ($op == 'edit') {
-            $sql1   = "UPDATE eks_kul SET nama_ekskul = '$nama_ekskul', nama_pembina = '$nama_pembina'";
-            $q1     = mysqli_query($koneksi, $sql1);
-            if ($q1) {
-                $sukses     = "Memperbarui data BERHASIL!";
-            } else {
-                $error      = "GAGAL memperbarui data!";
-            }
-        } else {
-            // Simpan data
-            $sql1   = "INSERT INTO eks_kul (nama_ekskul, nama_pembina) VALUES ('$nama_ekskul', '$nama_pembina')";
-            $q1     = mysqli_query($koneksi, $sql1);
-            if ($q1) {
-                $sukses     = "Menambahkan data baru BERHASIL!";
-            } else {
-                $error      = "GAGAL menambahkan data baru!";
-            }
-        }
-    } else {
-        $error  = "Silahkan masukkan data!";
-    }
-}
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -251,28 +196,27 @@ if (isset($_POST['simpan_eks_kul'])) {
 
                         <!-- Profil Sekolah -->
                         <li class="nav-item menu-open">
-                            <a href="#" class="nav-link">
+                            <a href="profil.php" class="nav-link active">
                                 <i class="nav-icon fas fa-table"></i>
-                                <p>
-                                    Profil Sekolah
-                                    <i class="fas fa-angle-left right"></i>
+                                <p>Profil Sekolah
+                                <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="profil.php" class="nav-link">
+                                    <a href="profil.php" class="nav-link active">
                                         <i class="fas fa-search nav-icon"></i>
                                         <p>Lihat Ekskul</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="eks_kul.php" class="nav-link active">
+                                    <a href="eks_kul.php" class="nav-link">
                                         <i class="fas fa-edit nav-icon"></i>
                                         <p>Edit Ekskul</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="profil.php" class="nav-link">
+                                    <a href="profil.php" class="nav-link active">
                                         <i class="fas fa-search nav-icon"></i>
                                         <p>Lihat Fasilitas</p>
                                     </a>
@@ -295,7 +239,7 @@ if (isset($_POST['simpan_eks_kul'])) {
                         </li>
 
                         <!-- Visi -->
-                        <li class="nav-item">
+                        <li class="nav-item menu-open">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
@@ -369,12 +313,13 @@ if (isset($_POST['simpan_eks_kul'])) {
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Edit - Ekskul</h1>
+                            <h1>Ekskul & Fasilitas</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
                                 <li class="breadcrumb-item active">Ekskul</li>
+                                <li class="breadcrumb-item active">Fasilitas</li>
                             </ol>
                         </div>
                     </div>
@@ -387,58 +332,105 @@ if (isset($_POST['simpan_eks_kul'])) {
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
-                            <!-- Alert Gagal -->
-                            <?php
-                            if ($error) {
-                            ?>
-                                <div class="card-tools alert alert-danger opacity-50" role="alert">
-                                    <?php echo $error ?>
-                                </div>
-                            <?php
-                            }
-                            ?>
-
-                            <!-- Alert Sukses -->
-                            <?php
-                            if ($sukses) {
-                            ?>
-                                <div class="alert alert-success opacity-50" role="alert">
-                                    <?php echo $sukses ?>
-                                </div>
-                            <?php
-                            }
-                            ?>
-
-                            <!-- Edit Kontak  -->
-                            <div class="card card-primary">
+                            <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">Edit Ekskul</h3>
+                                    <h3 class="card-title">
+                                        Ekskul
+                                    </h3>
                                 </div>
                                 <!-- /.card-header -->
-                                <!-- form start -->
-                                <form action="" method="POST">
-                                    <div class="card-body">
-                                        <!-- No telp-->
-                                        <div class="form-group">
-                                            <label for="nama_ekskul">Nama Ekskul</label>
-                                            <input type="text" class="form-control" id="nama_ekskul" name="nama_ekskul" placeholder="Masukkan Ekskul" value="<?php echo $nama_ekskul ?>">
-                                        </div>
-                                        <!-- No telp-->
-                                        <div class="form-group">
-                                            <label for="nama_pembina">Nama Pembina</label>
-                                            <input type="text" class="form-control" id="nama_pembina" name="nama_pembina" placeholder="Masukkan Pembina" value="<?php echo $nama_pembina ?>">
-                                        </div>
-                                    </div>
-                                    <!-- /.card-body -->
+                                <div class="card-body">
+                                    <table id="example2" class="table table-bordered table-hover table-striped">
+                                        <!-- Baris 1 (Jenis Kolom) -->
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nama Ekskul</th>
+                                                <th>Nama Pembina</th>
+                                            </tr>
+                                        </thead>
 
-                                    <div class="card-footer">
-                                        <button type="submit" name="simpan_eks_kul" class="btn btn-primary">Simpan</button>
-                                    </div>
-                                </form>
+                                        <!-- Isi -->
+                                        <tbody>
+                                            <?php
+                                            $sql2   = "SELECT * FROM eks_kul";
+                                            $q2     = mysqli_query($koneksi, $sql2);
+                                            $index  = 1;
+                                            while ($r2 = mysqli_fetch_array($q2)) {
+                                                $id_ekskul   = $r2['id_ekskul'];
+                                                $nama_ekskul   = $r2['nama_ekskul'];
+                                                $nama_pembina   = $r2['nama_pembina'];
+                                            ?>
+                                                <tr>
+                                                    <td><?php echo $index++ ?></td>
+                                                    <td><?php echo $nama_ekskul ?></td>
+                                                    <td><?php echo $nama_pembina ?></td>
+                                                </tr>
+                                            <?php
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.card -->
+                                <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        Fasilitas
+                                    </h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <table id="example2" class="table table-bordered table-hover table-striped">
+                                        <!-- Baris 1 (Jenis Kolom) -->
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nama Fasilitas</th>
+                                                <th>Tahun Masuk</th>
+                                                <th>Gambar</th>
+                                                <th>Keterangan</th>
+                                            </tr>
+                                        </thead>
+
+                                        <!-- Isi -->
+                                        <tbody>
+                                            <?php
+                                            $sql2   = "SELECT * FROM fasilitas";
+                                            $q2     = mysqli_query($koneksi, $sql2);
+                                            $index  = 1;
+                                            while ($r2 = mysqli_fetch_array($q2)) {
+                                                $id_fasilitas    = $r2['id_fasilitas'];
+                                                $nama_fasilitas  = $r2['nama_fasilitas']; 
+                                                $tahun_masuk     = $r2['tahun_masuk']; 
+                                                $gambar          = $r2['gambar']; 
+                                                $keterangan      = $r2['keterangan'];
+                                            ?>
+                                                <tr>
+                                                    <th><?php echo $index++ ?></th>
+                                                    <td><?php echo $nama_fasilitas ?></td>
+                                                    <td><?php echo $tahun_masuk ?></td>
+                                                    <td><?php echo $gambar ?></td>
+                                                    <td><?php echo $keterangan ?></td>
+                                                </tr>
+                                            <?php
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                            <!-- /card -->
-
-                            <!-- List Kontak -->
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container-fluid -->
+            </section>
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <!--list ekskul-->
                             <div class="card">
                                 <div class="card-header">
                                     <h3 class="card-title">
@@ -454,29 +446,25 @@ if (isset($_POST['simpan_eks_kul'])) {
                                                 <th>#</th>
                                                 <th>Nama Ekskul</th>
                                                 <th>Nama Pembina</th>
-                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
 
                                         <!-- Isi -->
                                         <tbody>
                                             <?php
-                                            $sql2   = "SELECT * FROM eks_kul";
-                                            $q2     = mysqli_query($koneksi, $sql2);
-                                            $index  = 1;
-                                            while ($r2 = mysqli_fetch_array($q2)) {
-                                                $id_ekskul  = $r2['id_ekskul'];
-                                                $nama_ekskul    = $r2['nama_ekskul'];
-                                                $nama_pembina      = $r2['nama_pembina'];
-                                                ?>
+                                            $sql3   = "SELECT * FROM eks_kul";
+                                            $q3     = mysqli_query($koneksi, $sql3);
+                                            $index2  = 1;
+                                            while ($r3 = mysqli_fetch_array($q3)) {
+                                                $id_ekskul   = $r3['id_ekskul'];
+                                                $nama_ekskul   = $r3['nama_ekskul'];
+                                                $nama_pembina   = $r3['nama_pembina'];
+                                            ?>
+
                                                 <tr>
-                                                    <th><?php echo $index++ ?></th>
+                                                    <td><?php echo $index2++ ?></td>
                                                     <td><?php echo $nama_ekskul ?></td>
                                                     <td><?php echo $nama_pembina ?></td>
-                                                    <td>
-                                                        <a href="eks_kul.php?op=edit&id_ekskul=<?php echo $id_ekskul ?>"><button type="button" class="btn btn-warning">Edit</button></a>
-                                                        <a href="eks_kul.php?op=delete&id_ekskul=<?php echo $id_ekskul ?>" onclick="return confirm('Ingin menghapus data ?')"><button type="button" class="btn btn-danger">Delete</button></a>
-                                                    </td>
                                                 </tr>
                                             <?php
                                             }
@@ -484,8 +472,55 @@ if (isset($_POST['simpan_eks_kul'])) {
                                         </tbody>
                                     </table>
                                 </div>
+                                <!--list fasilitas-->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">
+                                            List Fasilitas
+                                        </h4>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <table id="example3" class="table table-bordered table-hover table-striped">
+                                        <!-- Baris 1 (Jenis Kolom) -->
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nama Fasilitas</th>
+                                                <th>Tahun Masuk</th>
+                                                <th>Gambar</th>
+                                                <th>Keterangan</th>
+                                            </tr>
+                                        </thead>
+
+                                        <!-- Isi -->
+                                        <tbody>
+                                            <?php
+                                            $query   = "SELECT * FROM fasilitas";
+                                            $q3     = mysqli_query($koneksi, $query);
+                                            $index2  = 1;
+                                            while ($row = mysqli_fetch_array($q3)) {
+                                                $id_fasilitas    = $row['id_fasilitas'];
+                                                $nama_fasilitas  = $row['nama_fasilitas']; 
+                                                $tahun_masuk     = $row['tahun_masuk']; 
+                                                $gambar          = $row['gambar']; 
+                                                $keterangan      = $row['keterangan'];
+                                            ?>
+                                                <tr>
+                                                    <td><?php echo $index2++ ?></td>
+                                                    <td><?php echo $nama_fasilitas ?></td>
+                                                    <td><?php echo $tahun_masuk ?></td>
+                                                    <td><?php echo $gambar ?></td>
+                                                    <td><?php echo $keterangan ?></td>
+                                                </tr>
+                                            <?php
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.card -->
                             </div>
-                            <!-- /.col -->
                             <!-- /.col -->
                         </div>
                         <!-- /.row -->
@@ -532,30 +567,6 @@ if (isset($_POST['simpan_eks_kul'])) {
     <script src="dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
-    <!-- Page specific script -->
-    <script>
-        $(function() {
-            $("#example1")
-                .DataTable({
-                    responsive: true,
-                    lengthChange: false,
-                    autoWidth: false,
-                    buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
-                })
-                .buttons()
-                .container()
-                .appendTo("#example1_wrapper .col-md-6:eq(0)");
-            $("#example2").DataTable({
-                paging: true,
-                lengthChange: false,
-                searching: false,
-                ordering: true,
-                info: true,
-                autoWidth: false,
-                responsive: true,
-            });
-        });
-    </script>
 </body>
 
 </html>

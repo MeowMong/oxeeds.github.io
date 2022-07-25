@@ -21,6 +21,7 @@ function escape($value){
 
 function redirect($url){
     return header('Location: ' . $url);
+    exit;
 }
 
 // Tidak Ada Video Penambahan tentang Script Function escape() dan Function redirect()

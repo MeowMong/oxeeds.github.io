@@ -1,5 +1,15 @@
 <?php include '../includes/db.php'; ?>
-<?php include 'function.php'?>
+<?php include 'function.php' ?>
+
+<?php ob_start(); ?>
+<?php session_start(); ?>
+
+<?php
+    // Jika tidak ada session login maka kembalikan kehalaman login
+    if (!isset($_SESSION['login'])) {
+        redirect('login.php');
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">

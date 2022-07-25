@@ -144,7 +144,7 @@ if (isset($_POST['simpan_guru_karyawan'])) {
                 <!-- Edit Guru & Karyawan  -->
                 <div class="card card-primary">
                     <!-- form start -->
-                    <form action="" method="POST">
+                    <form action="" method="post">
                         <div class="card-body">
 
                             <div class="form-group">
