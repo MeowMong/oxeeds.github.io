@@ -13,7 +13,7 @@
 
     // Jika gambar tidak kosong, maka img akan diambil, jika kosong, maka img akan diambil berdasarkan link
     if (!empty($admin_image)) {
-        $userImage = "../img/" . $admin_image;
+        $userImage = "../img/admin/" . $admin_image;
     } else {
         $userImage = "https://via.placeholder.com/550x300";
     }

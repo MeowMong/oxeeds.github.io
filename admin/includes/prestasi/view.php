@@ -92,7 +92,7 @@ if (isset($_GET['delete'])) {
                                     </div>
                                     <div class="form-group">
                                         <label for="tanggal_prestasi">Tangal Prestasi</label>
-                                        <input type="date" class="form-control" id="tanggal_prestasi" name="tanggal_prestasi" placeholder="Masukkan Tanggal Prestasi">
+                                        <input type="date" class="form-control" id="tanggal_prestasi" name="tanggal_prestasi">
                                     </div>
                                     <div class="form-group">
                                         <label for="tingkat_prestasi">Tingkat Prestasi</label>
@@ -137,16 +137,16 @@ if (isset($_GET['delete'])) {
                         <div class="card-body">
                             <table class="table table-bordered table-hover">
                                 <thead>
-                                    <tr>
-                                        <th class="text-center">No</th>
-                                        <th class="text-center">Nama Prestasi</th>
-                                        <th class="text-center">Tanggal Prestasi</th>
-                                        <th class="text-center">Tingkat Prestasi</th>
-                                        <th class="text-center">Nama Peraih Prestasi</th>
-                                        <th class="text-center">Lokasi Prestasi</th>
-                                        <th class="text-center">Dokumentasi Prestasi</th>
-                                        <th class="text-center">Keterangan Prestasi</th>
-                                        <th class="text-center">Action</th>
+                                    <tr class="text-center">
+                                        <th>No</th>
+                                        <th>Nama Prestasi</th>
+                                        <th>Tanggal Prestasi</th>
+                                        <th>Tingkat Prestasi</th>
+                                        <th>Nama Peraih Prestasi</th>
+                                        <th>Lokasi Prestasi</th>
+                                        <th>Dokumentasi Prestasi</th>
+                                        <th>Keterangan Prestasi</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>

@@ -33,7 +33,7 @@ if (isset($_GET['delete'])) {
                 <div class="col-md-12">
                     <div class="card bordered-0 shadow-lg">
                         <div class="card-body">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th class="text-center">Deskripsi Visi</th>

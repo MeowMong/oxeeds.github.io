@@ -21,6 +21,7 @@
                 $_SESSION['login'] = true;
                 $_SESSION['username'] = $row['username'];
                 $_SESSION['id_admin'] = $row['id_admin'];
+                $_SESSION['admin_image'] = $row['admin_image'];
                 redirect('dashboard.php');  
             }
         }
