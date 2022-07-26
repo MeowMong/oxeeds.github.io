@@ -20,7 +20,7 @@ if (isset($_POST['add_berita'])) {
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-center">Form Tambah Berita</h1>
+            <h1 class="text-center"><strong>Tambah Berita</strong></h1>
         </div>
     </div>
     <div class="row">
@@ -54,7 +54,7 @@ if (isset($_POST['add_berita'])) {
                         </div>
 
                         <div class="form-group">
-                            <label for="">Gambar Artikel</label>
+                            <label for="">Gambar Berita</label>
                             <input type="file" name="berita_image" class="form-control">
                         </div>
 
@@ -64,7 +64,7 @@ if (isset($_POST['add_berita'])) {
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" name="add_berita" class="btn btn-primary btn-block">Simpan</button>
+                            <button type="submit" name="add_berita" class="btn btn-primary btn-block">Tambah Berita</button>
                         </div>
 
                     </form>

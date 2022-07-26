@@ -44,7 +44,7 @@ if (isset($_GET['delete'])) {
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="text-center">Keadaan Kelas</h1>
+                <h1 class="text-center"><strong>Data Keadaan Kelas</strong></h1>
             </div>
         </div>
     </div>
@@ -93,12 +93,12 @@ if (isset($_GET['delete'])) {
 
                             <div class="form-group">
                                 <label for="panjang_kelas">Panjang (m)</label>
-                                <input type="number" step="0.01" class="form-control" id="panjang_kelas" name="panjang_kelas" placeholder="Masukkan Panjang Ruang">
+                                <input type="number" step="any" class="form-control" id="panjang_kelas" name="panjang_kelas" placeholder="Masukkan Panjang Ruang">
                             </div>
 
                             <div class="form-group">
                                 <label for="lebar_kelas">Lebar (m)</label>
-                                <input type="number" step="0.01" class="form-control" id="lebar_kelas" name="lebar_kelas" placeholder="Masukkan Lebar Ruang">
+                                <input type="number" step="any" class="form-control" id="lebar_kelas" name="lebar_kelas" placeholder="Masukkan Lebar Ruang">
                             </div>
 
                             <div class="form-group">
@@ -106,8 +106,17 @@ if (isset($_GET['delete'])) {
                                 <input type="text" class="form-control" id="satuan_kelas" name="satuan_kelas" placeholder="Masukkan Satuan Ruang">
                             </div>
                             <div class="form-group">
-                                <label for="keadaan_kelas">Keadaan</label>
-                                <input type="text" class="form-control" id="keadaan_kelas" name="keadaan_kelas" placeholder="Masukkan Keadaan Ruang">
+                                <label>Keadaan Kelas</label>
+                                <select class="form-control" name="keadaan_kelas">
+                                    <option>Pilih Keadaan Kelas</option>
+                                    <?php
+                                    $query = query("SELECT * FROM category_keadaan_kelas");
+                                    confirmQuery($query);
+                                    while ($item = mysqli_fetch_assoc($query)) {
+                                    ?>
+                                        <option value="<?php echo $item['id_category_keadaan_kelas'] ?>"><?php echo $item['category_name'] ?></option>
+                                    <?php } ?>
+                                </select>
                             </div>
                         </div>
                         <!-- /.card-body -->
@@ -122,8 +131,8 @@ if (isset($_GET['delete'])) {
                 <!-- List Kontak -->
                 <div class="card border-0 shadow-lg mt-5">
                     <div class="card-header">
-                        <h3 class="card-title">
-                            List Keadaan Kelas
+                        <h3 class="card-title text-center">
+                            <strong>List Keadaan Kelas</strong>
                         </h3>
                     </div>
                     <!-- /.card-header -->

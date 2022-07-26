@@ -10,12 +10,12 @@ if (isset($_POST['simpan_tujuan'])) {
 
         $query   = query("INSERT INTO tujuan(isi_tujuan) VALUES ('$isi_tujuan')");
         if ($query) {
-            $sukses     = "Menambahkan data baru (Misi) BERHASIL!";
+            $sukses     = "Menambahkan data baru BERHASIL!";
         } else {
             $error      = "GAGAL menambahkan data baru!";
         }
     } else {
-        $error  = "Isi Visi KOSONG! Silahkan masukkan data!";
+        $error  = "Data KOSONG! Silahkan masukkan data!";
     }
 }
 
@@ -49,6 +49,7 @@ if (isset($_GET['delete'])) {
                     if ($error) {
                     ?>
                         <div class="card-tools alert alert-danger opacity-50" role="alert">
+                            <a href="tujuan.php"><button type="button" class="btn btn-outline-danger"><i class="fas fa-times"></i></button></a>
                             <?= $error ?>
                         </div>
                     <?php
@@ -60,6 +61,7 @@ if (isset($_GET['delete'])) {
                     if ($sukses) {
                     ?>
                         <div class="alert alert-success opacity-50" role="alert">
+                            <a href="tujuan.php"><button type="button" class="btn btn-outline-success"><i class="fas fa-times"></i></button></a>
                             <?= $sukses ?>
                         </div>
                     <?php
@@ -80,7 +82,7 @@ if (isset($_GET['delete'])) {
                             <!-- /.card-body -->
 
                             <div class=" card-footer">
-                                    <button type="submit" name="simpan_tujuan" class="btn btn-primary btn-block">Simpan</button>
+                                    <button type="submit" name="simpan_tujuan" class="btn btn-primary btn-block">Tambah Tujuan</button>
                                 </div>
                         </form>
                     </div>
@@ -89,19 +91,19 @@ if (isset($_GET['delete'])) {
                     <!-- List Tujuan Sekolah -->
                     <div class="card border-0 shadow-lg">
                         <div class="card-header">
-                            <h4 class="card-title">
-                                Tabel Tujuan Sekolah
+                            <h4 class="card-title text-center">
+                                <strong>Tabel Tujuan Sekolah</strong>
                             </h4>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="example1" class="table table-bordered">
+                            <table class="table table-bordered table-hover">
                                 <!-- Baris 1 (Jenis Kolom) -->
                                 <thead>
                                     <tr>
-                                        <th class="text-center"><strong>No</strong></th>
-                                        <th class="text-center"><strong>Tujuan</strong></th>
-                                        <th class="text-center"><strong>Aksi</strong></th>
+                                        <th class="text-center">No</th>
+                                        <th class="text-center">Tujuan</th>
+                                        <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
 

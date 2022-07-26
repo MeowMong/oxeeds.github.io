@@ -9,12 +9,12 @@ if (isset($_POST['simpan_misi'])) {
 
         $query   = query("INSERT INTO misi(isi_misi) VALUES ('$isi_misi')");
         if ($query) {
-            $sukses     = "Menambahkan data baru (Misi) BERHASIL!";
+            $sukses     = "Menambahkan data baru BERHASIL!";
         } else {
             $error      = "GAGAL menambahkan data baru!";
         }
     } else {
-        $error  = "Isi Visi KOSONG! Silahkan masukkan data!";
+        $error  = "Data KOSONG! Silahkan masukkan data!";
     }
 }
 
@@ -36,7 +36,7 @@ if (isset($_GET['delete'])) {
     <!-- Content Header (Page header) -->
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-center">Misi</h1>
+            <h1 class="text-center"><strong>Misi</strong></h1>
         </div>
     </div>
 
@@ -50,6 +50,7 @@ if (isset($_GET['delete'])) {
                     if ($error) {
                     ?>
                         <div class="alert alert-danger opacity-50" role="alert">
+                            <a href="misi.php"><button type="button" class="btn btn-outline-danger"><i class="fas fa-times"></i></button></a>
                             <?php echo $error ?>
                         </div>
                     <?php
@@ -61,6 +62,7 @@ if (isset($_GET['delete'])) {
                     if ($sukses) {
                     ?>
                         <div class="alert alert-success opacity-50" role="alert">
+                            <a href="misi.php"><button type="button" class="btn btn-outline-success"><i class="fas fa-times"></i></button></a>
                             <?php echo $sukses ?>
                         </div>
                     <?php
@@ -70,20 +72,16 @@ if (isset($_GET['delete'])) {
 
                         <!-- Tambah Deskripsi & Isi Misi-->
                         <div class="card card-warning">
-                            <div class="card-header">
-                                <h4 class="card-title">Tambah Poin Misi</h4>
-                            </div>
-                            <!-- /.card-header -->
                             <!-- form start -->
                             <form action="" method="post">
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="isi_misi">Poin Misi</label>
+                                        <label for="isi_misi">Tambah Poin Misi</label>
                                         <input type="text" class="form-control" id="isi_misi" name="isi_misi" placeholder="Masukkan Poin Misi">
                                     </div>
-                                    <div class="card-footer">
-                                        <button type="submit" name="simpan_misi" class="btn btn-primary btn-block">Simpan</button>
-                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="submit" name="simpan_misi" class="btn btn-primary btn-block">Tambah Misi</button>
                                 </div>
                             </form>
                         </div>
@@ -98,11 +96,11 @@ if (isset($_GET['delete'])) {
             <div class="row mt-5">
                 <div class="col-md-12">
                     <div class="card bordered-0 shadow-lg">
-                        <div class="card-header">
-                            <h3>Tabel Misi</h3>
+                        <div class="card-header text-center">
+                            <h3><strong>Tabel Misi</strong></h3>
                         </div>
                         <div class="card-body">
-                            <table class="table table-bordered mb-5">
+                            <table class="table table-bordered table-hover mb-5">
                                 <thead>
                                     <tr>
                                         <th class="text-center">Deskripsi Misi</th>
@@ -124,7 +122,7 @@ if (isset($_GET['delete'])) {
                                     <?php } ?>
                                 </tbody>
                             </table>
-                            <table class="table table-bordered">
+                            <table class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th class="text-center">No</th>
@@ -143,8 +141,8 @@ if (isset($_GET['delete'])) {
                                             <td class="text-center"><?= $index++ ?></td>
                                             <td><?= $row['isi_misi'] ?></td>
                                             <td class="text-center">
-                                                <a href="misi.php?page=edit&id_misi=<?= $row['id_misi'] ?>" class="btn btn-warning">Update</a>
-                                                <a href="misi.php?delete=<?= $row['id_misi'] ?>" class="btn btn-danger" onclick="return confirm('Ingin Menghapus Data ?')">Delete</a>
+                                                <a href="misi.php?page=edit&id_misi=<?= $row['id_misi'] ?>" class="btn btn-warning mt-1">Update</a>
+                                                <a href="misi.php?delete=<?= $row['id_misi'] ?>" class="btn btn-danger mt-1" onclick="return confirm('Ingin Menghapus Data ?')">Delete</a>
                                             </td>
                                         </tr>
                                     <?php } ?>

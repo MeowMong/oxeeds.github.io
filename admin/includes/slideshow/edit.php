@@ -1,10 +1,10 @@
 <?php
-    $id_carr = $_GET['id_carr'];
-    if (isset($_GET['id_carr'])) {
-        $query = query("SELECT * FROM carousel WHERE id_carr='$id_carr' ");
-        confirmQuery($query);
-        $result = mysqli_fetch_array($query);
-        $gambar_carr = $result['gambar_carr'];
+$id_carr = $_GET['id_carr'];
+if (isset($_GET['id_carr'])) {
+    $query = query("SELECT * FROM carousel WHERE id_carr='$id_carr' ");
+    confirmQuery($query);
+    $result = mysqli_fetch_array($query);
+    $gambar_carr = $result['gambar_carr'];
 
     // Query Edit ke Database
     if (isset($_POST['update'])) {
@@ -35,7 +35,7 @@
 <div class="container">
     <div class="row mb-2">
         <div class="col-md-12">
-            <h1 class="text-center">Update Slideshow</h1>
+            <h1 class="text-center"><strong>Update Slideshow</strong></h1>
             <div class="card border-0 shadow-lg">
                 <div class="card-body">
                     <form method="post" enctype="multipart/form-data">

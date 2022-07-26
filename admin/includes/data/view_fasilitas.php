@@ -50,7 +50,7 @@ if (isset($_GET['delete'])) {
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-center">Data Fasilitas</h1>
+                    <h1 class="text-center"><strong>Data Fasilitas</strong></h1>
                 </div>
             </div>
         </div>
@@ -121,13 +121,13 @@ if (isset($_GET['delete'])) {
                     <!-- List Kontak -->
                     <div class="card border-0 shadow-lg">
                         <div class="card-header">
-                            <h3 class="card-title">
-                                List Fasilitas
+                            <h3 class="card-title text-center">
+                                <strong>List Fasilitas</strong>
                             </h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="example1" class="table table-bordered table-hover table-striped">
+                            <table class="table table-bordered table-hover">
                                 <!-- Baris 1 (Jenis Kolom) -->
                                 <thead>
                                     <tr class="text-center">

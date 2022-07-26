@@ -11,13 +11,12 @@ if (isset($_GET['page'])) {
 
 switch ($page) {
     case 'edit':
-        include 'includes/kontak_sekolah/edit.php';
+        include 'includes/prestasi/edit.php';
         break;
     default:
-        include 'includes/kontak_sekolah/view.php';
+        include 'includes/prestasi/view.php';
         break;
 }
-
 ?>
 
 <?php include 'includes/admin_footer.php' ?>

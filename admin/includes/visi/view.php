@@ -21,7 +21,7 @@ if (isset($_GET['delete'])) {
     <!-- Content Header (Page header) -->
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-center">Visi</h1>
+            <h1 class="text-center"><strong>Visi</strong></h1>
         </div>
     </div>
 

@@ -57,12 +57,12 @@ if (isset($_GET['id_keadaan_kelas'])) {
 
                             <div class="form-group">
                                 <label for="panjang_kelas">Panjang (m)</label>
-                                <input type="number" step="0.01" class="form-control" id="panjang_kelas" name="panjang_kelas" value="<?= $result['panjang_kelas'] ?>">
+                                <input type="number" step="any" class="form-control" id="panjang_kelas" name="panjang_kelas" value="<?= $result['panjang_kelas'] ?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="lebar_kelas">Lebar (m)</label>
-                                <input type="number" step="0.01" class="form-control" id="lebar_kelas" name="lebar_kelas" value="<?= $result['lebar_kelas'] ?>">
+                                <input type="number" step="any" class="form-control" id="lebar_kelas" name="lebar_kelas" value="<?= $result['lebar_kelas'] ?>">
                             </div>
 
                             <div class="form-group">

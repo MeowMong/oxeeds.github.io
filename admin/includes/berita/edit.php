@@ -42,7 +42,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-center">Form Edit Artikel</h1>
+            <h1 class="text-center"><strong>Update Berita</strong></h1>
         </div>
     </div>
     <div class="row">
@@ -64,11 +64,11 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Judul Artikel</label>
+                            <label>Judul Berita</label>
                             <input type="text" name="berita_title" class="form-control" value="<?php echo $result['berita_title'] ?>">
                         </div>
                         <div class="form-group">
-                            <label>Image</label>
+                            <label>Gambar Berita</label>
                             <input type="file" name="berita_image" class="form-control">
                         </div>
                         <div class="form-group">
@@ -76,7 +76,7 @@
                             <textarea name="berita_description" class="form-control" cols="30" rows="10"><?php echo $result['berita_description'] ?></textarea>
                         </div>
                         <div class="form-group">
-                            <button type="submit" name="update_artikel" class="btn btn-warning btn-block">Update Artikel</button>
+                            <button type="submit" name="update_artikel" class="btn btn-warning btn-block">Update Berita</button>
                         </div>
                     </form>
                 </div>

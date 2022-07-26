@@ -21,7 +21,7 @@ if (isset($_GET['id_misi'])) {
 <div class="container">
     <div class="row mb-2">
         <div class="col-md-12">
-            <h1 class="text-center">Update Misi</h1>
+            <h1 class="text-center"><strong>Update Misi</strong></h1>
             <div class="card border-0 shadow-lg">
                 <div class="card-body">
                     <form action="" method="post">
@@ -30,9 +30,9 @@ if (isset($_GET['id_misi'])) {
                                 <label for="isi_misi">Poin Misi</label>
                                 <input type="text" class="form-control" id="isi_misi" name="isi_misi" value="<?= $result['isi_misi'] ?>">
                             </div>
-                            <div class="card-footer">
-                                <button type="submit" name="update_misi" class="btn btn-warning btn-block">Update Misi</button>
-                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" name="update_misi" class="btn btn-warning btn-block">Update Misi</button>
                         </div>
                     </form>
                 </div>

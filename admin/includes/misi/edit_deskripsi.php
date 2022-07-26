@@ -21,7 +21,7 @@ if (isset($_GET['id_deskripsi_misi'])) {
 <div class="container">
     <div class="row mb-2">
         <div class="col-md-12">
-            <h1 class="text-center">Update Deskripsi Misi</h1>
+            <h1 class="text-center"><strong>Update Deskripsi Misi</strong></h1>
             <div class="card border-0 shadow-lg">
                 <div class="card-body">
                     <form action="" method="post">
