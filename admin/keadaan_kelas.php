@@ -11,10 +11,10 @@ if (isset($_GET['page'])) {
 
 switch ($page) {
     case 'edit':
-        include 'includes/data/edit_fasilitas.php';
+        include 'includes/data/edit_keadaan_kelas.php';
         break;
     default:
-        include 'includes/data/view_fasilitas.php';
+        include 'includes/data/view_keadaan_kelas.php';
         break;
 }
 

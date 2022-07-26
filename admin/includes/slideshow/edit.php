@@ -1,21 +1,10 @@
 <?php
-    // Jika Klik btn update yang ada pada tabel list kategori, 
-    // maka akan menampilkan nama dari kategory tersebut di 
-    // form edit yang ada di dalam tabel Form Tambah Kategory
-    // Global $id_carr
     $id_carr = $_GET['id_carr'];
     if (isset($_GET['id_carr'])) {
         $query = query("SELECT * FROM carousel WHERE id_carr='$id_carr' ");
         confirmQuery($query);
         $result = mysqli_fetch_array($query);
         $gambar_carr = $result['gambar_carr'];
-
-    // Jika user_image tidak kosong, maka akan menampilkan user_image yang sudah ada
-    if (!empty($user_image)) {
-        $userImage = "../img/" . $user_image;
-    } else {
-        $userImage = "https://via.placeholder.com/550x300";
-    }
 
     // Query Edit ke Database
     if (isset($_POST['update'])) {

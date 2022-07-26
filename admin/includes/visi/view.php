@@ -1,7 +1,4 @@
 <?php
-
-$deskripsi_visi  = "";
-$isi_visi       = "";
 $sukses         = "";
 $error          = "";
 
@@ -35,9 +32,6 @@ if (isset($_GET['delete'])) {
             <div class="row">
                 <div class="col-md-12">
                     <div class="card bordered-0 shadow-lg">
-                        <div class="card-header">
-                            <h3>Tabel Visi</h3>
-                        </div>
                         <div class="card-body">
                             <table class="table table-bordered">
                                 <thead>
@@ -56,7 +50,6 @@ if (isset($_GET['delete'])) {
                                             <td><?= $row['isi_visi'] ?></td>
                                             <td class="text-center">
                                                 <a href="visi.php?page=edit&id_visi=<?= $row['id_visi'] ?> " class="btn btn-warning">Update</a>
-                                                <a href="visi.php?delete=<?= $row['id_visi'] ?>" class="btn btn-danger">Delete</a>
                                             </td>
                                         </tr>
                                     <?php } ?>

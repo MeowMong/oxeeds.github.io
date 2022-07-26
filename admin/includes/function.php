@@ -24,8 +24,6 @@ function redirect($url){
     exit;
 }
 
-// Tidak Ada Video Penambahan tentang Script Function escape() dan Function redirect()
-
 //============= END DATABASE HELPER =============// 
 
 //============= DASHBOARD HELPER =============// 
@@ -62,4 +60,5 @@ function getCountKomentarBerita(){
     return $result;
 }
 //============= END DASHBOARD HELPER =============// 
+
 ?>

@@ -25,16 +25,16 @@ if (isset($_GET['id_visi'])) {
 <div class="container">
     <div class="row mb-2">
         <div class="col-md-12">
-            <h1 class="text-center">Update Slideshow</h1>
+            <h1 class="text-center">Update Visi</h1>
             <div class="card border-0 shadow-lg">
                 <div class="card-body">
                     <form method="post">
                         <div class="form-group">
-                            <label for="">Isi Slideshow</label>
-                            <input type="text" name="isi_visi" class="form-control" value="<?= $result['isi_visi'] ?>">
+                            <label>Isi Visi</label>
+                            <textarea name="isi_visi" cols="30" rows="10" class="form-control"><?= $result['isi_visi'] ?></textarea>
                         </div>
                         <div class="form-group card-footer">
-                            <button type="submit" name="update" class="btn btn-warning btn-block">Udpdate Slideshow</button>
+                            <button type="submit" name="update" class="btn btn-warning btn-block">Udpdate Visi</button>
                         </div>
                     </form>
                 </div>

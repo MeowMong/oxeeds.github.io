@@ -117,10 +117,10 @@
                 </a>
                 <div id="collapseData" class="collapse" aria-labelledby="headingData" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Siswa</a>
+                        <a class="collapse-item" href="siswa.php">Siswa</a>
                         <a class="collapse-item" href="guru_karyawan.php">Guru dan Karyawan</a>
-                        <a class="collapse-item" href="#">Fasilitas</a>
-                        <a class="collapse-item" href="#">Keadaan Kelas</a>
+                        <a class="collapse-item" href="fasilitas.php">Fasilitas</a>
+                        <a class="collapse-item" href="keadaan_kelas.php">Keadaan Kelas</a>
                     </div>
                 </div>
             </li>
@@ -247,8 +247,8 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $_SESSION['username'] ?></span>
-                                <img class="img-profile rounded-circle" src="https://ui-avatars.com/api/?name=<?= $_SESSION['username'] ?>">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Daffa Rayhan Riadi</span>
+                                <img class="img-profile rounded-circle" src="https://ui-avatars.com/api/?name=Daffa">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

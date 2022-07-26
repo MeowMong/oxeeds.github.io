@@ -88,7 +88,7 @@ $error          = "";
                         <a class="nav-link" href="kontak.php">Kontak</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="admin/login.php">Login</a>
+                        <a class="nav-link" href="admin">Login</a>
                     </li>
                 </ul>
             </div>

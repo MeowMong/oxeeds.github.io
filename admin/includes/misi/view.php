@@ -4,11 +4,10 @@ $error = "";
 
 if (isset($_POST['simpan_misi'])) {
     $isi_misi = escape($_POST['isi_misi']);
-    $deskripsi_misi  = escape($_POST['deskripsi_misi']);
 
     if ($isi_misi) {
 
-        $query   = query("INSERT INTO misi(isi_misi, deskripsi_misi) VALUES ('$isi_misi', '$deskripsi_misi')");
+        $query   = query("INSERT INTO misi(isi_misi) VALUES ('$isi_misi')");
         if ($query) {
             $sukses     = "Menambahkan data baru (Misi) BERHASIL!";
         } else {
@@ -72,23 +71,16 @@ if (isset($_GET['delete'])) {
                         <!-- Tambah Deskripsi & Isi Misi-->
                         <div class="card card-warning">
                             <div class="card-header">
-                                <h3 class="card-title">Tambah Deskripsi Misi & Poin Misi</h3>
+                                <h4 class="card-title">Tambah Poin Misi</h4>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
                             <form action="" method="post">
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="deskripsi_misi">Deskripsi Misi</label>
-                                        <textarea class="form-control" rows="3" id="deskripsi_misi" name="deskripsi_misi" placeholder="Masukkan Deskripsi Misi"></textarea>
-                                    </div>
-                                    <!-- /.card-body -->
-                                    <div class="form-group">
                                         <label for="isi_misi">Poin Misi</label>
                                         <input type="text" class="form-control" id="isi_misi" name="isi_misi" placeholder="Masukkan Poin Misi">
                                     </div>
-                                    <!-- /.card-body -->
-
                                     <div class="card-footer">
                                         <button type="submit" name="simpan_misi" class="btn btn-primary btn-block">Simpan</button>
                                     </div>
@@ -103,14 +95,14 @@ if (isset($_GET['delete'])) {
             </div>
             <!-- /.row -->
 
-            <div class="row">
+            <div class="row mt-5">
                 <div class="col-md-12">
                     <div class="card bordered-0 shadow-lg">
                         <div class="card-header">
                             <h3>Tabel Misi</h3>
                         </div>
                         <div class="card-body">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered mb-5">
                                 <thead>
                                     <tr>
                                         <th class="text-center">Deskripsi Misi</th>
@@ -124,7 +116,7 @@ if (isset($_GET['delete'])) {
                                     while ($row = mysqli_fetch_assoc($query)) {
                                     ?>
                                         <tr>
-                                            <td class="text-center"><?php $row['deskripsi_misi'] ?></td>
+                                            <td><?= $row['isi_deskripsi_misi'] ?></td>
                                             <td class="text-center">
                                                 <a href="misi.php?page=edit_deskripsi&id_deskripsi_misi=<?= $row['id_deskripsi_misi'] ?>" class="btn btn-warning">Update</a>
                                             </td>
@@ -152,7 +144,7 @@ if (isset($_GET['delete'])) {
                                             <td><?= $row['isi_misi'] ?></td>
                                             <td class="text-center">
                                                 <a href="misi.php?page=edit&id_misi=<?= $row['id_misi'] ?>" class="btn btn-warning">Update</a>
-                                                <a href="misi.php?delete=<?= $row['id_misi'] ?>" class="btn btn-danger">Delete</a>
+                                                <a href="misi.php?delete=<?= $row['id_misi'] ?>" class="btn btn-danger" onclick="return confirm('Ingin Menghapus Data ?')">Delete</a>
                                             </td>
                                         </tr>
                                     <?php } ?>

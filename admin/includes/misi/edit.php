@@ -1,30 +1,17 @@
 <?php
-// Jika Klik btn update yang ada pada tabel list kategori, 
-// maka akan menampilkan nama dari kategory tersebut di 
-// form edit yang ada di dalam tabel Form Tambah Kategory
-// Global $id_carr
-$id_carr = $_GET['id_carr'];
-if (isset($_GET['id_carr'])) {
-    $query = query("SELECT * FROM carousel WHERE id_carr='$id_carr' ");
+$id_misi = $_GET['id_misi'];
+if (isset($_GET['id_misi'])) {
+    $query = query("SELECT * FROM misi WHERE id_misi='$id_misi' ");
     confirmQuery($query);
-    $result = mysqli_fetch_array($query);
-    $gambar_carr = $result['gambar_carr'];
-
-    // Jika user_image tidak kosong, maka akan menampilkan user_image yang sudah ada
-    if (!empty($user_image)) {
-        $userImage = "../img/" . $user_image;
-    } else {
-        $userImage = "https://via.placeholder.com/550x300";
-    }
+    $result = mysqli_fetch_assoc($query);
 
     // Query Edit ke Database
-    if (isset($_POST['update'])) {
-        $judul_carr = escape($_POST['judul_carr']);
-        $isi_carr = escape($_POST['isi_carr']);
+    if (isset($_POST['update_misi'])) {
+        $isi_misi = escape($_POST['isi_misi']);
 
-        $query = query("UPDATE carousel SET gambar_carr='$gambar_carr', judul_carr='$judul_carr', isi_carr='$isi_carr' WHERE id_carr='$id_carr' ");
+        $query = query("UPDATE misi SET isi_misi='$isi_misi' WHERE id_misi='$id_misi' ");
         if ($query) {
-            redirect('slideshow.php');
+            redirect('misi.php');
         }
     }
 }
@@ -34,17 +21,17 @@ if (isset($_GET['id_carr'])) {
 <div class="container">
     <div class="row mb-2">
         <div class="col-md-12">
-            <h1 class="text-center">Update Slideshow</h1>
+            <h1 class="text-center">Update Misi</h1>
             <div class="card border-0 shadow-lg">
                 <div class="card-body">
                     <form action="" method="post">
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="isi_misi">Poin Misi</label>
-                                <input type="text" class="form-control" id="isi_misi" name="isi_misi" placeholder="Masukkan Poin Misi">
+                                <input type="text" class="form-control" id="isi_misi" name="isi_misi" value="<?= $result['isi_misi'] ?>">
                             </div>
                             <div class="card-footer">
-                                <button type="submit" name="simpan_misi" class="btn btn-primary btn-block">Simpan</button>
+                                <button type="submit" name="update_misi" class="btn btn-warning btn-block">Update Misi</button>
                             </div>
                         </div>
                     </form>

@@ -1,43 +1,17 @@
+<?php include 'includes/admin_header.php'; ?>
+<?php include 'includes/admin_navigation.php'; ?>
 <?php
-$host       = "localhost";
-$user       = "root";
-$pass       = "";
-$db         = "sdn1pwtk";
-
-$koneksi    = mysqli_connect($host, $user, $pass, $db);
-if (!$koneksi) {
-    die("Tidak dapat terhubung ke database");
-}
-
-$id_komentar_berita = "";
-$komentar_id_berita = "";
-$nama_komentar = "";
-$email_komentar = "";
-$isi_komentar = "";
-$tanggal_komentar = "";
-
-if (isset($_GET['op'])) {
-    $op = $_GET['op'];
-} else {
-    $op = "";
-}
-
 // DELETE
-if ($op == 'delete') {
+if (isset($_POST['delete'])) {
     $id_komentar_berita = $_GET['id_komentar_berita'];
-    $query   = "DELETE FROM komentar_berita WHERE id_komentar_berita = '$id_komentar_berita'";
-    $q1     = mysqli_query($koneksi, $query);
-    if ($q1) {
+    $query   = query("DELETE FROM komentar_berita WHERE id_komentar_berita = '$id_komentar_berita'");
+    if ($query) {
         $sukses     = "Menghapus data BERHASIL!";
     } else {
         $error      = "GAGAL menghapus data!";
     }
 }
-
 ?>
-
-<?php include 'includes/admin_header.php'; ?>
-<?php include 'includes/admin_navigation.php'; ?>
 
 <div class="container-fluid">
     <div class="row">
@@ -86,7 +60,7 @@ if ($op == 'delete') {
                             <td><?php echo $isi_komentar ?></td>
                             <td><?php echo $tanggal_komentar ?></td>
                             <td>
-                                <a href="komentar_berita.php?op=delete&id_komentar_berita=<?php echo $id_komentar_berita ?>" onclick="return confirm('Ingin menghapus data ?')"><button type="button" class="btn btn-danger">Delete</button></a>
+                                <a href="komentar_berita.php?op=delete&id_komentar_berita=<?php echo $id_komentar_berita ?>" onclick="return confirm('Ingin menghapus data ?')" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                     <?php

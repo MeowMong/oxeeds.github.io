@@ -35,7 +35,7 @@ if (isset($_GET['delete'])) {
 <div class="content-wrapper">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-center">Tujuan Sekolah</h1>
+            <h1 class="text-center"><strong>Tujuan Sekolah</strong></h1>
         </div>
     </div>
 
@@ -67,7 +67,7 @@ if (isset($_GET['delete'])) {
                     ?>
 
                     <!-- Edit Tujuan -->
-                    <div class="card card-primary">
+                    <div class="card card-primary border-0 shadow-lg mb-5">
                         <!-- /.card-header -->
                         <!-- form start -->
                         <form method="post">
@@ -79,29 +79,29 @@ if (isset($_GET['delete'])) {
                             </div>
                             <!-- /.card-body -->
 
-                            <div class="card-footer">
-                                <button type="submit" name="simpan_tujuan" class="btn btn-primary">Simpan</button>
-                            </div>
+                            <div class=" card-footer">
+                                    <button type="submit" name="simpan_tujuan" class="btn btn-primary btn-block">Simpan</button>
+                                </div>
                         </form>
                     </div>
                     <!-- /card -->
 
                     <!-- List Tujuan Sekolah -->
-                    <div class="card">
+                    <div class="card border-0 shadow-lg">
                         <div class="card-header">
-                            <h3 class="card-title">
-                                List tujuan Sekolah
-                            </h3>
+                            <h4 class="card-title">
+                                Tabel Tujuan Sekolah
+                            </h4>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="example1" class="table table-bordered table-hover table-striped">
+                            <table id="example1" class="table table-bordered">
                                 <!-- Baris 1 (Jenis Kolom) -->
                                 <thead>
                                     <tr>
-                                        <th>#</th>
-                                        <th>Tujuan</th>
-                                        <th>Aksi</th>
+                                        <th class="text-center"><strong>No</strong></th>
+                                        <th class="text-center"><strong>Tujuan</strong></th>
+                                        <th class="text-center"><strong>Aksi</strong></th>
                                     </tr>
                                 </thead>
 
@@ -115,10 +115,10 @@ if (isset($_GET['delete'])) {
                                         $isi_tujuan     = $row['isi_tujuan'];
                                     ?>
                                         <tr>
-                                            <th><?= $index++ ?></th>
+                                            <th class="text-center"><?= $index++ ?></th>
                                             <td><?= $isi_tujuan ?></td>
                                             <td>
-                                                <a href="tujuan.php?page=edit&id_tujuan=<?php echo $id_tujuan ?>"><button type="button" class="btn btn-warning">Edit</button></a>
+                                                <a href="tujuan.php?page=edit&id_tujuan=<?php echo $id_tujuan ?>"><button type="button" class="btn btn-warning">Update</button></a>
                                                 <a href="tujuan.php?delete=<?php echo $id_tujuan ?>" onclick="return confirm('Ingin menghapus data ?')"><button type="button" class="btn btn-danger">Delete</button></a>
                                             </td>
                                         </tr>
