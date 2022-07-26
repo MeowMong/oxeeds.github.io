@@ -48,12 +48,12 @@ if (isset($_GET['id_siswa'])) {
 
                             <div class="form-group">
                                 <label>Jumlah Siswa Laki-laki</label>
-                                <input type="text" class="form-control" name="jumlah_siswa_laki" value="<?= $result['jumlah_siswa_laki'] ?>">
+                                <input type="number" class="form-control" name="jumlah_siswa_laki" value="<?= $result['jumlah_siswa_laki'] ?>">
                             </div>
 
                             <div class="form-group">
                                 <label>Jumlah Siswa Perempuan</label>
-                                <input type="text" class="form-control" name="jumlah_siswa_perempuan" value="<?= $result['jumlah_siswa_perempuan'] ?>">
+                                <input type="number" class="form-control" name="jumlah_siswa_perempuan" value="<?= $result['jumlah_siswa_perempuan'] ?>">
                             </div>
 
                             <div class="form-group">

@@ -85,24 +85,24 @@ if (isset($_GET['delete'])) {
                     <form method="post">
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="nama">Siswa Laki-laki</label>
-                                <input type="text" class="form-control" id="nama" name="jumlah_siswa_laki" placeholder="Masukkan Jumlah Siswa Laki-laki" autofocus>
+                                <label for="jumlah_siswa_laki">Siswa Laki-laki</label>
+                                <input type="number" class="form-control" id="jumlah_siswa_laki" name="jumlah_siswa_laki" placeholder="Masukkan Jumlah Siswa Laki-laki" autofocus>
                             </div>
 
                             <div class="form-group">
-                                <label for="nip">Siswa Perempuan</label>
-                                <input type="text" class="form-control" id="nip" name="jumlah_siswa_perempuan" placeholder="Masukkan Jumlah Siswa Perempuan">
+                                <label for="jumlah_siswa_perempuan">Siswa Perempuan</label>
+                                <input type="number" class="form-control" id="jumlah_siswa_perempuan" name="jumlah_siswa_perempuan" placeholder="Masukkan Jumlah Siswa Perempuan">
                             </div>
 
                             <div class="form-group">
-                                <label for="gol_ruang">Tahun Ajaran</label>
-                                <input type="text" class="form-control" id="gol_ruang" name="tahun_ajaran_siswa" placeholder="Masukkan Tahun Ajaran Siswa">
+                                <label for="tahun_ajaran_siswa">Tahun Ajaran</label>
+                                <input type="text" class="form-control" id="tahun_ajaran_siswa" name="tahun_ajaran_siswa" placeholder="Masukkan Tahun Ajaran Siswa">
                             </div>
                         </div>
                         <!-- /.card-body -->
 
                         <div class="card-footer">
-                            <button type="submit" name="simpan_siswa" class="btn btn-primary btn-block">Simpan</button>
+                            <button type="submit" name="simpan_siswa" class="btn btn-primary btn-block">Tambah Data Siswa</button>
                         </div>
                     </form>
                 </div>
@@ -125,7 +125,7 @@ if (isset($_GET['delete'])) {
                                     <th>Jumlah Siswa Laki-laki</th>
                                     <th>Jumlah Siswa Perempuan</th>
                                     <th>Tahun Ajaran</th>
-                                    <th>Aksi</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
 
@@ -142,8 +142,8 @@ if (isset($_GET['delete'])) {
                                         <td><?= $row['jumlah_siswa_perempuan'] ?></td>
                                         <td><?= $row['tahun_ajaran_siswa'] ?></td>
                                         <td>
-                                            <a href="siswa.php?page=edit&id_siswa=<?= $row['id_siswa'] ?>" class="btn btn-warning mb-1">Update</a>
-                                            <a href="siswa.php?delete=<?= $row['id_siswa'] ?>" onclick="return confirm('Ingin menghapus data ?')" class="btn btn-danger mb-1">Hapus</a>
+                                            <a href="siswa.php?page=edit&id_siswa=<?= $row['id_siswa'] ?>" class="btn btn-warning mt-1">Update</a>
+                                            <a href="siswa.php?delete=<?= $row['id_siswa'] ?>" onclick="return confirm('Ingin menghapus data ?')" class="btn btn-danger mt-1">Hapus</a>
                                         </td>
                                     </tr>
                                 <?php

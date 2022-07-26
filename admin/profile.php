@@ -2,49 +2,49 @@
 <?php include 'includes/admin_navigation.php' ?>
 
 <?php
-// Membuat penamaan dalam Profil menjadi Dinamis ketiga login 
-$id_user = $_SESSION['id_user'];
+    // Membuat penamaan dalam Profil menjadi Dinamis ketiga login 
+    $id_admin = $_SESSION['id_admin'];
 
-// Menampilkan data dari database
-$query = query("SELECT * FROM users WHERE id_user='$id_user' ");
-confirmQuery($query);
-$result = mysqli_fetch_array($query);
-$user_image = $result['user_image'];    
-// Jika img tidak kosong, maka img akan diambil, jika kosong, maka img akan diambil berdasarkan link
-if (!empty($user_image)) {
-    $userImage = "../img/" . $user_image;
-} else {
-    $userImage = "https://via.placeholder.com/550x300";
-}
-
-// Aktivasi btn Update Profile
-if (isset($_POST['update_profile'])) {
-    $email = escape($_POST['email']);
-    $password = escape($_POST['password']);
-    // Membuat variable enksripsi password
-    $hash_password = password_hash($password, PASSWORD_BCRYPT, array('cost' => '10'));
-
-    $user_image = $_FILES['user_image']['name'];
-    $user_image_tmp = $_FILES['user_image']['tmp_name'];
-
-    move_uploaded_file($user_image_tmp, "../img/" . $user_image);
-
-    if (empty($user_image)) {
-        $user_image = $result['user_image'];
-    }
-
-    if (empty($password)) {
-        $password = $result['password'];
-    }
-
-    $query = query("UPDATE users SET user_image='$user_image',
-                                            email='$email',
-                                            password='$hash_password' 
-                                            WHERE id_user='$id_user' ");
+    // Menampilkan data dari database
+    $query = query("SELECT * FROM admins WHERE id_admin='$id_admin' ");
     confirmQuery($query);
-    redirect('profile.php');
-}
+    $result = mysqli_fetch_array($query);
+    $admin_image = $result['admin_image'];
 
+    // Jika gambar tidak kosong, maka img akan diambil, jika kosong, maka img akan diambil berdasarkan link
+    if (!empty($admin_image)) {
+        $userImage = "../img/" . $admin_image;
+    } else {
+        $userImage = "https://via.placeholder.com/550x300";
+    }
+
+    // Aktivasi btn Update Profile
+    if (isset($_POST['update_profile'])) {
+        $email_admin = escape($_POST['email_admin']);
+        $password = escape($_POST['password']);
+        // Membuat variable enksripsi password
+        $hash_password = password_hash($password, PASSWORD_BCRYPT, array('cost' => '10'));
+
+        $admin_image = $_FILES['admin_image']['name'];
+        $admin_image_tmp = $_FILES['admin_image']['tmp_name'];
+
+        move_uploaded_file($admin_image_tmp, "../img/" . $admin_image);
+
+        if (empty($admin_image)) {
+            $admin_image = $result['admin_image'];
+        }
+
+        if (empty($password)) {
+            $password = $result['password'];
+        }
+
+        $query = query("UPDATE admins SET admin_image='$admin_image',
+                                                    email_admin='$email_admin',
+                                                    password='$hash_password' 
+                                                    WHERE id_admin='$id_admin' ");
+        confirmQuery($query);
+        redirect('profile.php');
+    }
 ?>
 
 <!-- Membuat tampilan img agar lebih rapi -->
@@ -65,16 +65,16 @@ if (isset($_POST['update_profile'])) {
                         <div class="form-group">
                             <img src="<?= $userImage ?>" id="profile-img" class="img-fluid img-thumbnail mx-auto d-block rounded-circle">
                             <div class="col-md-3 m-auto">
-                                <input type="file" class="form-control" name="user_image">
+                                <input type="file" class="form-control" name="admin_image">
                             </div>
                         </div>
                         <div class=" form-group">
                             <label>Email</label>
-                            <input type="email" name="email" class="form-control" value="<?= $result['email'] ?>">
+                            <input type="email_admin" name="email_admin" class="form-control" value="<?= $result['email_admin'] ?>">
                         </div>
                         <div class="form-group">
                             <label>Username</label>
-                            <input type="text" name="username" class="form-control" value="<?= $result['username'] ?>" readonly>
+                            <input type="text" name="username" class="form-control" value="<?= $result['username'] ?>">
                         </div>
                         <div class="form-group">
                             <label>Password</label>

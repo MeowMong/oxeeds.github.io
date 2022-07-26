@@ -122,7 +122,6 @@
                         <a class="collapse-item" href="alumni.php">Alumni</a>
                         <a class="collapse-item" href="fasilitas.php">Fasilitas</a>
                         <a class="collapse-item" href="keadaan_kelas.php">Keadaan Kelas</a>
-                        <a class="collapse-item" href="#">Staff Kelas</a>
                     </div>
                 </div>
             </li>
@@ -218,8 +217,8 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Daffa Rayhan Riadi</span>
-                                <img class="img-profile rounded-circle" src="https://ui-avatars.com/api/?name=Daffa">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $_SESSION['username'] ?></span>
+                                <img class="img-profile rounded-circle" src="https://ui-avatars.com/api/?name=<?= $_SESSION['username'] ?>">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

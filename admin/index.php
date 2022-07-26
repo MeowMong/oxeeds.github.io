@@ -11,7 +11,7 @@
         $username = escape($_POST['username']);
         $password = escape($_POST['password']);
 
-        $query = query("SELECT * FROM users WHERE username='$username' ");
+        $query = query("SELECT * FROM admins WHERE username='$username' ");
 
         // Cek Username
         if(mysqli_num_rows($query) === 1){
@@ -20,6 +20,7 @@
             if($password === $row['password']){
                 $_SESSION['login'] = true;
                 $_SESSION['username'] = $row['username'];
+                $_SESSION['id_admin'] = $row['id_admin'];
                 redirect('dashboard.php');  
             }
         }
