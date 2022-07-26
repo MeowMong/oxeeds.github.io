@@ -23,8 +23,7 @@
         $email_admin = escape($_POST['email_admin']);
         $password = escape($_POST['password']);
         // Membuat variable enksripsi password
-        $hash_password = password_hash($password, PASSWORD_BCRYPT, array('cost' => '10'));
-
+        
         $admin_image = $_FILES['admin_image']['name'];
         $admin_image_tmp = $_FILES['admin_image']['tmp_name'];
 
