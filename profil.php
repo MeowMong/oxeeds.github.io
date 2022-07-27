@@ -1,6 +1,7 @@
+<?php include 'includes/header.php' ?>
+<?php include 'includes/navigation.php' ?>
+
 <?php
-// Koneksi
-include 'includes/db.php';
 
 // GET OP
 if (isset($_GET['op'])) {
@@ -56,8 +57,6 @@ $sukses         = "";
 $error          = "";
 
 ?>
-<?php include 'includes/header.php' ?>
-<?php include 'includes/navigation.php' ?>
 
 <!-- Main Content -->
 <main>

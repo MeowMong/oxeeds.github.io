@@ -1,7 +1,7 @@
-<?php
-// Koneksi
-include 'includes/db.php';
+<?php include 'includes/header.php' ?>
+<?php include 'includes/navigation.php' ?>
 
+<?php
 // GET OP
 if (isset($_GET['op'])) {
     $op = $_GET['op'];
@@ -56,8 +56,6 @@ $sukses         = "";
 $error          = "";
 
 ?>
-<?php include 'includes/header.php' ?>
-<?php include 'includes/navigation.php' ?>
 
 <!-- Hero Section -->
 <section id="hero" class="h-100">
@@ -69,26 +67,26 @@ $error          = "";
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="5000">
-                <img src="assets/images/<?php echo $gambar_carr1 ?>" class="d-block w-100" alt="...">
+                <img src="img/slideshow/<?= $gambar_carr1 ?>" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>SELAMAT DATANG DI<br />
                         <span class="fw-bold">SDN 1 PURWOKERTO KULON</span>
                     </h1>
-                    <p><?php echo $isi_carr1 ?></p>
+                    <p><?= $isi_carr1 ?></p>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="5000">
-                <img src="assets/images/<?php echo $gambar_carr2 ?>" class="d-block w-100" alt="...">
+                <img src="img/slideshow/<?= $gambar_carr2 ?>" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5><?php echo $judul_carr2 ?></h5>
-                    <p><?php echo $isi_carr2 ?></p>
+                    <h5><?= $judul_carr2 ?></h5>
+                    <p><?= $isi_carr2 ?></p>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="5000">
-                <img src="assets/images/<?php echo $gambar_carr3 ?>" class="d-block w-100" alt="...">
+                <img src="img/slideshow/<?= $gambar_carr3 ?>" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5><?php echo $judul_carr3 ?></h5>
-                    <p><?php echo $isi_carr3 ?></p>
+                    <h5><?= $judul_carr3 ?></h5>
+                    <p><?= $isi_carr3 ?></p>
                 </div>
             </div>
         </div>
