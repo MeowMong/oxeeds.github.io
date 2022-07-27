@@ -154,6 +154,9 @@ $error          = "";
                     <li class="nav-item mx-2">
                         <a class="nav-link" href="kontak.php">Kontak</a>
                     </li>
+                    <li class="nav-item mx-2">
+                        <a href="admin/index.php" class="nav-link">Login</a>
+                    </li>
                 </ul>
             </div>
         </div>

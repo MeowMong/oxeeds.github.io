@@ -39,7 +39,7 @@
 
         $query = query("UPDATE admins SET admin_image='$admin_image',
                                             email_admin='$email_admin',
-                                            password='$hash_password' 
+                                            password='$password' 
                                             WHERE id_admin='$id_admin' ");
         confirmQuery($query);
         redirect('profile.php');
