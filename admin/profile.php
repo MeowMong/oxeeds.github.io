@@ -23,11 +23,11 @@
         $email_admin = escape($_POST['email_admin']);
         $password = escape($_POST['password']);
         // Membuat variable enksripsi password
-        
+
         $admin_image = $_FILES['admin_image']['name'];
         $admin_image_tmp = $_FILES['admin_image']['tmp_name'];
 
-        move_uploaded_file($admin_image_tmp, "../img/" . $admin_image);
+        move_uploaded_file($admin_image_tmp, "../img/admin/" . $admin_image);
 
         if (empty($admin_image)) {
             $admin_image = $result['admin_image'];
@@ -38,9 +38,9 @@
         }
 
         $query = query("UPDATE admins SET admin_image='$admin_image',
-                                                    email_admin='$email_admin',
-                                                    password='$hash_password' 
-                                                    WHERE id_admin='$id_admin' ");
+                                            email_admin='$email_admin',
+                                            password='$hash_password' 
+                                            WHERE id_admin='$id_admin' ");
         confirmQuery($query);
         redirect('profile.php');
     }
