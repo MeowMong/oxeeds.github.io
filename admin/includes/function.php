@@ -21,9 +21,8 @@ function escape($value){
 
 function redirect($url){
     return header('Location: ' . $url);
+    exit;
 }
-
-// Tidak Ada Video Penambahan tentang Script Function escape() dan Function redirect()
 
 //============= END DATABASE HELPER =============// 
 
@@ -61,4 +60,5 @@ function getCountKomentarBerita(){
     return $result;
 }
 //============= END DASHBOARD HELPER =============// 
+
 ?>

@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-center">List Berita</h1>
+            <h1 class="text-center"><strong>List Berita</strong></h1>
         </div>
     </div>
 
@@ -40,7 +40,7 @@
                     </div>
                 </div>';
         echo '<div class="row mt-5">';
-            while ($row = mysqli_fetch_array($query)) {
+        while ($row = mysqli_fetch_array($query)) {
     ?>
             <!-- Blog Entries Column -->
             <div class="col-md-4 mb-5">
