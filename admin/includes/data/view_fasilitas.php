@@ -11,7 +11,7 @@ if (isset($_POST['simpan_fasilitas'])) {
     $gambar_fasilitas = $_FILES['gambar_fasilitas']['name'];
     $gambar_fasilitas_tmp = $_FILES['gambar_fasilitas']['tmp_name'];
 
-    move_uploaded_file($gambar_fasilitas_tmp, "../img/$gambar_fasilitas");
+    move_uploaded_file($gambar_fasilitas_tmp, "../assets/images/fasilitas/$gambar_fasilitas");
 
     if ($nama_fasilitas || $keterangan_fasilitas || $gambar_fasilitas) {
         // Simpan data
@@ -151,7 +151,7 @@ if (isset($_GET['delete'])) {
                                             <th><?= $index++ ?></th>
                                             <td><?= $row['nama_fasilitas'] ?></td>
                                             <td><?= $row['tahun_masuk_fasilitas'] ?></td>
-                                            <td><img src="../img/<?= $row['gambar_fasilitas'] ?>" alt="<?= $row['gambar_fasilitas'] ?>" width="400"></td>
+                                            <td><img src="../assets/images/fasilitas/<?= $row['gambar_fasilitas'] ?>" alt="<?= $row['gambar_fasilitas'] ?>" width="400"></td>
                                             <td><?= $row['keterangan_fasilitas'] ?></td>
                                             <td>
                                                 <a href="fasilitas.php?page=edit&id_fasilitas=<?= $row['id_fasilitas'] ?>"><button type="button" class="btn btn-warning mt-1">Update</button></a>

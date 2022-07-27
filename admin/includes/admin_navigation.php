@@ -223,7 +223,7 @@
                                     confirmQuery($query);
                                     $result = mysqli_fetch_assoc($query);
                                 ?>
-                                <img class="img-profile rounded-circle" src="../img/admin/<?= $result['admin_image'] ?>">
+                                <img class="img-profile rounded-circle" src="../assets/images/admin/<?= $result['admin_image'] ?>">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

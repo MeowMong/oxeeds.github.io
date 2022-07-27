@@ -18,7 +18,7 @@
         $berita_image = $_FILES['berita_image']['name'];
         $berita_image_tmp = $_FILES['berita_image']['tmp_name'];
 
-        move_uploaded_file($berita_image_tmp,"../img/$berita_image");
+        move_uploaded_file($berita_image_tmp,"../assets/images/berita/$berita_image");
 
         // Jika gambar nya kosong
         if(empty($berita_image)){

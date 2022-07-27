@@ -14,7 +14,7 @@ if (isset($_GET['id_carr'])) {
         $gambar_carr = $_FILES['gambar_carr']['name'];
         $gambar_carr_tmp = $_FILES['gambar_carr']['tmp_name'];
 
-        move_uploaded_file($gambar_carr_tmp, "../img/slideshow/$gambar_carr");
+        move_uploaded_file($gambar_carr_tmp, "../assets/images/slideshow/$gambar_carr");
 
         // Jika gambar nya kosong
         if (empty($gambar_carr)) {

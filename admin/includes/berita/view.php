@@ -46,7 +46,7 @@
             <div class="col-md-4 mb-5">
                 <!-- Blog Post -->
                 <div class="card mb-4 border-0 shadow-lg">
-                    <img class="card-img-top" src="../img/<?= $row['berita_image'] ?>" alt="Card image cap">
+                    <img class="card-img-top" src="../assets/images/berita/<?= $row['berita_image'] ?>" alt="Card image cap">
                     <div class="card-body">
                         <span class="badge badge-primary"><?= $row['category_name'] ?></span> / <span><?= $row['berita_author'] ?></span>
                         <h2 class="card-title"><?= $row['berita_title'] ?></h2>
@@ -80,7 +80,7 @@
                 <div class="col-md-4 mb-5">
                     <!-- Blog Post -->
                     <div class="card mb-4 border-0 shadow-lg">
-                        <img class="card-img-top" src="../img/<?= $row['berita_image'] ?>" alt="Card image cap">
+                        <img class="card-img-top" src="../assets/images/berita/<?= $row['berita_image'] ?>" alt="Card image cap">
                         <div class="card-body">
                             <span class="badge badge-primary"><?= $row['category_name'] ?></span> / <span><?= $row['berita_author'] ?></span>
                             <h2 class="card-title"><?= $row['berita_title'] ?></h2>

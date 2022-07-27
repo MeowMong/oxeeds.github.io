@@ -17,7 +17,7 @@ if (isset($_GET['id_prestasi'])) {
         $gambar_prestasi = $_FILES['gambar_prestasi']['name'];
         $gambar_prestasi_tmp = $_FILES['gambar_prestasi']['tmp_name'];
 
-        move_uploaded_file($gambar_prestasi_tmp, "../img/prestasi/$gambar_prestasi");
+        move_uploaded_file($gambar_prestasi_tmp, "../assets/images/prestasi/$gambar_prestasi");
 
         // Jika gambar nya kosong
         if (empty($gambar_prestasi)) {

@@ -67,7 +67,7 @@ $error          = "";
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="5000">
-                <img src="img/slideshow/<?= $gambar_carr1 ?>" class="d-block w-100" alt="...">
+                <img src="assets/images/slideshow/<?= $gambar_carr1 ?>" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>SELAMAT DATANG DI<br />
                         <span class="fw-bold">SDN 1 PURWOKERTO KULON</span>
@@ -76,14 +76,14 @@ $error          = "";
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="5000">
-                <img src="img/slideshow/<?= $gambar_carr2 ?>" class="d-block w-100" alt="...">
+                <img src="assets/images/slideshow/<?= $gambar_carr2 ?>" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5><?= $judul_carr2 ?></h5>
                     <p><?= $isi_carr2 ?></p>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="5000">
-                <img src="img/slideshow/<?= $gambar_carr3 ?>" class="d-block w-100" alt="...">
+                <img src="assets/images/slideshow/<?= $gambar_carr3 ?>" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5><?= $judul_carr3 ?></h5>
                     <p><?= $isi_carr3 ?></p>
@@ -113,7 +113,7 @@ $error          = "";
                     <div class="col-sm-6 col-md-3 my-2">
                         <div class="row d-flex align-items-center">
                             <div class="col-6">
-                                <h1 class="fw-bold" style="text-align: right;">177</h1>
+                                <h1 class="fw-bold" style="text-align: right;"><?= getSumSiswaLaki() ?></h1>
                             </div>
                             <div class="col-6 border-start">
                                 <p class="card-text" style="text-align: left;">Siswa<br>Laki-Laki</p>
@@ -123,7 +123,7 @@ $error          = "";
                     <div class="col-sm-6 col-md-3 my-2">
                         <div class="row d-flex align-items-center">
                             <div class="col-6">
-                                <h1 class="fw-bold" style="text-align: right;">177</h1>
+                                <h1 class="fw-bold" style="text-align: right;"><?= getSumSiswaPr() ?></h1>
                             </div>
                             <div class="col-6 border-start">
                                 <p class="card-text" style="text-align: left;">Siswa<br>Perempuan</p>
@@ -133,7 +133,7 @@ $error          = "";
                     <div class="col-sm-6 col-md-3 my-2">
                         <div class="row d-flex align-items-center">
                             <div class="col-6">
-                                <h1 class="fw-bold" style="text-align: right;">177</h1>
+                                <h1 class="fw-bold" style="text-align: right;"><?= getCountGuru() ?></h1>
                             </div>
                             <div class="col-6 border-start">
                                 <p class="card-text" style="text-align: left;">Staff<br>Pengajar</p>
@@ -143,7 +143,7 @@ $error          = "";
                     <div class="col-sm-6 col-md-3 my-2">
                         <div class="row d-flex align-items-center">
                             <div class="col-6">
-                                <h1 class="fw-bold" style="text-align: right;">177</h1>
+                                <h1 class="fw-bold" style="text-align: right;"><?= getCountKelas() ?></h1>
                             </div>
                             <div class="col-6 border-start">
                                 <p class="card-text" style="text-align: left;">Ruang<br>Kelas</p>
@@ -164,43 +164,40 @@ $error          = "";
     <section>
         <div class="container text-black">
             <div class="row">
+                <!-- Kata Sambutan -->
                 <div class="col-sm-9">
                     <?php
-                    $sql2   = "SELECT * FROM sambutan";
-                    $q2     = mysqli_query($koneksi, $sql2);
-                    while ($r2 = mysqli_fetch_array($q2)) {
-                        $id_sambutan    = $r2['id_sambutan'];
-                        $nama_penyambut = $r2['nama'];
-                        $status         = $r2['status'];
-                        $isi_sambutan   = $r2['isi_sambutan'];
-                        $tanggal_sambut = $r2['tanggal'];
-                    }
+                    $query   = query("SELECT * FROM sambutan");
+                    while ($row = mysqli_fetch_array($query)) {
                     ?>
-                    <div class="card" style="padding: 10px; max-width: auto;">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <img src="assets/images/ibu-Andjar.png" class="img-fluid rounded" alt="..." style="width: 700px;">
-                            </div>
-                            <div class="col-sm-8" style="padding: 30px">
-                                <h4 class="card-title fw-bold">Sambutan Kepala Sekolah</h4>
-                                <blockquote class="blockquote">
-                                    <p class="card-text blockquote" style="text-align: justify"><?php echo $isi_sambutan ?></p>
-                                    <footer class="card-text"><small class="text-muted blockquote-footer"><?php echo $nama_penyambut ?></small></footer>
-                                </blockquote>
+                        <div class="card" style="padding: 10px; max-width: auto;">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <img src="assets/images/ibu-Andjar.png" class="img-fluid rounded" alt="..." style="width: 700px;">
+                                </div>
+                                <div class="col-sm-8" style="padding: 30px">
+                                    <h4 class="card-title fw-bold">Sambutan Kepala Sekolah</h4>
+                                    <blockquote class="blockquote">
+                                        <p class="card-text blockquote" style="text-align: justify"><?= $row['isi_sambutan'] ?></p>
+                                        <footer class="card-text"><small class="text-muted blockquote-footer"><?= $row['name_sambutan'] ?></small></footer>
+                                    </blockquote>
+                                </div>
                             </div>
                         </div>
+                </div>
+            <?php } ?>
+            <!-- END Kata Sambutan -->
+
+            <div class="col-sm-3">
+                <div class="card" style="max-width: auto;">
+                    <div class="card-header" style="text-align: justify;">
+                        Featured
+                    </div>
+                    <div class="card-body">
+                        <iframe width="225" height="auto" src="https://www.youtube.com/embed/qM-1T9zeQpY" title="#PANDEMI COVID-19# UJIAN SEKOLAH #BERBASIS ANDROID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
-                <div class="col-sm-3">
-                    <div class="card" style="max-width: auto;">
-                        <div class="card-header" style="text-align: justify;">
-                            Featured
-                        </div>
-                        <div class="card-body">
-                            <iframe width="225" height="auto" src="https://www.youtube.com/embed/qM-1T9zeQpY" title="#PANDEMI COVID-19# UJIAN SEKOLAH #BERBASIS ANDROID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
+            </div>
             </div>
         </div>
     </section>
@@ -223,63 +220,90 @@ $error          = "";
             <div class="row">
                 <div class="col-sm-12 col-md-9">
                     <div class="row">
-                        <div class="col-sm-6 d-flex justify-content-between">
-                            <div class="card my-3" style="width: 500px; height: max-content;" href="berita-detail.php">
-                                <a href="berita-detail.php">
-                                    <img src="https://picsum.photos/id/200/300" class="card-img-top mw-100" alt="...">
-                                </a>
-                                <div class="card-body">
-                                    <span class="fs-6 fw-lighter text-secondary">Oleh: Anshari | 12 Jul 2022 22:33:41</span>
-                                    <a href="berita-detail.php" style="text-decoration: none; color: black;">
-                                        <h5 class="card-title mt-2">Card title</h5>
-                                    </a>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 d-flex justify-content-between">
-                            <div class="card my-3" style="width: 500px; height: max-content;" href="berita-detail.php">
-                                <a href="berita-detail.php">
-                                    <img src="https://picsum.photos/id/200/300" class="card-img-top mw-100" alt="...">
-                                </a>
-                                <div class="card-body">
-                                    <span class="fs-6 fw-lighter text-secondary">Oleh: Anshari | 12 Jul 2022 22:33:41</span>
-                                    <a href="berita-detail.php" style="text-decoration: none; color: black;">
-                                        <h5 class="card-title mt-2">Card title</h5>
-                                    </a>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 d-flex justify-content-between">
-                            <div class="card my-3" style="width: 500px; height: max-content;" href="berita-detail.php">
-                                <a href="berita-detail.php">
-                                    <img src="https://picsum.photos/id/200/300" class="card-img-top mw-100" alt="...">
-                                </a>
-                                <div class="card-body">
-                                    <span class="fs-6 fw-lighter text-secondary">Oleh: Anshari | 12 Jul 2022 22:33:41</span>
-                                    <a href="berita-detail.php" style="text-decoration: none; color: black;">
-                                        <h5 class="card-title mt-2">Card title</h5>
-                                    </a>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 d-flex justify-content-between">
-                            <div class="card my-3" style="width: 500px; height: max-content;" href="berita-detail.php">
-                                <a href="berita-detail.php">
-                                    <img src="https://picsum.photos/id/200/300" class="card-img-top mw-100" alt="...">
-                                </a>
-                                <div class="card-body">
-                                    <span class="fs-6 fw-lighter text-secondary">Oleh: Anshari | 12 Jul 2022 22:33:41</span>
-                                    <a href="berita-detail.php" style="text-decoration: none; color: black;">
-                                        <h5 class="card-title mt-2">Card title</h5>
-                                    </a>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        // MEMBUAT PAGINATION
+                        $per_page = 4;
+                        if (isset($_GET['page'])) {
+                            $page = $_GET['page'];
+                        } else {
+                            $page = '';
+                        }
+
+                        if ($page == '' || $page == 1) {
+                            $page_1 = 0;
+                        } else {
+                            $page_1 = ($page * $per_page) - $per_page;
+                        }
+
+                        $berita_count_query = query("SELECT * FROM berita");
+                        $result = mysqli_fetch_array($query);
+                        $count = mysqli_num_rows($berita_count_query);
+
+                        if ($count < 1) {
+                            echo '<h1>NO POST DATA</h1>';
+                        } else {
+                            $count = ceil($count / $per_page);
+
+                            $query = query("SELECT * FROM berita
+                                            INNER JOIN category_berita ON category_berita.id_category_berita=berita.berita_category_id
+                                            ORDER BY berita.berita_date DESC
+                                            LIMIT $page_1, $per_page");
+                            if (mysqli_num_rows($query) > 0) {
+                                while ($row = mysqli_fetch_array($query)) {
+                                    $category_name = $row['category_name'];
+                                    $berita_title = $row['berita_title'];
+                                    $berita_description = $row['berita_description'];
+                                    $berita_date = $row['berita_date'];
+                                    $id_berita = $row['id_berita'];
+                                    $berita_image = $row['berita_image'];
+                                    $berita_author = $row['berita_author'];
+
+                                    // Jika gambar ada, maka tampilkan, jika tidak maka ambil gambar melalui link
+                                    if ($berita_image) {
+                                        $dir = "assets/images/berita/" . $berita_image;
+                                    } else {
+                                        $dir = "https://via.placeholder.com/500x300";
+                                    }
+                        ?>
+                                    <!-- Informasi/Berita -->
+                                    <div class="col-sm-6 d-flex justify-content-between">
+                                        <div class="card my-3 border-0 shadow-lg" style="width: 500px; height: max-content;" href="berita-detail.php">
+                                            <a href="berita-detail.php">
+                                                <img src="<?= $dir ?>" class="card-img-top mw-100" alt="<?= $dir ?>">
+                                            </a>
+                                            <div class="card-body">
+                                                <span class="fs-6 fw-lighter text-secondary">Oleh: <?= $berita_author ?> | <?= $berita_date ?></span>
+                                                <a href="berita-detail.php" style="text-decoration: none; color: black;">
+                                                    <h5 class="card-title mt-2"><?= $berita_title ?></h5>
+                                                </a>
+                                                <p class="card-text"><?= $berita_description ?></p>
+                                            </div>
+                                        </div>
+                                        <!-- END Informasi/Berita -->
+                                    </div>
+                        <?php }
+                            } else {
+                                echo '<div class="alert alert-danger" role="alert">
+                                    Belum ada Data
+                                </div>';
+                            }
+                        } ?>
                     </div>
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <?php
+                            for ($i = 1; $i <= $count; $i++) {
+                                if ($i == $page) {
+                                    echo "<li class='page-item active'><a class='page-link' href='index.php?page=$i'>$i</a></li>";
+                                } else {
+                                    echo "<li class='page-item'><a class='page-link' href='index.php?page=$i'>$i</a></li>";
+                                }
+                            }
+                            ?>
+                        </ul>
+                    </nav>
+                    <!-- END Pagination -->
                 </div>
                 <!-- Konten Berita -->
                 <div class="col-sm-12 col-md-3">

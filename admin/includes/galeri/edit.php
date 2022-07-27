@@ -14,7 +14,7 @@ if (isset($_GET['id_galeri'])) {
         $gambar_galeri = $_FILES['gambar_galeri']['name'];
         $gambar_galeri_tmp = $_FILES['gambar_galeri']['tmp_name'];
 
-        move_uploaded_file($gambar_galeri_tmp, "../img/galeri/$gambar_galeri");
+        move_uploaded_file($gambar_galeri_tmp, "../assets/images/galeri/$gambar_galeri");
 
         // Jika gambar nya kosong
         if (empty($gambar_galeri)) {

@@ -18,7 +18,7 @@
                         <a class="nav-link" aria-current="page" href="index.php">Beranda</a>
                     </li>
                     <li class="nav-item dropdown mx-2">
-                        <a class="nav-link active border border-success rounded link-success dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Profil
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
@@ -64,6 +64,9 @@
                     </li>
                     <li class="nav-item mx-2">
                         <a class="nav-link" href="kontak.php">Kontak</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="admin/index.php">Login</a>
                     </li>
                 </ul>
             </div>

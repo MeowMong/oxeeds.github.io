@@ -59,6 +59,30 @@ function getCountKomentarBerita(){
     $result = $count['total_comments'];
     return $result;
 }
+
+function getSumSiswaLaki(){
+    $query = query("SELECT SUM(jumlah_siswa_laki) AS 'total_siswa_laki' FROM siswa");
+    confirmQuery($query);
+    $count = mysqli_fetch_array($query);
+    $result = $count['total_siswa_laki'];
+    return $result;
+}
+
+function getSumSiswaPr(){
+    $query = query("SELECT SUM(jumlah_siswa_perempuan) AS 'total_siswa_perempuan' FROM siswa");
+    confirmQuery($query);
+    $count = mysqli_fetch_array($query);
+    $result = $count['total_siswa_perempuan'];
+    return $result;
+}
+
+function getCountKelas(){
+    $query = query("SELECT COUNT('*') AS 'total_kelas' FROM keadaan_kelas");
+    confirmQuery($query);
+    $count = mysqli_fetch_array($query);
+    $result = $count['total_kelas'];
+    return $result;
+}
 //============= END DASHBOARD HELPER =============// 
 
 ?>

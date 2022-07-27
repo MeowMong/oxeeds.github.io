@@ -10,7 +10,7 @@ if (isset($_POST['simpan_galeri'])) {
     $gambar_galeri = $_FILES['gambar_galeri']['name'];
     $gambar_galeri_tmp = $_FILES['gambar_galeri']['tmp_name'];
 
-    move_uploaded_file($gambar_galeri_tmp, "../img/galeri/$gambar_galeri");
+    move_uploaded_file($gambar_galeri_tmp, "../assets/images/galeri/$gambar_galeri");
 
     if ($gambar_galeri || $judul_galeri || $deskripsi_galeri || $tanggal_galeri) {
         $query   = query("INSERT INTO galeri(gambar_galeri, judul_galeri, deskripsi_galeri, tanggal_galeri) 
@@ -139,7 +139,7 @@ if (isset($_GET['delete'])) {
                                     ?>
                                         <tr>
                                             <td class="text-center"><?= $index++ ?></td>
-                                            <td class="text-center"><img src="../img/galeri/<?= $row['gambar_galeri'] ?>" alt="<?= $row['gambar_galeri'] ?>" width="300"></td>
+                                            <td class="text-center"><img src="../assets/images/galeri/<?= $row['gambar_galeri'] ?>" alt="<?= $row['gambar_galeri'] ?>" width="300"></td>
                                             <td><?= $row['judul_galeri'] ?></td>
                                             <td><?= $row['deskripsi_galeri'] ?></td>
                                             <td class="text-center"><?= $row['tanggal_galeri'] ?></td>

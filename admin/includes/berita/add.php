@@ -8,7 +8,7 @@ if (isset($_POST['add_berita'])) {
     $berita_image = $_FILES['berita_image']['name'];
     $berita_image_tmp = $_FILES['berita_image']['tmp_name'];
 
-    move_uploaded_file($berita_image_tmp, "../img/$berita_image");
+    move_uploaded_file($berita_image_tmp, "../assets/images/berita/$berita_image");
 
     $query = query("INSERT INTO berita(berita_category_id, berita_title, berita_image, berita_description, berita_author,  berita_date)
                         VALUES('$berita_category_id','$berita_title','$berita_image','$berita_description','$berita_author',now())");

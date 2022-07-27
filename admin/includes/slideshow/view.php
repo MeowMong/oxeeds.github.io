@@ -27,7 +27,7 @@
                             ?>
                                 <tr>
                                     <td class="text-center"><?= $index++ ?></td>
-                                    <td class="text-center"><img src="../img/slideshow/<?= $row['gambar_carr'] ?>" width="300"></td>
+                                    <td class="text-center"><img src="../assets/images/slideshow/<?= $row['gambar_carr'] ?>" width="300"></td>
                                     <td><?= $row['judul_carr'] ?></td>
                                     <td><?= $row['isi_carr'] ?></td>
                                     <td class="text-center">

@@ -13,7 +13,7 @@
 
     // Jika gambar tidak kosong, maka img akan diambil, jika kosong, maka img akan diambil berdasarkan link
     if (!empty($admin_image)) {
-        $userImage = "../img/admin/" . $admin_image;
+        $userImage = "../assets/images/admin/" . $admin_image;
     } else {
         $userImage = "https://via.placeholder.com/550x300";
     }
@@ -27,7 +27,7 @@
         $admin_image = $_FILES['admin_image']['name'];
         $admin_image_tmp = $_FILES['admin_image']['tmp_name'];
 
-        move_uploaded_file($admin_image_tmp, "../img/admin/" . $admin_image);
+        move_uploaded_file($admin_image_tmp, "../assets/images/admin/" . $admin_image);
 
         if (empty($admin_image)) {
             $admin_image = $result['admin_image'];

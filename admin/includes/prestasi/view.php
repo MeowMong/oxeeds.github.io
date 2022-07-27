@@ -13,7 +13,7 @@ if (isset($_POST['simpan_prestasi'])) {
     $gambar_prestasi = $_FILES['gambar_prestasi']['name'];
     $gambar_prestasi_tmp = $_FILES['gambar_prestasi']['tmp_name'];
 
-    move_uploaded_file($gambar_prestasi_tmp, "../img/prestasi/$gambar_prestasi");
+    move_uploaded_file($gambar_prestasi_tmp, "../assets/images/prestasi/$gambar_prestasi");
 
     if ($nama_prestasi || $tanggal_prestasi || $tingkat_prestasi || $nama_peraih_prestasi || $lokasi_prestasi || $keterangan_prestasi) {
         $query   = query("INSERT INTO prestasi(nama_prestasi, tanggal_prestasi, tingkat_prestasi, nama_peraih_prestasi, lokasi_prestasi, gambar_prestasi, keterangan_prestasi) 
@@ -163,7 +163,7 @@ if (isset($_GET['delete'])) {
                                             <th><?= $row['tingkat_prestasi'] ?></th>
                                             <th><?= $row['nama_peraih_prestasi'] ?></th>
                                             <th><?= $row['lokasi_prestasi'] ?></th>
-                                            <th><img src="../img/prestasi/<?= $row['gambar_prestasi'] ?>" alt="<?= $row['gambar_prestasi'] ?>" width="300"></th>
+                                            <th><img src="../assets/images/prestasi/<?= $row['gambar_prestasi'] ?>" alt="<?= $row['gambar_prestasi'] ?>" width="300"></th>
                                             <th><?= $row['keterangan_prestasi'] ?></th>
                                             <td class="text-center">
                                                 <a href="prestasi.php?page=edit&id_prestasi=<?= $row['id_prestasi'] ?>" class="btn btn-warning mt-1">Update</a>
