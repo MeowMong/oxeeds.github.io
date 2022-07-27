@@ -12,28 +12,17 @@ body {
 
 .nav-link.active {
     font-weight: 600;
-    background-color: transparent;
-    stroke: #ffffff;
-    border-radius: 5px;
 }
 
 .dropdown-item {
     font-size: 12px;
 }
 
-section {
-    margin-top: 50px;
-}
-
 .carousel-caption h1 {
     margin-bottom: 90px;
 }
 
+/* 
 .carousel-item img {
     border-radius: 10px;
-}
-
-.main-footer {
-    margin-top: 100px;
-    margin-bottom: 100px;
-}
+} */
