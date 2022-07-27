@@ -1,0 +1,28 @@
+:root {
+    --pr-color: #4caf50;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.nav-link {
+    font-size: 16px;
+}
+
+.nav-link.active {
+    font-weight: 600;
+}
+
+.dropdown-item {
+    font-size: 12px;
+}
+
+.carousel-caption h1 {
+    margin-bottom: 90px;
+}
+
+/* 
+.carousel-item img {
+    border-radius: 10px;
+} */
