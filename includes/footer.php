@@ -53,7 +53,7 @@ $result = mysqli_fetch_assoc($query);
             <div class="col mb-3" style="text-align: right">
             </div>
 
-            <div class="col mb-3" style="text-align: right">
+            <div class="col" style="text-align: right">
                 <h5 class="fw-semibold">Ikuti Kami di</h5>
                 <hr class="my-4">
                 <ul class="nav flex-column">
@@ -72,6 +72,9 @@ $result = mysqli_fetch_assoc($query);
                     <li class="nav-item mb-1"><a href="#" class="nav-link p-0 link-light"></a></li>
                     <li class="nav-item mb-1"><a href="#" class="nav-link p-0 link-light"></a></li>
                 </ul>
+                <div class="col-md-12" style="text-align: right">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15825.105088111584!2d109.23929456977537!3d-7.43465099999999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7de6794df0fd32f5!2sSD%20NEGERI%201%20PURWOKERTO%20KULON!5e0!3m2!1sid!2sid!4v1658986264951!5m2!1sid!2sid" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
         </footer>
         <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">

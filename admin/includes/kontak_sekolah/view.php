@@ -129,7 +129,7 @@ if (isset($_GET['delete'])) {
                                     <tr>
                                         <td><?= $index++ ?></td>
                                         <td><?= $row['name_respon_kontak_sekolah'] ?></td>
-                                        <td><?= $row['email_respon_kontak_sekolah'] ?></td>
+                                        <td><?= $row['kontak_perespon_kontak_sekolah'] ?></td>
                                         <td><?= $row['pesan_respon_kontak_sekolah'] ?></td>
                                         <td><?= $row['tanggal_respon_kontak_sekolah'] ?></td>
                                         <td>
