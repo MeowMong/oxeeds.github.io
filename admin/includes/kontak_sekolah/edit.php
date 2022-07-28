@@ -39,7 +39,7 @@ if (isset($_GET['id_kontak_sekolah'])) {
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="no_telp_sekolah">No Handphone Sekolah</label>
-                                <input type="number" class="form-control" id="no_telp_sekolah" name="no_telp_sekolah" value="<?= $result['no_telp_sekolah'] ?>">
+                                <input type="text" class="form-control" id="no_telp_sekolah" name="no_telp_sekolah" value="<?= $result['no_telp_sekolah'] ?>">
                             </div>
                             <div class="form-group">
                                 <label for="email_sekolah">Email Sekolah</label>

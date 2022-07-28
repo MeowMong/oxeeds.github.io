@@ -63,7 +63,7 @@
                         <a class="nav-link" href="berita.php">Berita</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="kontak.php">Kontak</a>
+                        <a class="nav-link" href="respon_kontak.php">Kontak</a>
                     </li>
                     <li class="nav-item mx-2">
                         <a class="nav-link" href="admin/index.php">Login</a>
