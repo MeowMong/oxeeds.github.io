@@ -276,7 +276,9 @@ $error          = "";
                                                 <a href="berita-detail.php" style="text-decoration: none; color: black;">
                                                     <h5 class="card-title mt-2"><?= $berita_title ?></h5>
                                                 </a>
-                                                <p class="card-text"><?= $berita_description ?></p>
+                                                <p class="card-text"><?= substr($berita_description, 0, 100) ?>
+                                                    <a href="berita-detail.php"> Read More</a>
+                                                </p>
                                             </div>
                                         </div>
                                         <!-- END Informasi/Berita -->
