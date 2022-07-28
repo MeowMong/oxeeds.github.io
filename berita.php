@@ -8,91 +8,92 @@
             <h4 class="text-center pt-5">Berita Terbaru</h4>
         </div>
         <div class="row">
-            <div class="col-md-4">
-                <div class="card my-3">
-                    <a href="berita-detail.php">
-                        <img src="https://picsum.photos/id/200/300" class="card-img-top" alt="...">
-                    </a>
-                    <div class="card-body">
-                        <span class="fs-6 fw-lighter text-secondary">Oleh: Anshari | 12 Jul 2022 22:33:41</span>
-                        <a href="berita-detail.php" style="text-decoration: none; color: black;">
-                            <h5 class="card-title mt-2">Card title</h5>
-                        </a>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <?php
+                    // MEMBUAT PAGINATION
+                    $per_page = 6;
+                    if (isset($_GET['page'])) {
+                        $page = $_GET['page'];
+                    } else {
+                        $page = '';
+                    }
+
+                    if ($page == '' || $page == 1) {
+                        $page_1 = 0;
+                    } else {
+                        $page_1 = ($page * $per_page) - $per_page;
+                    }
+
+                    $berita_count_query = query("SELECT * FROM berita");
+                    // $result = mysqli_fetch_array($query);
+                    $count = mysqli_num_rows($berita_count_query);
+
+                    if ($count < 1) {
+                        echo '<h1>NO POST DATA</h1>';
+                    } else {
+                        $count = ceil($count / $per_page);
+
+                        $query = query("SELECT * FROM berita
+                                            INNER JOIN category_berita ON category_berita.id_category_berita=berita.berita_category_id
+                                            ORDER BY berita.berita_date DESC
+                                            LIMIT $page_1, $per_page");
+                        if (mysqli_num_rows($query) > 0) {
+                            while ($row = mysqli_fetch_array($query)) {
+                                $category_name = $row['category_name'];
+                                $berita_title = $row['berita_title'];
+                                $berita_description = $row['berita_description'];
+                                $berita_date = $row['berita_date'];
+                                $id_berita = $row['id_berita'];
+                                $berita_image = $row['berita_image'];
+                                $berita_author = $row['berita_author'];
+
+                            // Jika gambar ada, maka tampilkan, jika tidak maka ambil gambar melalui link
+                            if ($berita_image) {
+                                $dir = "assets/images/berita/" . $berita_image;
+                            } else {
+                                $dir = "https://via.placeholder.com/500x300";
+                            }
+                    ?>
+                    <!-- Informasi/Berita -->
+                    <div class="col-md-4">
+                        <div class="card my-3 border-0 shadow-lg">
+                            <a href="berita-detail.php">
+                                <img src="<?= $dir ?>" class="card-img-top" alt="<?= $dir ?>">
+                            </a>
+                            <div class="card-body">
+                                <span class="fs-6 fw-lighter text-secondary">Oleh: <?= $berita_author ?> | <?= $berita_date ?></span>
+                                <a href="berita-detail.php" style="text-decoration: none; color: black;">
+                                    <h5 class="card-title mt-2"><?= $berita_title ?></h5>
+                                </a>
+                                <p class="card-text"><?= substr($berita_description, 0, 100) ?> 
+                                <a href="berita-detail.php"> Read More</a>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- END Informasi/Berita -->
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card my-3">
-                    <a href="berita-detail.php">
-                        <img src="https://picsum.photos/id/200/300" class="card-img-top" alt="...">
-                    </a>
-                    <div class="card-body">
-                        <span class="fs-6 fw-lighter text-secondary">Oleh: Anshari | 12 Jul 2022 22:33:41</span>
-                        <a href="berita-detail.php" style="text-decoration: none; color: black;">
-                            <h5 class="card-title mt-2">Card title</h5>
-                        </a>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card my-3">
-                    <a href="berita-detail.php">
-                        <img src="https://picsum.photos/id/200/300" class="card-img-top" alt="...">
-                    </a>
-                    <div class="card-body">
-                        <span class="fs-6 fw-lighter text-secondary">Oleh: Anshari | 12 Jul 2022 22:33:41</span>
-                        <a href="berita-detail.php" style="text-decoration: none; color: black;">
-                            <h5 class="card-title mt-2">Card title</h5>
-                        </a>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card my-3">
-                    <a href="berita-detail.php">
-                        <img src="https://picsum.photos/id/200/300" class="card-img-top" alt="...">
-                    </a>
-                    <div class="card-body">
-                        <span class="fs-6 fw-lighter text-secondary">Oleh: Anshari | 12 Jul 2022 22:33:41</span>
-                        <a href="berita-detail.php" style="text-decoration: none; color: black;">
-                            <h5 class="card-title mt-2">Card title</h5>
-                        </a>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card my-3">
-                    <a href="berita-detail.php">
-                        <img src="https://picsum.photos/id/200/300" class="card-img-top" alt="...">
-                    </a>
-                    <div class="card-body">
-                        <span class="fs-6 fw-lighter text-secondary">Oleh: Anshari | 12 Jul 2022 22:33:41</span>
-                        <a href="berita-detail.php" style="text-decoration: none; color: black;">
-                            <h5 class="card-title mt-2">Card title</h5>
-                        </a>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card my-3">
-                    <a href="berita-detail.php">
-                        <img src="https://picsum.photos/id/200/300" class="card-img-top" alt="...">
-                    </a>
-                    <div class="card-body">
-                        <span class="fs-6 fw-lighter text-secondary">Oleh: Anshari | 12 Jul 2022 22:33:41</span>
-                        <a href="berita-detail.php" style="text-decoration: none; color: black;">
-                            <h5 class="card-title mt-2">Card title</h5>
-                        </a>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
+                    <?php }
+                        } else {
+                            echo '<div class="alert alert-danger" role="alert">
+                                    Belum ada Data
+                                </div>';
+                        }
+                    } ?>
         </div>
+        <!-- Pagination -->
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <?php
+                for ($i = 1; $i <= $count; $i++) {
+                    if ($i == $page) {
+                        echo "<li class='page-item active'><a class='page-link' href='berita.php?page=$i'>$i</a></li>";
+                    } else {
+                        echo "<li class='page-item'><a class='page-link' href='berita.php?page=$i'>$i</a></li>";
+                    }
+                }
+                ?>
+            </ul>
+        </nav>
+        <!-- END Pagination -->
     </div>
 </main>
 <?php include 'includes/footer.php' ?>

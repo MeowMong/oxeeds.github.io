@@ -236,7 +236,7 @@ $error          = "";
                         }
 
                         $berita_count_query = query("SELECT * FROM berita");
-                        $result = mysqli_fetch_array($query);
+                        // $result = mysqli_fetch_array($query);
                         $count = mysqli_num_rows($berita_count_query);
 
                         if ($count < 1) {
