@@ -12,7 +12,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-start" id="navbarNavDropdown">
+            <div class="collapse navbar-collapse justify-content-start" id="navbar">
                 <ul class="navbar-nav">
                     <li class="nav-item mx-2">
                         <a class="nav-link" aria-current="page" href="index.php">Beranda</a>
@@ -28,7 +28,7 @@
                             <li><a class="dropdown-item" href="profil.php">Data Guru & Pegawai</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown mx-2">
+                    <li class=" nav-item dropdown mx-2">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Kurikulum
                         </a>
@@ -72,3 +72,14 @@
             </div>
         </div>
     </nav>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script text="text/javascript">
+        const currentLocation = location.href;
+        const menuItem = document.querySelectorAll('a');
+        const menuLength = menuItem.length
+        for (let i = 0; i < menuLength; i++) {
+            if (menuItem[i].href === currentLocation) {
+                menuItem[i].className = "active border border-success rounded link-success nav-link"
+            }
+        }
+    </script>

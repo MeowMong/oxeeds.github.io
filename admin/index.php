@@ -3,30 +3,30 @@
 <?php session_start() ?>
 
 <?php
-    if (isset($_SESSION['login'])) {
-        redirect('dashboard.php');
-    }
+if (isset($_SESSION['login'])) {
+    redirect('dashboard.php');
+}
 
-    if(isset($_POST['login'])){
-        $username = escape($_POST['username']);
-        $password = escape($_POST['password']);
+if (isset($_POST['login'])) {
+    $username = escape($_POST['username']);
+    $password = escape($_POST['password']);
 
-        $query = query("SELECT * FROM admins WHERE username='$username' ");
+    $query = query("SELECT * FROM admins WHERE username='$username' ");
 
-        // Cek Username
-        if(mysqli_num_rows($query) === 1){
-            // Cek Password
-            $row = mysqli_fetch_assoc($query);
-            if($password === $row['password']){
-                $_SESSION['login'] = true;
-                $_SESSION['username'] = $row['username'];
-                $_SESSION['id_admin'] = $row['id_admin'];
-                $_SESSION['admin_image'] = $row['admin_image'];
-                redirect('dashboard.php');  
-            }
+    // Cek Username
+    if (mysqli_num_rows($query) === 1) {
+        // Cek Password
+        $row = mysqli_fetch_assoc($query);
+        if ($password === $row['password']) {
+            $_SESSION['login'] = true;
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['id_admin'] = $row['id_admin'];
+            $_SESSION['admin_image'] = $row['admin_image'];
+            redirect('dashboard.php');
         }
-        $error = true;
     }
+    $error = true;
+}
 ?>
 
 <!DOCTYPE html>
@@ -47,8 +47,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <!-- <link href="css/sb-admin-2.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="css/sb-admin-2.css">
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/sb-admin-2.css"> -->
 
 </head>
 
@@ -65,18 +65,20 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6 d-none d-lg-block">
+                                <img src="../assets/images/admin/login.png" alt="" style="background-position: center;background-size: cover;width: 700px;height: 600px;">
+                            </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Selamat Datang!</h1>
                                     </div>
-                                    <?php if(isset($error)) : ?>
+                                    <?php if (isset($error)) : ?>
                                         <p style="color:red; font-style:italic;">Username / Password Salah!</p>
                                     <?php endif; ?>
                                     <form class="user" method="post">
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user"  placeholder="Username" name="username">
+                                            <input type="text" class="form-control form-control-user" placeholder="Username" name="username">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user" placeholder="Password" name="password">
@@ -91,9 +93,6 @@
                                         <button type="submit" class="btn btn-primary btn-user btn-block" name="login">Login</button>
                                         <hr>
                                     </form>
-                                    <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Lupa Password?</a>
-                                    </div>
                                 </div>
                             </div>
                         </div>

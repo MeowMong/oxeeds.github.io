@@ -52,9 +52,6 @@ while ($r_carr3 = mysqli_fetch_array($q_carr3)) {
 
 // End of Carousel
 
-$sukses         = "";
-$error          = "";
-
 ?>
 
 <!-- Hero Section -->
@@ -173,7 +170,7 @@ $error          = "";
                         <div class="card" style="padding: 10px; max-width: auto;">
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <img src="assets/images/ibu-Andjar.png" class="img-fluid rounded" alt="..." style="width: 700px;">
+                                    <img src="assets/images/sambutan/<?= $row['gambar_sambutan'] ?>" class="img-fluid rounded" alt="..." style="width: 700px;">
                                 </div>
                                 <div class="col-sm-8" style="padding: 30px">
                                     <h4 class="card-title fw-bold">Sambutan Kepala Sekolah</h4>
@@ -214,7 +211,7 @@ $error          = "";
             </div>
             <div class="row">
                 <div class="col-sm">
-                    <p class="fs-1 fw-bold" style="text-align: center;">Informasi</p>
+                    <p id="berita" class="fs-1 fw-bold" style="text-align: center;">Informasi</p>
                 </div>
             </div>
             <div class="row">
@@ -321,75 +318,4 @@ $error          = "";
     </section>
 </main>
 
-<main class="container">
-    <!-- <hr class="my-5">
-        <section class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-1">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-header">
-                                Featured
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-                                <li class="list-group-item">A third item</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div id="ibu" class="col-md-10">
-                        <div class="card" style="max-width: 4000px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="assets/images/ibu-Andjar.png" class="img-fluid rounded-start" alt="..." height="100">
-                                </div>
-                                <div class="col-md-8 text-dark">
-                                    <div class="card-body">
-                                        <h4 class="card-title fw-bold my-3 mx-5">Sambutan Kepala Sekolah</h4>
-                                        <blockquote class="blockquote">
-                                            <p class="card-text mx-5 blockquote"><?php echo $isi_sambutan ?></p>
-                                            <footer class="card-text mx-5"><small class="text-muted blockquote-footer"><?php echo $nama_penyambut ?></small></footer>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-    <!-- CardBox Sambutan Kepala Sekolah -->
-
-    <!-- Visi & Misi -->
-    <!-- <hr class="my-5">
-        <hr class="my-5">
-        <section id="visi" class="content">
-            <div id="visi">
-                <h1 class="fw-bold">Visi :</h1>
-                <p>Terwujudnya Siswa yang Beriman, Berakhlak Mulia, Cerdas, Terampil, dan Mandiri</p>
-            </div>
-
-            <div id="misi">
-                <h1 class="fw-bold">Misi :</h1>
-                <p class="justify-content">Untuk mencapai visi sebagai sekolah yang terdepan, terbaik, dan terpercaya, perlu dilakukan suatu misi berupa kegiatan jangka panjang dengan arah yang jelas dan sistematis. Berikut misi Sekolah Dasar Negeri 1 Purwokerto Kulon yang dirumuskan berdasarkan visi sekolah, yaitu:</p>
-                <?php
-                $sql3   = "SELECT * FROM misi";
-                $q3     = mysqli_query($koneksi, $sql3);
-                $index3  = 1;
-                while ($r3 = mysqli_fetch_array($q3)) {
-                    $id_misi    = $r3['id_misi'];
-                    $isi_misi   = $r3['isi_Misi'];
-                ?>
-                    <tr>
-                        <th><?php echo $index3++ ?>. </th>
-                        <td><?php echo $isi_misi ?><br></td>
-                    </tr>
-                <?php
-                }
-                ?>
-            </div>
-        </section> -->
-</main>
 <?php include 'includes/footer.php' ?>

@@ -12,24 +12,28 @@
                     <table class="table table-bordered table-hover table-striped">
                         <thead>
                             <tr>
-                                <th class="text-center">Nama</th>
+                                <th class="text-center">Gambar Penyambut</th>
+                                <th class="text-center">Nama Penyambut</th>
                                 <th class="text-center">Isi Sambutan</th>
+                                <th class="text-center">Tanggal</th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php 
-                                $query = query("SELECT * FROM sambutan");
-                                confirmQuery($query);
-                                while($row = mysqli_fetch_assoc($query)){
+                            <?php
+                            $query = query("SELECT * FROM sambutan");
+                            confirmQuery($query);
+                            while ($row = mysqli_fetch_assoc($query)) {
                             ?>
-                            <tr>
-                                <td><?= $row['name_sambutan'] ?></td>
-                                <td><?= $row['isi_sambutan'] ?></td>
-                                <td>
-                                    <a href="sambutan.php?page=edit&id_sambutan=<?= $row['id_sambutan'] ?>" class="btn btn-warning btn-block">Update</a>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td><img src="../assets/images/sambutan/<?= $row['gambar_sambutan'] ?>" alt="<?= $row['gambar_sambutan'] ?>"></td>
+                                    <td><?= $row['name_sambutan'] ?></td>
+                                    <td><?= $row['isi_sambutan'] ?></td>
+                                    <td><?= $row['tanggal_sambutan'] ?></td>
+                                    <td>
+                                        <a href="sambutan.php?page=edit&id_sambutan=<?= $row['id_sambutan'] ?>" class="btn btn-warning btn-block">Update</a>
+                                    </td>
+                                </tr>
                             <?php } ?>
                         </tbody>
                     </table>
