@@ -274,7 +274,7 @@ while ($r_carr3 = mysqli_fetch_array($q_carr3)) {
                                                     <h5 class="card-title mt-2"><?= $berita_title ?></h5>
                                                 </a>
                                                 <p class="card-text"><?= substr($berita_description, 0, 100) ?>
-                                                    <a href="berita-detail.php"> Read More</a>
+                                                    <a href="berita_detail.php?id_berita=<?= $id_berita ?>"> Read More</a>
                                                 </p>
                                             </div>
                                         </div>

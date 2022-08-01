@@ -125,6 +125,8 @@
                 </a>
                 <div id="collapseData" class="collapse" aria-labelledby="headingData" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="kurikulum_sekolah.php">Kurikulum Sekolah</a>
+                        <a class="collapse-item" href="program_sekolah.php">Program Sekolah</a>
                         <a class="collapse-item" href="guru_karyawan.php">Guru dan Karyawan</a>
                         <a class="collapse-item" href="siswa.php">Siswa</a>
                         <a class="collapse-item" href="alumni.php">Alumni</a>

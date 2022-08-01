@@ -22,9 +22,15 @@
                     </div>
                     <div class="row">
                         <div class="col-sm">
+                            <?php 
+                                $query = query("SELECT * FROM kurikulum_sekolah");
+                                confirmQuery($query);
+                                while($row = mysqli_fetch_assoc($query)){
+                            ?>
                             <p class="lh-lg fs-5 text-center">
-                                Kurikulum yang digunakan pada <b>Sekolah Dasar Negeri 1 Purwokerto Kulon</b> merupakan <b>Kurikulum 2013</b> dengan layanan SKS, sesuai dengan bakat, minat, dan kemampuan / kecepatan belajar peserta didik. Mengembangkan literasi, numerasi, meningkatkan kemampuan <b><i>Critical Thinking, Creativity, Collaboration, Communication</i></b> pada seluruh peserta didik.
+                                <?= $row['deskripsi_kurikulum_sekolah'] ?>
                             </p>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>

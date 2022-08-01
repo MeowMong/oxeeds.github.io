@@ -97,8 +97,7 @@
                         </div>
                     </div>
                     <div class="card-footer text-muted">
-                        Posted on <?= $row['berita_date'] ?> by
-                        <a href="#">Start Bootstrap</a>
+                        Posted on <?= $row['berita_date'] ?>
                     </div>
                 </div>
             <?php } ?>

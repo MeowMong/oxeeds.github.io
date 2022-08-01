@@ -1,7 +1,9 @@
 <?php include 'includes/header.php' ?>
 <?php include 'includes/navigation.php' ?>
+<?php
 $qry_prestasi = mysqli_query($koneksi, "SELECT * FROM prestasi");
 $qry_prestasi2 = mysqli_query($koneksi, "SELECT * FROM prestasi");
+?>
 
 <!-- Main Content -->
 <main>
