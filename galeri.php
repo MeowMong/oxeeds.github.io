@@ -1,5 +1,13 @@
 <?php include 'includes/header.php' ?>
-<?php include 'includes/navigation.php' ?>
+<?php include 'includes/navigation.php';
+    $qry_fasilitas = mysqli_query($koneksi, "SELECT * FROM fasilitas");
+    $qry_fasilitas2 = mysqli_query($koneksi, "SELECT * FROM fasilitas");
+    $qry_ekstrakulikuler = mysqli_query($koneksi, "SELECT * FROM fasilitas");
+    $qry_ekstrakulikuler2 = mysqli_query($koneksi, "SELECT * FROM fasilitas");
+    $qry_prestasi = mysqli_query($koneksi, "SELECT * FROM prestasi");
+    $qry_prestasi2 = mysqli_query($koneksi, "SELECT * FROM prestasi");
+
+?>
 
 <!-- Main Content -->
 <main>
@@ -17,46 +25,20 @@
                 </div>
             </div>
             <div class="row">
+                <?php while($data = mysqli_fetch_assoc($qry_fasilitas)) : ?>
                 <div class="col-sm-2 col-md-4">
                     <div class="card text-bg-dark mx-2 my-2">
-                        <img src="https://picsum.photos/300/200" class="card-img" alt="https://picsum.photos/300/200">
-                        <div class="card-img-overlay">
-                            <!-- <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">Last updated 3 mins ago</p> -->
-                        </div>
+                        <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#fasilitas<?= $data['id_fasilitas'] ?>">
+                        <img src="assets/images/berita/<?= $data['gambar_fasilitas'] ?>" class="card-img">
+                        </a>
+                        <!-- <div class="card-img-overlay">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text">Last updated 3 mins ago</p>
+                        </div> -->
                     </div>
                 </div>
-                <div class="col-sm-2 col-md-4">
-                    <div class="card text-bg-dark mx-2 my-2">
-                        <img src="https://picsum.photos/300/200" class="card-img" alt="https://picsum.photos/300/200">
-                        <div class="card-img-overlay">
-                            <!-- <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">Last updated 3 mins ago</p> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-2 col-md-4">
-                    <div class="card text-bg-dark mx-2 my-2">
-                        <img src="https://picsum.photos/300/200" class="card-img" alt="https://picsum.photos/id/200/300">
-                        <div class="card-img-overlay">
-                            <!-- <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">Last updated 3 mins ago</p> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-2 col-md-4">
-                    <div class="card text-bg-dark mx-2 my-2">
-                        <img src="https://picsum.photos/300/200" class="card-img" alt="https://picsum.photos/id/200/300">
-                        <div class="card-img-overlay">
-                            <!-- <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">Last updated 3 mins ago</p> -->
-                        </div>
-                    </div>
-                </div>
+                <?php endwhile; ?>
             </div>
         </div>
     </section>
@@ -76,46 +58,20 @@
                 </div>
             </div>
             <div class="row">
+                <?php while($data = mysqli_fetch_assoc($qry_ekstrakulikuler)) : ?>
                 <div class="col-sm-2 col-md-4">
                     <div class="card text-bg-dark mx-2 my-2">
-                        <img src="https://picsum.photos/300/200" class="card-img" alt="https://picsum.photos/300/200">
-                        <div class="card-img-overlay">
-                            <!-- <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">Last updated 3 mins ago</p> -->
-                        </div>
+                        <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#fasilitas<?= $data['id_fasilitas'] ?>">
+                        <img src="assets/images/berita/<?= $data['gambar_fasilitas'] ?>" class="card-img">
+                        </a>
+                        <!-- <div class="card-img-overlay">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text">Last updated 3 mins ago</p>
+                        </div> -->
                     </div>
                 </div>
-                <div class="col-sm-2 col-md-4">
-                    <div class="card text-bg-dark mx-2 my-2">
-                        <img src="https://picsum.photos/300/200" class="card-img" alt="https://picsum.photos/300/200">
-                        <div class="card-img-overlay">
-                            <!-- <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">Last updated 3 mins ago</p> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-2 col-md-4">
-                    <div class="card text-bg-dark mx-2 my-2">
-                        <img src="https://picsum.photos/300/200" class="card-img" alt="https://picsum.photos/id/200/300">
-                        <div class="card-img-overlay">
-                            <!-- <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">Last updated 3 mins ago</p> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-2 col-md-4">
-                    <div class="card text-bg-dark mx-2 my-2">
-                        <img src="https://picsum.photos/300/200" class="card-img" alt="https://picsum.photos/id/200/300">
-                        <div class="card-img-overlay">
-                            <!-- <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">Last updated 3 mins ago</p> -->
-                        </div>
-                    </div>
-                </div>
+                <?php endwhile; ?>
             </div>
         </div>
     </section>
@@ -135,49 +91,104 @@
                 </div>
             </div>
             <div class="row">
+                
+            <?php while($data = mysqli_fetch_assoc($qry_prestasi)) : ?>
                 <div class="col-sm-2 col-md-4">
                     <div class="card text-bg-dark mx-2 my-2">
-                        <img src="https://picsum.photos/300/200" class="card-img" alt="https://picsum.photos/300/200">
-                        <div class="card-img-overlay">
-                            <!-- <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">Last updated 3 mins ago</p> -->
-                        </div>
+                        <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#prestasi<?= $data['id_prestasi'] ?>">
+                        <img src="assets/images/prestasi/<?= $data['gambar_prestasi'] ?>" class="card-img">
+                        </a>
+                        <!-- <div class="card-img-overlay">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text">Last updated 3 mins ago</p>
+                        </div> -->
                     </div>
                 </div>
-                <div class="col-sm-2 col-md-4">
-                    <div class="card text-bg-dark mx-2 my-2">
-                        <img src="https://picsum.photos/300/200" class="card-img" alt="https://picsum.photos/300/200">
-                        <div class="card-img-overlay">
-                            <!-- <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">Last updated 3 mins ago</p> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-2 col-md-4">
-                    <div class="card text-bg-dark mx-2 my-2">
-                        <img src="https://picsum.photos/300/200" class="card-img" alt="https://picsum.photos/id/200/300">
-                        <div class="card-img-overlay">
-                            <!-- <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">Last updated 3 mins ago</p> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-2 col-md-4">
-                    <div class="card text-bg-dark mx-2 my-2">
-                        <img src="https://picsum.photos/300/200" class="card-img" alt="https://picsum.photos/id/200/300">
-                        <div class="card-img-overlay">
-                            <!-- <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">Last updated 3 mins ago</p> -->
-                        </div>
-                    </div>
-                </div>
+                <?php endwhile; ?>
             </div>
         </div>
     </section>
     <!-- Akhir dari Prestasi -->
+    
 </main>
+
+<?php while($data = mysqli_fetch_assoc($qry_fasilitas2)) : ?>
+<!-- Modal -->
+<div class="modal fade" id="fasilitas<?= $data['id_fasilitas'] ?>" tabindex="-1" aria-labelledby="fasilitas<?= $data['id_fasilitas'] ?>" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><?= $data['nama_fasilitas'] ?></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <img src="assets/images/berita/<?= $data['gambar_fasilitas'] ?>" class="card-img">
+          <p><?= $data['keterangan_fasilitas'] ?></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<?php endwhile; ?>
+
+<?php while($data = mysqli_fetch_assoc($qry_ekstrakulikuler2)) : ?>
+<!-- Modal -->
+<div class="modal fade" id="fasilitas<?= $data['id_fasilitas'] ?>" tabindex="-1" aria-labelledby="fasilitas<?= $data['id_fasilitas'] ?>" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><?= $data['nama_fasilitas'] ?></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <img src="assets/images/berita/<?= $data['gambar_fasilitas'] ?>" class="card-img">
+          <p><?= $data['keterangan_fasilitas'] ?></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<?php endwhile; ?>
+
+<?php while($data = mysqli_fetch_assoc($qry_prestasi2)) : ?>
+<!-- Modal -->
+<div class="modal fade" id="prestasi<?= $data['id_prestasi'] ?>" tabindex="-1" aria-labelledby="prestasi<?= $data['id_prestasi'] ?>" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><?= $data['nama_prestasi'] ?></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <img src="assets/images/prestasi/<?= $data['gambar_prestasi'] ?>" class="card-img">
+          <p>
+            <span>
+                Tanggal: <?= date('d F Y', strtotime($data['tanggal_prestasi'])) ?>
+            </span><br>
+            <span>
+                Tingkat: <?= $data['tingkat_prestasi'] ?>
+            </span><br>
+            <span>
+                Nama Peraih: <?= $data['nama_peraih_prestasi'] ?>
+            </span><br>
+            <span>
+                Lokasi: <?= $data['lokasi_prestasi'] ?>
+            </span><br>
+            <span>
+                Keterangan: <?= $data['keterangan_prestasi'] ?>
+            </span>
+            </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<?php endwhile; ?>
 <?php include 'includes/footer.php' ?>
