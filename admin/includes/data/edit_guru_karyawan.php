@@ -16,15 +16,29 @@ if (isset($_GET['id_guru_karyawan'])) {
         $total_jam = escape($_POST['total_jam']);
         $keterangan = escape($_POST['keterangan']);
 
-        $query = query("UPDATE guru_karyawan SET nama='$nama', 
-                                                    nip='$nip',
-                                                    gol_ruang='$gol_ruang',
-                                                    posisi='$posisi',
-                                                    jumlah_kelas='$jumlah_kelas',
-                                                    jam_tatap_muka='$jam_tatap_muka',
-                                                    total_jam='$total_jam',
-                                                    keterangan='$keterangan'
-                                                    WHERE id_guru_karyawan='$id_guru_karyawan' ");
+        $gambar = $_FILES['gambar']['name'];
+        $gambar_tmp = $_FILES['gambar']['tmp_name'];
+
+        move_uploaded_file($gambar_tmp, "../assets/images/guru_karyawan/$gambar");
+
+        // Jika gambar nya kosong
+        if (empty($gambar)) {
+            $query = query("SELECT * FROM guru_karyawan WHERE id_guru_karyawan='$id_guru_karyawan'");
+            confirmQuery($query);
+            $result = mysqli_fetch_array($query);
+            $gambar = $result['gambar'];
+        }
+
+        $query = query("UPDATE guru_karyawan SET gambar='$gambar',
+                                                nama='$nama', 
+                                                nip='$nip',
+                                                gol_ruang='$gol_ruang',
+                                                posisi='$posisi',
+                                                jumlah_kelas='$jumlah_kelas',
+                                                jam_tatap_muka='$jam_tatap_muka',
+                                                total_jam='$total_jam',
+                                                keterangan='$keterangan'
+                                                WHERE id_guru_karyawan='$id_guru_karyawan' ");
         if ($query) {
             redirect('guru_karyawan.php');
         }
@@ -52,24 +66,25 @@ if (isset($_GET['id_guru_karyawan'])) {
                 <!-- Edit Guru & Karyawan  -->
                 <div class="card card-primary">
                     <!-- form start -->
-                    <form method="post">
+                    <form method="post" enctype="multipart/form-data">
                         <div class="card-body">
 
+                            <div class="form-group">
+                                <label for="gambar">Gambar</label>
+                                <input type="file" class="form-control" id="gambar" name="gambar">
+                            </div>
                             <div class="form-group">
                                 <label for="nama">Nama</label>
                                 <input type="text" class="form-control" id="nama" name="nama" value="<?= $result['nama'] ?>">
                             </div>
-
                             <div class="form-group">
                                 <label for="nip">Nip</label>
                                 <input type="text" class="form-control" id="nip" name="nip" value="<?= $result['nip'] ?>">
                             </div>
-
                             <div class="form-group">
                                 <label for="gol_ruang">Gol Ruang</label>
-                                <input type="text" class="form-control" id="gol_ruang" name="gol_ruang" value="<?= $result['gol_ruang']?>">
+                                <input type="text" class="form-control" id="gol_ruang" name="gol_ruang" value="<?= $result['gol_ruang'] ?>">
                             </div>
-
                             <div class="form-group">
                                 <label for="posisi">Posisi</label>
                                 <input type="text" class="form-control" id="posisi" name="posisi" value="<?= $result['posisi'] ?>">
@@ -90,9 +105,9 @@ if (isset($_GET['id_guru_karyawan'])) {
                                 <label for="keterangan">Keterangan</label>
                                 <input type="text" class="form-control" id="keterangan" name="keterangan" value="<?= $result['keterangan'] ?>">
                             </div>
+
                         </div>
                         <!-- /.card-body -->
-
                         <div class="card-footer">
                             <button type="submit" name="update_guru_karyawan" class="btn btn-warning btn-block">Update Data Guru dan Karyawan</button>
                         </div>

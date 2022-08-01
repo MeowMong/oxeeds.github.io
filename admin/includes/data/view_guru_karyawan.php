@@ -13,10 +13,15 @@ if (isset($_POST['simpan_guru_karyawan'])) {
     $total_jam = escape($_POST['total_jam']);
     $keterangan = escape($_POST['keterangan']);
 
+    $gambar = $_FILES['gambar']['name'];
+    $gambar_tmp = $_FILES['gambar']['tmp_name'];
+
+    move_uploaded_file($gambar_tmp, "../assets/images/guru_karyawan/$gambar");
+
     if ($nama && $nip) {
         // Simpan data
-        $query   = query("INSERT INTO guru_karyawan(nama, nip, gol_ruang, posisi, jumlah_kelas, jam_tatap_muka, total_jam, keterangan) 
-                                VALUES ('$nama', '$nip', '$gol_ruang', '$posisi', '$jumlah_kelas', '$jam_tatap_muka', '$total_jam', '$keterangan')");
+        $query   = query("INSERT INTO guru_karyawan(gambar, nama, nip, gol_ruang, posisi, jumlah_kelas, jam_tatap_muka, total_jam, keterangan) 
+                                VALUES ('$gambar','$nama', '$nip', '$gol_ruang', '$posisi', '$jumlah_kelas', '$jam_tatap_muka', '$total_jam', '$keterangan')");
         if ($query) {
             $sukses     = "Menambahkan data baru BERHASIL!";
         } else {
@@ -86,24 +91,25 @@ if (isset($_GET['delete'])) {
                 <!-- Edit Guru & Karyawan  -->
                 <div class="card card-primary border-0 shadow-lg">
                     <!-- form start -->
-                    <form method="post">
+                    <form method="post" enctype="multipart/form-data">
                         <div class="card-body">
 
+                            <div class="form-group">
+                                <label for="gambar">Gambar</label>
+                                <input type="file" class="form-control" id="gambar" name="gambar">
+                            </div>
                             <div class="form-group">
                                 <label for="nama">Nama</label>
                                 <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama" autofocus>
                             </div>
-
                             <div class="form-group">
                                 <label for="nip">Nip</label>
                                 <input type="text" class="form-control" id="nip" name="nip" placeholder="Masukkan Nip">
                             </div>
-
                             <div class="form-group">
                                 <label for="gol_ruang">Gol Ruang</label>
                                 <input type="text" class="form-control" id="gol_ruang" name="gol_ruang" placeholder="Masukkan Golongan Ruang">
                             </div>
-
                             <div class="form-group">
                                 <label for="posisi">Posisi</label>
                                 <input type="text" class="form-control" id="posisi" name="posisi" placeholder="Masukkan Posisi">
@@ -124,9 +130,9 @@ if (isset($_GET['delete'])) {
                                 <label for="keterangan">Keterangan</label>
                                 <input type="text" class="form-control" id="keterangan" name="keterangan" placeholder="Masukkan Keterangan">
                             </div>
+
                         </div>
                         <!-- /.card-body -->
-
                         <div class="card-footer">
                             <button type="submit" name="simpan_guru_karyawan" class="btn btn-primary btn-block">Simpan</button>
                         </div>
@@ -148,6 +154,7 @@ if (isset($_GET['delete'])) {
                             <thead>
                                 <tr class="text-center">
                                     <th>No</th>
+                                    <th>Gambar</th>
                                     <th>Nama</th>
                                     <th>Nip</th>
                                     <th>Gol Ruang</th>
@@ -169,6 +176,7 @@ if (isset($_GET['delete'])) {
                                 ?>
                                     <tr>
                                         <th><?php echo $index++ ?></th>
+                                        <td><img src="../assets/images/guru_karyawan/<?= $row['gambar'] ?>" alt="<?= $row['gambar'] ?>" width="150"></td>
                                         <td><?= $row['nama'] ?></td>
                                         <td><?= $row['nip'] ?></td>
                                         <td><?= $row['gol_ruang'] ?></td>

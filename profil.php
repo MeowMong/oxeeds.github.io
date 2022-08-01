@@ -68,7 +68,13 @@ $isi_misi   = "";
                     </div>
                     <div class="row">
                         <div class="col-sm">
-                            <p class="text-center fs-5">"Terwujudnya Siswa yang Beriman, Berakhlak Mulia, Cerdas, Terampil, dan Mandiri"</p>
+                            <?php
+                            $query = query("SELECT * FROM visi");
+                            confirmQuery($query);
+                            while ($row = mysqli_fetch_assoc($query)) {
+                            ?>
+                                <p class="text-center fs-5"><?= $row['isi_visi'] ?></p>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -87,20 +93,22 @@ $isi_misi   = "";
                     </div>
                     <div class="row">
                         <div class="col-sm">
-                            <p class="lh-lg" style="text-align: justify;">
-                                Untuk mencapai visi sebagai sekolah yang terdepan, terbaik, dan terpercaya, perlu dilakukan suatu misi berupa kegiatan jangka panjang dengan arah yang jelas dan sistematis. Berikut misi Sekolah Dasar Negeri 1 Purwokerto Kulon yang dirumuskan berdasarkan visi sekolah, yaitu :
-                            </p>
                             <?php
-                            $sql3   = "SELECT * FROM misi";
-                            $q3     = mysqli_query($koneksi, $sql3);
-                            $index3  = 1;
-                            while ($r3 = mysqli_fetch_array($q3)) {
-                                $id_misi    = $r3['id_misi'];
-                                $isi_misi   = $r3['isi_misi'];
+                            $query   = query("SELECT * FROM deskripsi_misi");
+                            while ($row = mysqli_fetch_array($query)) {
+                            ?>
+                                <p class="lh-lg" style="text-align: justify;">
+                                    <?= $row['isi_deskripsi_misi'] ?>
+                                </p>
+                            <?php
+                            }
+                            $query   = query("SELECT * FROM misi");
+                            $index  = 1;
+                            while ($row = mysqli_fetch_array($query)) {
                             ?>
                                 <tr>
-                                    <th class="lh-lg"><?php echo $index3++ ?>. </th>
-                                    <td class="lh-lg"><?php echo $isi_misi ?><br></td>
+                                    <th class="lh-lg"><?= $index++ ?>. </th>
+                                    <td class="lh-lg"><?= $row['isi_misi'] ?><br></td>
                                 </tr>
                             <?php
                             }
@@ -132,16 +140,26 @@ $isi_misi   = "";
                     </div>
                     <div class="row">
                         <div class="col-sm">
-                            <p class="lh-lg" style="text-align: justify;">
-                                Sesuai dengan visi misi sekolah, tujuan SD Negeri 1 Purwokerto Kulon adalah mengantarkan siswa untuk :
-                            </p>
-                            <ol>
-                                <li>Mendidik dan membimbing peserta didik untuk menjadi manusia yang beriman dan bertaqwa kepada Tuhan Yang Maha Esa.</li>
-                                <li>Mendidik dan membimbing peserta didik menjadi manusia yang berakhlak mulia dan berbudi pekerti yang luhur.</li>
-                                <li>Membimbing dan mendidik peserta didik menjadi manusia yang cerdas, terampil, dan berdaya guna.</li>
-                                <li>Mendidik dan membimbing siswa menjadi manusia yang jujur, disiplin, mandiri dan bertanggung jawab.</li>
-                                <li>Melaksanakan pembelajaran model saintifik sehingga tercipta belajar mengajar yang kreatif, efektif, inovatif, dan kondusif.</li>
-                            </ol>
+                            <?php
+                            $query = query("SELECT * FROM deskripsi_tujuan");
+                            confirmQuery($query);
+                            while ($row = mysqli_fetch_assoc($query)) {
+                            ?>
+                                <p class="lh-lg" style="text-align: justify;">
+                                    <?= $row['isi_deskripsi_tujuan'] ?>
+                                </p>
+                            <?php
+                            }
+                            $query = query("SELECT * FROM tujuan");
+                            confirmQuery($query);
+                            $index = 1;
+                            while ($row = mysqli_fetch_assoc($query)) {
+                            ?>
+                                <tr>
+                                    <th class="lh-lg"><?= $index++ ?>. </th>
+                                    <td class="lh-lg"><?= $row['isi_tujuan'] ?><br></td>
+                                </tr>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -166,47 +184,65 @@ $isi_misi   = "";
                         <hr class="mt-1 mb-5">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-10 col-md-8">
-                        <p class="lh-lg" style="text-align: justify;">
-                            Sebelum bernama <b>SDN 1 Purwokerto Kulon</b> dahulu bernama SD Purwokerto Kulon II berdasarkan Kutipan Surat Keputusan Gubernur Kepala Daerah Propinsi Jawa Tengah tanggal 14 Juli 1971 bahwa wilayah S.D.2 terletak di dalam wilayah P.S. Purwokerto II terhitung mulai tanggal 1 Januari 1970 diberikan hak PAKAI atas gedung/tanah halaman sekolah menurut keadaan yang sesungguhnya seperti tercantum pada daftar lampiran Keputusan Gubernur Kepala Daerah Propinsi Jawa Tengah tanggal 14 Juli 1971 No.SD/PDK/.17/1/1 bagi S.D.2 dalam wilayah Purwokerto II Kab.Banyumas.
-                        </p>
-                    </div>
-                    <div class="col-sm-2 col-md-4">
-                        <div class="card text-bg-dark mx-2 my-2">
-                            <img src="https://picsum.photos/300/200" class="card-img" alt="https://picsum.photos/300/200">
-                            <div class="card-img-overlay">
-                                <!-- <h5 class="card-title">Card title</h5>
+                <?php
+                $query = query("SELECT * FROM sejarah_sekolah WHERE id_sejarah_sekolah='1'");
+                confirmQuery($query);
+                while ($row = mysqli_fetch_assoc($query)) {
+                ?>
+                    <div class="row">
+                        <div class="col-sm-10 col-md-8">
+                            <p class="lh-lg" style="text-align: justify;">
+                                <?= $row['deskripsi_sejarah_sekolah'] ?>
+                            </p>
+                        </div>
+                        <div class="col-sm-2 col-md-4">
+                            <div class="card text-bg-dark mx-2 my-2">
+                                <img src="assets/images/sejarah_sekolah/<?= $row['gambar_sejarah_sekolah'] ?>" class="card-img" alt="<?= $row['gambar_sejarah_sekolah'] ?>">
+                                <div class="card-img-overlay">
+                                    <!-- <h5 class="card-title">Card title</h5>
                                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                     <p class="card-text">Last updated 3 mins ago</p> -->
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row mt-5">
-                    <div class="col-sm-2 col-md-4">
-                        <div class="card text-bg-dark mx-2 my-2">
-                            <img src="https://picsum.photos/300/200" class="card-img" alt="https://picsum.photos/300/200">
-                            <div class="card-img-overlay">
-                                <!-- <h5 class="card-title">Card title</h5>
+                <?php
+                }
+                $query = query("SELECT * FROM sejarah_sekolah WHERE id_sejarah_sekolah='2'");
+                confirmQuery($query);
+                while ($row = mysqli_fetch_assoc($query)) {
+                ?>
+                    <div class="row mt-5">
+                        <div class="col-sm-2 col-md-4">
+                            <div class="card text-bg-dark mx-2 my-2">
+                                <img src="assets/images/sejarah_sekolah/<?= $row['gambar_sejarah_sekolah'] ?>" class="card-img" alt="<?= $row['gambar_sejarah_sekolah'] ?>">
+                                <div class="card-img-overlay">
+                                    <!-- <h5 class="card-title">Card title</h5>
                                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                     <p class="card-text">Last updated 3 mins ago</p> -->
+                                </div>
                             </div>
                         </div>
+                        <div class="col-sm-10 col-md-8">
+                            <p class="lh-lg" style="text-align: justify;">
+                                <?= $row['deskripsi_sejarah_sekolah'] ?>
+                            </p>
+                        </div>
                     </div>
-                    <div class="col-sm-10 col-md-8">
-                        <p class="lh-lg" style="text-align: justify;">
-                            Berdasarkan Peraturan Bupati Banyumas Nomor 21 Tahun 2005 tentang penggabungan 173 Sekolah Dasar Negeri di Lingkungan Pemerintah Kabupaten Banyumas tanggal 07 Mei 2005 berlaku diundangkan yaitu Diundangkan di Purwokerto Pada tanggal 9 Mei 2005 ditandatangani oleh Sekretaris Daerah Kabupaten Banyumas Singgih Wiranto,S.H, NIP. 500 086 384 pada Berita Daerah Kabupaten Banyumas Nomor 11 Seri E.
-                        </p>
+                <?php
+                }
+                $query = query("SELECT * FROM sejarah_sekolah WHERE id_sejarah_sekolah='3'");
+                confirmQuery($query);
+                while ($row = mysqli_fetch_assoc($query)) {
+                ?>
+                    <div class="row my-5 pb-5">
+                        <div class="col-sm">
+                            <p class="lh-lg text-center">
+                                <?= $row['deskripsi_sejarah_sekolah'] ?>
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="row my-5 pb-5">
-                    <div class="col-sm">
-                        <p class="lh-lg text-center">
-                            Sejak tanggal 9 Mei 2005 SD N 1 Purwokerto Kulon SD N 2 Purwokerto Kulon digabung menjadi satu dengan nama SD N 1 Purwokerto Kulon yang terletak di Jalan DI Panjaitan Seluas ∓ 2.852 meter persegi terletak di persil 114 klas D.III Jalan DI Panjaitan Kelurahan Purwokerto Kulon Kecamatan Purwokerto Selatan.
-                        </p>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </section>
@@ -263,24 +299,31 @@ $isi_misi   = "";
                 <div class="col-sm-2 col-md-4">
                     <div class="card p-2">
                         <div class="row">
-                            <div class="col-sm-5 p-3 d-flex align-items-center justify-content-center">
-                                <img src="assets/images/guru/rr.jpg" class="card-img" style="height: auto; width: full;" alt="Guru & Staff">
-                            </div>
-                            <div class="col-sm-7 p-3 align-items-center">
-                                <div class="row">
-                                    <div class="col">
-                                        <p class="fs-5 fw-semibold card-title">Kepala Sekolah</p>
+                            <?php
+                            $query = query("SELECT * FROM sambutan INNER JOIN guru_karyawan WHERE id_guru_karyawan='1' ");
+                            confirmQuery($query);
+                            $index = 1;
+                            while ($row = mysqli_fetch_assoc($query)) {
+                            ?>
+                                <div class="col-sm-5 p-3 d-flex align-items-center justify-content-center">
+                                    <img src="assets/images/sambutan/<?= $row['gambar_sambutan'] ?>" class="card-img" style="height: auto; width: full;" alt="Guru & Staff">
+                                </div>
+                                <div class="col-sm-7 p-3 align-items-center">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="fs-5 fw-semibold card-title">Kepala Sekolah</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <blockquote class="blockquote">
+                                                <p class="card-text blockquote" style="font-size: medium;"><?= $row['name_sambutan'] ?></p>
+                                                <footer class="card-text"><small class="text-muted text-left blockquote-footer" style="font-size: small;"><?= 'NIP : ' . $row['nip'] ?></small></footer>
+                                            </blockquote>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <blockquote class="blockquote">
-                                            <p class="card-text blockquote" style="font-size: medium;">Esti Andjar Arijandhini</p>
-                                            <footer class="card-text"><small class="text-muted text-left blockquote-footer" style="font-size: small;">NIP. </small></footer>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -301,27 +344,20 @@ $isi_misi   = "";
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="text-center">1.</td>
-                                <td class="text-center">Siti Supihnah, S.Pd</td>
-                                <td class="text-center">19681026 199401 2 001</td>
-                                <td class="text-center">Guru Kelas IV</td>
-                                <td class="text-center">Koordinator Pramuka, Koordinator Olimpiade, Koordinator Paskibra</td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">1.</td>
-                                <td class="text-center">Siti Supihnah, S.Pd</td>
-                                <td class="text-center">19681026 199401 2 001</td>
-                                <td class="text-center">Guru Kelas IV</td>
-                                <td class="text-center">Koordinator Pramuka</td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">1.</td>
-                                <td class="text-center">Siti Supihnah, S.Pd</td>
-                                <td class="text-center">19681026 199401 2 001</td>
-                                <td class="text-center">Guru Kelas IV</td>
-                                <td class="text-center">Koordinator Pramuka</td>
-                            </tr>
+                            <?php
+                            $query = query("SELECT * FROM guru_karyawan");
+                            confirmQuery($query);
+                            $index = 1;
+                            while ($row = mysqli_fetch_assoc($query)) {
+                            ?>
+                                <tr>
+                                    <td class="text-center"><?= $index++ ?></td>
+                                    <td><?= $row['nama'] ?></td>
+                                    <td class="text-center"><?= $row['nip'] ?></td>
+                                    <td class="text-center"><?= $row['posisi'] ?></td>
+                                    <td class="text-center"><?= $row['keterangan'] ?></td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
@@ -348,68 +384,33 @@ $isi_misi   = "";
 
                 <!-- Guru 1 -->
                 <div class="row d-flex justify-content-between">
-                    <div class="col-sm-2 col-md-3 p-2">
-                        <div class="card" style="height: auto; max-width: 300px;">
-                            <div class="row">
-                                <div class="col d-flex justify-content-center">
-                                    <img src="assets/images/guru/rr.jpg" class="card-img" style="height: auto; width: full;" alt="Guru & Staff">
+                    <?php
+                    $query = query("SELECT * FROM guru_karyawan");
+                    confirmQuery($query);
+                    $index = 1;
+                    while ($row = mysqli_fetch_assoc($query)) {
+                        $gambar = $row['gambar'];
+                        if ($gambar) {
+                            $dir = "assets/images/guru_karyawan/$gambar";
+                        } else {
+                            $dir = "https://via.placeholder.com/600x729";
+                        }
+                    ?>
+                        <div class="col-sm-2 col-md-3 p-2">
+                            <div class="card" style="height: auto; max-width: 300px;">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center">
+                                        <img src="<?= $dir ?>" class="card-img" style="height: auto; width: full;" alt="Guru & Staff">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col p-2 d-flex justify-content-center" style="height: 50px;">
-                                    <p class="text-center fw-semibold">1. RR. Esti Andjar Arijandhini</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Guru 2 -->
-                    <div class="col-sm-2 col-md-3 p-2">
-                        <div class="card" style="height: auto; max-width: 300px;">
-                            <div class="row">
-                                <div class="col d-flex justify-content-center">
-                                    <img src="assets/images/guru/rr.jpg" class="card-img" style="height: auto; width: full;" alt="https://picsum.photos/300/200">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col p-2 d-flex justify-content-center" style="height: 50px;">
-                                    <p class="text-center fw-semibold">1. RR. Esti Andjar Arijandhini</p>
+                                <div class="row">
+                                    <div class="col p-2 d-flex justify-content-center" style="height: 50px;">
+                                        <p class="text-center fw-semibold"><?= $row['nama'] ?></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Guru 3 -->
-                    <div class="col-sm-2 col-md-3 p-2">
-                        <div class="card" style="height: auto; max-width: 300px;">
-                            <div class="row">
-                                <div class="col d-flex justify-content-center">
-                                    <img src="assets/images/guru/rr.jpg" class="card-img" style="height: auto; width: full;" alt="https://picsum.photos/300/200">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col p-2 d-flex justify-content-center" style="height: 50px;">
-                                    <p class="text-center fw-semibold">1. RR. Esti Andjar Arijandhini</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Guru 4 -->
-                    <div class="col-sm-2 col-md-3 p-2">
-                        <div class="card" style="height: auto; max-width: 300px;">
-                            <div class="row">
-                                <div class="col d-flex justify-content-center">
-                                    <img src="assets/images/guru/rr.jpg" class="card-img" style="height: auto; width: full;" alt="https://picsum.photos/300/200">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col p-2 d-flex justify-content-center" style="height: 50px;">
-                                    <p class="text-center fw-semibold">1. RR. Esti Andjar Arijandhini</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
             </div>
 

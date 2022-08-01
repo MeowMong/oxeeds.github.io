@@ -97,6 +97,28 @@ if (isset($_GET['delete'])) {
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
+                            <table class="table table-bordered table-hover mb-5">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Deskripsi Tujuan</th>
+                                        <th class="text-center">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $query = query("SELECT * FROM deskripsi_tujuan WHERE id_deskripsi_tujuan='1' ");
+                                    confirmQuery($query);
+                                    while ($row = mysqli_fetch_assoc($query)) {
+                                    ?>
+                                        <tr>
+                                            <td><?= $row['isi_deskripsi_tujuan'] ?></td>
+                                            <td class="text-center">
+                                                <a href="tujuan.php?page=edit_deskripsi&id_deskripsi_tujuan=<?= $row['id_deskripsi_tujuan'] ?>" class="btn btn-warning">Update</a>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
                             <table class="table table-bordered table-hover">
                                 <!-- Baris 1 (Jenis Kolom) -->
                                 <thead>
