@@ -95,12 +95,11 @@ $result = mysqli_fetch_assoc($query);
 </div>
 <!-- End of Footer -->
 
-<!-- Bootstrap CSS -->
+<!-- MDBootstrap JS -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"></script>
+
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-
-<!-- JQuery -->
-<script src="js/jquery-3.6.0.min.js"></script>
-
 </body>
 
 </html>
