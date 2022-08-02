@@ -54,7 +54,7 @@
                             <li><a class="dropdown-item" href="kesiswaan.php#kesiswaan-Tatatertib">Tata Tertib</a></li>
                             <li><a class="dropdown-item" href="kesiswaan.php#kesiswaan-Kesiswaan">Kesiswaan SDN 1 Purwokerto Kulon</a></li>
                             <li><a class="dropdown-item" href="kesiswaan.php#kesiswaan-Program">Program</a></li>
-                            <li><a class="dropdown-item" href="kesiswaan.php#kesiswaan-Ekstrakurikuler">Ekstrakurikuler</a></li>
+                            <li><a class="dropdown-item" href="kesiswaan.php#kesiswaan-Program">Ekstrakurikuler</a></li>
                             <li><a class="dropdown-item" href="kesiswaan.php#kesiswaan-Prestasi">Prestasi</a></li>
                         </ul>
                     </li>
