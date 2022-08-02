@@ -7,7 +7,7 @@ if (isset($_GET['id_program_sekolah'])) {
 
     // Query Edit ke Database
     if (isset($_POST['update_program_sekolah'])) {
-        $deskripsi_kurikulum_sekolah = escape($_POST['deskripsi_kurikulum_sekolah']);
+        $deskripsi_gambar_program_sekolah = escape($_POST['deskripsi_gambar_program_sekolah']);
 
         $gambar_program_sekolah = $_FILES['gambar_program_sekolah']['name'];
         $gambar_program_sekolah_tmp = $_FILES['gambar_program_sekolah']['tmp_name'];
@@ -67,7 +67,7 @@ if (isset($_GET['id_program_sekolah'])) {
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="submit" name="update_program_sekolah" class="btn btn-warning btn-block">Update Data Kurikulum Sekolah</button>
+                            <button type="submit" name="update_program_sekolah" class="btn btn-warning btn-block">Update Data Program Sekolah</button>
                         </div>
                     </form>
                 </div>
