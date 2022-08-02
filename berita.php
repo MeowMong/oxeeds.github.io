@@ -45,7 +45,7 @@
                                 $id_berita = $row['id_berita'];
                                 $berita_image = $row['berita_image'];
                                 $berita_author = $row['berita_author'];
-
+                                
                             // Jika gambar ada, maka tampilkan, jika tidak maka ambil gambar melalui link
                             if ($berita_image) {
                                 $dir = "assets/images/berita/" . $berita_image;
@@ -56,16 +56,16 @@
                     <!-- Informasi/Berita -->
                     <div class="col-md-4">
                         <div class="card my-3 border-0 shadow-lg">
-                            <a href="berita-detail.php">
+                            <a href="berita_detail.php">
                                 <img src="<?= $dir ?>" class="card-img-top" alt="<?= $dir ?>">
                             </a>
                             <div class="card-body">
                                 <span class="fs-6 fw-lighter text-secondary">Oleh: <?= $berita_author ?> | <?= $berita_date ?></span>
-                                <a href="berita-detail.php" style="text-decoration: none; color: black;">
+                                <a href="berita_detail.php" style="text-decoration: none; color: black;">
                                     <h5 class="card-title mt-2"><?= $berita_title ?></h5>
                                 </a>
                                 <p class="card-text"><?= substr($berita_description, 0, 100) ?> 
-                                <a href="berita-detail.php"> Read More</a>
+                                <a href="berita_detail.php?id_berita=<?= $id_berita ?>"> Read More</a>
                                 </p>
                             </div>
                         </div>

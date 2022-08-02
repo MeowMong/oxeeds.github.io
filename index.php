@@ -264,13 +264,13 @@ while ($r_carr3 = mysqli_fetch_array($q_carr3)) {
                         ?>
                                     <!-- Informasi/Berita -->
                                     <div class="col-sm-6 d-flex justify-content-between">
-                                        <div class="card my-3 border-0 shadow-lg" style="width: 500px; height: max-content;" href="berita-detail.php">
-                                            <a href="berita-detail.php">
+                                        <div class="card my-3 border-0 shadow-lg" style="width: 500px; height: max-content;" href="berita_detail.php">
+                                            <a href="berita_detail.php">
                                                 <img src="<?= $dir ?>" class="card-img-top mw-100" alt="<?= $dir ?>">
                                             </a>
                                             <div class="card-body">
                                                 <span class="fs-6 fw-lighter text-secondary">Oleh: <?= $berita_author ?> | <?= $berita_date ?></span>
-                                                <a href="berita-detail.php" style="text-decoration: none; color: black;">
+                                                <a href="berita_detail.php" style="text-decoration: none; color: black;">
                                                     <h5 class="card-title mt-2"><?= $berita_title ?></h5>
                                                 </a>
                                                 <p class="card-text"><?= substr($berita_description, 0, 100) ?>
