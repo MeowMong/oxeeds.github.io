@@ -16,12 +16,12 @@
                 <ul class="navbar-nav">
                     <li class="nav-item mx-2">
                         <a class="nav-link <?php if (strpos($_SERVER['REQUEST_URI'], 'index') == TRUE) {
-                                                echo "active border border-succes rounded link-success";
+                                                echo "active border border-success rounded link-success";
                                             } ?>" aria-current="page" href="index.php">Beranda</a>
                     </li>
                     <li class="nav-item dropdown mx-2">
                         <a class="nav-link dropdown-toggle <?php if (strpos($_SERVER['REQUEST_URI'], 'profil') == TRUE) {
-                                                                echo "active border border-succes rounded link-success";
+                                                                echo "active border border-success rounded link-success";
                                                             } ?>" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Profil
                         </a>
@@ -35,7 +35,7 @@
                     </li>
                     <li class="nav-item dropdown mx-2">
                         <a class="nav-link dropdown-toggle <?php if (strpos($_SERVER['REQUEST_URI'], 'kurikulum') == TRUE) {
-                                                                echo "active border border-succes rounded link-success";
+                                                                echo "active border border-success rounded link-success";
                                                             } ?>" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Kurikulum
                         </a>
@@ -46,7 +46,7 @@
                     </li>
                     <li class="nav-item dropdown mx-2">
                         <a class="nav-link dropdown-toggle <?php if (strpos($_SERVER['REQUEST_URI'], 'kesiswaan') == TRUE) {
-                                                                echo "active border border-succes rounded link-success";
+                                                                echo "active border border-success rounded link-success";
                                                             } ?>" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Kesiswaan
                         </a>
@@ -60,7 +60,7 @@
                     </li>
                     <li class="nav-item dropdown mx-2">
                         <a class="nav-link dropdown-toggle <?php if (strpos($_SERVER['REQUEST_URI'], 'galeri') == TRUE) {
-                                                                echo "active border border-succes rounded link-success";
+                                                                echo "active border border-success rounded link-success";
                                                             } ?>" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Galeri
                         </a>
@@ -72,12 +72,12 @@
                     </li>
                     <li class="nav-item mx-2">
                         <a class="nav-link <?php if (strpos($_SERVER['REQUEST_URI'], 'berita') == TRUE) {
-                                                echo "active border border-succes rounded link-success";
+                                                echo "active border border-success rounded link-success";
                                             } ?>" href="berita.php">Berita</a>
                     </li>
                     <li class="nav-item mx-2">
                         <a class="nav-link <?php if (strpos($_SERVER['REQUEST_URI'], 'kontak') == TRUE) {
-                                                echo "active border border-succes rounded link-success";
+                                                echo "active border border-success rounded link-success";
                                             } ?>" href="respon_kontak.php">Kontak</a>
                     </li>
                     <li class="nav-item mx-2">
