@@ -114,81 +114,81 @@
 </main>
 
 <?php while($data = mysqli_fetch_assoc($qry_fasilitas2)) : ?>
-<!-- Modal -->
-<div class="modal fade" id="fasilitas<?= $data['id_fasilitas'] ?>" tabindex="-1" aria-labelledby="fasilitas<?= $data['id_fasilitas'] ?>" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"><?= $data['nama_fasilitas'] ?></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-          <img src="assets/images/berita/<?= $data['gambar_fasilitas'] ?>" class="card-img">
-          <p><?= $data['keterangan_fasilitas'] ?></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
+    <!-- Modal -->
+    <div class="modal fade" id="fasilitas<?= $data['id_fasilitas'] ?>" tabindex="-1" aria-labelledby="fasilitas<?= $data['id_fasilitas'] ?>" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"><?= $data['nama_fasilitas'] ?></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <img src="assets/images/berita/<?= $data['gambar_fasilitas'] ?>" class="card-img">
+            <p><?= $data['keterangan_fasilitas'] ?></p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+        </div>
     </div>
-  </div>
-</div>
-<?php endwhile; ?>
+    </div>
+    <?php endwhile; ?>
 
-<?php while($data = mysqli_fetch_assoc($qry_ekstrakulikuler2)) : ?>
-<!-- Modal -->
-<div class="modal fade" id="fasilitas<?= $data['id_fasilitas'] ?>" tabindex="-1" aria-labelledby="fasilitas<?= $data['id_fasilitas'] ?>" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"><?= $data['nama_fasilitas'] ?></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-          <img src="assets/images/berita/<?= $data['gambar_fasilitas'] ?>" class="card-img">
-          <p><?= $data['keterangan_fasilitas'] ?></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
+    <?php while($data = mysqli_fetch_assoc($qry_ekstrakulikuler2)) : ?>
+    <!-- Modal -->
+    <div class="modal fade" id="fasilitas<?= $data['id_fasilitas'] ?>" tabindex="-1" aria-labelledby="fasilitas<?= $data['id_fasilitas'] ?>" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"><?= $data['nama_fasilitas'] ?></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <img src="assets/images/berita/<?= $data['gambar_fasilitas'] ?>" class="card-img">
+            <p><?= $data['keterangan_fasilitas'] ?></p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+        </div>
     </div>
-  </div>
-</div>
-<?php endwhile; ?>
+    </div>
+    <?php endwhile; ?>
 
-<?php while($data = mysqli_fetch_assoc($qry_prestasi2)) : ?>
-<!-- Modal -->
-<div class="modal fade" id="prestasi<?= $data['id_prestasi'] ?>" tabindex="-1" aria-labelledby="prestasi<?= $data['id_prestasi'] ?>" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"><?= $data['nama_prestasi'] ?></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-          <img src="assets/images/prestasi/<?= $data['gambar_prestasi'] ?>" class="card-img">
-          <p>
-            <span>
-                Tanggal: <?= date('d F Y', strtotime($data['tanggal_prestasi'])) ?>
-            </span><br>
-            <span>
-                Tingkat: <?= $data['tingkat_prestasi'] ?>
-            </span><br>
-            <span>
-                Nama Peraih: <?= $data['nama_peraih_prestasi'] ?>
-            </span><br>
-            <span>
-                Lokasi: <?= $data['lokasi_prestasi'] ?>
-            </span><br>
-            <span>
-                Keterangan: <?= $data['keterangan_prestasi'] ?>
-            </span>
-            </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
+    <?php while($data = mysqli_fetch_assoc($qry_prestasi2)) : ?>
+    <!-- Modal -->
+    <div class="modal fade" id="prestasi<?= $data['id_prestasi'] ?>" tabindex="-1" aria-labelledby="prestasi<?= $data['id_prestasi'] ?>" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"><?= $data['nama_prestasi'] ?></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <img src="assets/images/prestasi/<?= $data['gambar_prestasi'] ?>" class="card-img">
+            <p>
+                <span>
+                    Tanggal: <?= date('d F Y', strtotime($data['tanggal_prestasi'])) ?>
+                </span><br>
+                <span>
+                    Tingkat: <?= $data['tingkat_prestasi'] ?>
+                </span><br>
+                <span>
+                    Nama Peraih: <?= $data['nama_peraih_prestasi'] ?>
+                </span><br>
+                <span>
+                    Lokasi: <?= $data['lokasi_prestasi'] ?>
+                </span><br>
+                <span>
+                    Keterangan: <?= $data['keterangan_prestasi'] ?>
+                </span>
+                </p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+        </div>
     </div>
-  </div>
-</div>
+    </div>
 <?php endwhile; ?>
 <?php include 'includes/footer.php' ?>
