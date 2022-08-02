@@ -15,10 +15,14 @@
             <div class="collapse navbar-collapse justify-content-start" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item mx-2">
-                        <a class="nav-link <?php if(strpos($_SERVER['REQUEST_URI'],'index') == TRUE) { echo "active border border-success rounded link-success"; } ?>" aria-current="page" href="index.php">Beranda</a>
+                        <a class="nav-link <?php if (strpos($_SERVER['REQUEST_URI'], 'index') == TRUE) {
+                                                echo "active border border-succes rounded link-success";
+                                            } ?>" aria-current="page" href="index.php">Beranda</a>
                     </li>
                     <li class="nav-item dropdown mx-2">
-                        <a class="nav-link dropdown-toggle <?php if(strpos($_SERVER['REQUEST_URI'],'profil') == TRUE) { echo "active border border-success rounded link-success"; } ?>" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle <?php if (strpos($_SERVER['REQUEST_URI'], 'profil') == TRUE) {
+                                                                echo "active border border-succes rounded link-success";
+                                                            } ?>" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Profil
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
@@ -30,7 +34,9 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown mx-2">
-                        <a class="nav-link dropdown-toggle <?php if(strpos($_SERVER['REQUEST_URI'],'kurikulum') == TRUE) { echo "active border border-success rounded link-success"; } ?>" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle <?php if (strpos($_SERVER['REQUEST_URI'], 'kurikulum') == TRUE) {
+                                                                echo "active border border-succes rounded link-success";
+                                                            } ?>" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Kurikulum
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
@@ -39,19 +45,23 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown mx-2">
-                        <a class="nav-link dropdown-toggle <?php if(strpos($_SERVER['REQUEST_URI'],'kesiswaan') == TRUE) { echo "active border border-success rounded link-success"; } ?>" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle <?php if (strpos($_SERVER['REQUEST_URI'], 'kesiswaan') == TRUE) {
+                                                                echo "active border border-succes rounded link-success";
+                                                            } ?>" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Kesiswaan
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="kesiswaan.php#kesiswaan-Tatatertib">Tata Tertib</a></li>
                             <li><a class="dropdown-item" href="kesiswaan.php#kesiswaan-Kesiswaan">Kesiswaan SDN 1 Purwokerto Kulon</a></li>
                             <li><a class="dropdown-item" href="kesiswaan.php#kesiswaan-Program">Program</a></li>
                             <li><a class="dropdown-item" href="kesiswaan.php#kesiswaan-Ekstrakurikuler">Ekstrakurikuler</a></li>
                             <li><a class="dropdown-item" href="kesiswaan.php#kesiswaan-Prestasi">Prestasi</a></li>
-                            <li><a class="dropdown-item" href="kesiswaan.php#kesiswaan-Tatatertib">Tata Tertib</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown mx-2">
-                        <a class="nav-link dropdown-toggle <?php if(strpos($_SERVER['REQUEST_URI'],'galeri') == TRUE) { echo "active border border-success rounded link-success"; } ?>" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle <?php if (strpos($_SERVER['REQUEST_URI'], 'galeri') == TRUE) {
+                                                                echo "active border border-succes rounded link-success";
+                                                            } ?>" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Galeri
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
@@ -61,10 +71,14 @@
                         </ul>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link <?php if(strpos($_SERVER['REQUEST_URI'],'berita') == TRUE) { echo "active border border-success rounded link-success"; } ?>" href="berita.php">Berita</a>
+                        <a class="nav-link <?php if (strpos($_SERVER['REQUEST_URI'], 'berita') == TRUE) {
+                                                echo "active border border-succes rounded link-success";
+                                            } ?>" href="berita.php">Berita</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link <?php if(strpos($_SERVER['REQUEST_URI'],'kontak') == TRUE) { echo "active border border-success rounded link-success"; } ?>" href="respon_kontak.php">Kontak</a>
+                        <a class="nav-link <?php if (strpos($_SERVER['REQUEST_URI'], 'kontak') == TRUE) {
+                                                echo "active border border-succes rounded link-success";
+                                            } ?>" href="respon_kontak.php">Kontak</a>
                     </li>
                     <li class="nav-item mx-2">
                         <a class="nav-link" href="admin/index.php">Login</a>
