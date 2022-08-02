@@ -45,7 +45,7 @@
         <div class="row justify-content-center">
             <div class="col-md-9">
                 <img src="<?= $dir ?>" class="rounded mx-auto d-block w-100">
-                <div class="h2 mt-3"><?= $berita_title ?></div>
+                <div class="h2 mt-3"><?= $berita_title?></div>
                 <span class="fs-6 fw-lighter text-secondary">Oleh: <?= $berita_author ?> | <?= $berita_date ?></span>
                 <div class="content my-3">
                     <p><?= $berita_description ?></p>
