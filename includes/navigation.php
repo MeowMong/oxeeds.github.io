@@ -41,7 +41,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                             <li><a class="dropdown-item" href="kurikulum.php#kurikulum-Kurikulum">Kurikulum SDN 1 Purwokerto Kulon</a></li>
-                            <li><a class="dropdown-item" href="kurikulum.php#kurikulum-Kurikulum">Program</a></li>
+                            <li><a class="dropdown-item" href="kurikulum.php#kurikulum-Program">Program</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown mx-2">
