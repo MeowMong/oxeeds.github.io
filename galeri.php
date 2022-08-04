@@ -27,7 +27,7 @@
             <div class="row">
                 <?php while($data = mysqli_fetch_assoc($qry_fasilitas)) : ?>
                 <div class="col-sm-2 col-md-4">
-                    <div class="card text-bg-dark mx-2 my-2">
+                    <div class="card border-0 shadow-lg text-bg-dark mx-2 my-2">
                         <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#fasilitas<?= $data['id_fasilitas'] ?>">
                         <img src="assets/images/berita/<?= $data['gambar_fasilitas'] ?>" class="card-img">
                         </a>
@@ -60,7 +60,7 @@
             <div class="row">
                 <?php while($data = mysqli_fetch_assoc($qry_ekstrakulikuler)) : ?>
                 <div class="col-sm-2 col-md-4">
-                    <div class="card text-bg-dark mx-2 my-2">
+                    <div class="card border-0 shadow-lg text-bg-dark mx-2 my-2">
                         <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#fasilitas<?= $data['id_fasilitas'] ?>">
                         <img src="assets/images/berita/<?= $data['gambar_fasilitas'] ?>" class="card-img">
                         </a>
@@ -94,7 +94,7 @@
                 
             <?php while($data = mysqli_fetch_assoc($qry_prestasi)) : ?>
                 <div class="col-sm-2 col-md-4">
-                    <div class="card text-bg-dark mx-2 my-2">
+                    <div class="card border-0 shadow-lg text-bg-dark mx-2 my-2">
                         <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#prestasi<?= $data['id_prestasi'] ?>">
                         <img src="assets/images/prestasi/<?= $data['gambar_prestasi'] ?>" class="card-img">
                         </a>
