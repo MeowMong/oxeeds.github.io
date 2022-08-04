@@ -137,11 +137,17 @@ $qry_prestasi2 = mysqli_query($koneksi, "SELECT * FROM prestasi");
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php
+                                        $query = query("SELECT * FROM alumni");
+                                        confirmQuery($query);
+                                        while($row = mysqli_fetch_assoc($query)){
+                                    ?>
                                 <tr class="text-center">
-                                    <td>2014/2015</td>
-                                    <td>200</td>
-                                    <td>200</td>
+                                    <td><?= $row['tahun_pelajaran'] ?></td>
+                                    <td><?= $row['jumlah_lulusan'] ?></td>
+                                    <td><?= $row['jumlah_lanjut'] ?></td>
                                 </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>

@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="fontawesome-free/css/fontawesome.min.css">
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <style>
         .marginme {
             margin-top: 50px;
