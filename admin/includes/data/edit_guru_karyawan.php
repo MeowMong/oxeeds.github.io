@@ -14,7 +14,7 @@ if (isset($_GET['id_guru_karyawan'])) {
         $jumlah_kelas = escape($_POST['jumlah_kelas']);
         $jam_tatap_muka = escape($_POST['jam_tatap_muka']);
         $total_jam = escape($_POST['total_jam']);
-        $keterangan = escape($_POST['keterangan']);
+        $posisi_lainnya = escape($_POST['posisi_lainnya']);
 
         $gambar = $_FILES['gambar']['name'];
         $gambar_tmp = $_FILES['gambar']['tmp_name'];
@@ -37,7 +37,7 @@ if (isset($_GET['id_guru_karyawan'])) {
                                                 jumlah_kelas='$jumlah_kelas',
                                                 jam_tatap_muka='$jam_tatap_muka',
                                                 total_jam='$total_jam',
-                                                keterangan='$keterangan'
+                                                posisi_lainnya='$posisi_lainnya'
                                                 WHERE id_guru_karyawan='$id_guru_karyawan' ");
         if ($query) {
             redirect('guru_karyawan.php');
@@ -102,8 +102,8 @@ if (isset($_GET['id_guru_karyawan'])) {
                                 <input type="text" class="form-control" id="total_jam" name="total_jam" value="<?= $result['total_jam'] ?>">
                             </div>
                             <div class="form-group">
-                                <label for="keterangan">Keterangan</label>
-                                <input type="text" class="form-control" id="keterangan" name="keterangan" value="<?= $result['keterangan'] ?>">
+                                <label for="posisi_lainnya">Posisi Lainnya</label>
+                                <input type="text" class="form-control" id="posisi_lainnya" name="posisi_lainnya" value="<?= $result['posisi_lainnya'] ?>">
                             </div>
 
                         </div>

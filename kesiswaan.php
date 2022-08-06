@@ -104,7 +104,12 @@ $qry_prestasi2 = mysqli_query($koneksi, "SELECT * FROM prestasi");
             </div>
             <div class="row">
                 <div class="col-sm-2 col-md-5">
-                    <p class="lh-lg" style="text-align: justify;">Pada tahun ajaran 2022/2023, <b>SDN 1 Purwokerto Kulon</b> memiliki banyak siswa laki-laki dan perempuan yaitu :</p>
+                    <?php
+                        $query = query("SELECT * FROM siswa");
+                        confirmQuery($query);
+                        while ($row = mysqli_fetch_assoc($query)) :
+                        ?>
+                    <p class="lh-lg" style="text-align: justify;">Pada tahun ajaran <?= $row['tahun_ajaran_siswa'] ?>, <b>SDN 1 Purwokerto Kulon</b> memiliki banyak siswa laki-laki dan perempuan yaitu :</p>
                     <div class="row text-center">
                         <div class="col-sm">
                             <p class="fw-semibold fs-5">Laki-Laki</p>
@@ -114,12 +119,13 @@ $qry_prestasi2 = mysqli_query($koneksi, "SELECT * FROM prestasi");
                         </div>
                     </div>
                     <div class="row text-center">
-                        <div class="col-sm">
-                            <p class="fw-reguler">82 Siswa</p>
-                        </div>
-                        <div class="col-sm">
-                            <p class="fw-reguler">80 Siswi</p>
-                        </div>
+                            <div class="col-sm">
+                                <p class="fw-reguler"><?= $row['jumlah_siswa_laki'] ?> Siswa</p>
+                            </div>
+                            <div class="col-sm">
+                                <p class="fw-reguler"><?= $row['jumlah_siswa_perempuan'] ?> Siswi</p>
+                            </div>
+                        <?php endwhile ?>
                     </div>
                 </div>
                 <div class="col">
@@ -138,15 +144,15 @@ $qry_prestasi2 = mysqli_query($koneksi, "SELECT * FROM prestasi");
                             </thead>
                             <tbody>
                                 <?php
-                                        $query = query("SELECT * FROM alumni");
-                                        confirmQuery($query);
-                                        while($row = mysqli_fetch_assoc($query)){
-                                    ?>
-                                <tr class="text-center">
-                                    <td><?= $row['tahun_pelajaran'] ?></td>
-                                    <td><?= $row['jumlah_lulusan'] ?></td>
-                                    <td><?= $row['jumlah_lanjut'] ?></td>
-                                </tr>
+                                $query = query("SELECT * FROM alumni");
+                                confirmQuery($query);
+                                while ($row = mysqli_fetch_assoc($query)) {
+                                ?>
+                                    <tr class="text-center">
+                                        <td><?= $row['tahun_pelajaran'] ?></td>
+                                        <td><?= $row['jumlah_lulusan'] ?></td>
+                                        <td><?= $row['jumlah_lanjut'] ?></td>
+                                    </tr>
                                 <?php } ?>
                             </tbody>
                         </table>

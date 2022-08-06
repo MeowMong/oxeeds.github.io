@@ -353,9 +353,9 @@ $isi_misi   = "";
                                 <tr>
                                     <td class="text-center"><?= $index++ ?></td>
                                     <td><?= $row['nama'] ?></td>
-                                    <td class="text-center"><?= $row['nip'] ?></td>
-                                    <td class="text-center"><?= $row['posisi'] ?></td>
-                                    <td class="text-center"><?= $row['keterangan'] ?></td>
+                                    <td><?= $row['nip'] ?></td>
+                                    <td><?= $row['posisi'] ?></td>
+                                    <td><?= $row['posisi_lainnya'] ?></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
@@ -400,7 +400,7 @@ $isi_misi   = "";
                             <div class="card" style="height: auto; max-width: 300px;">
                                 <div class="row">
                                     <div class="col d-flex justify-content-center">
-                                        <img src="<?= $dir ?>" class="card-img" style="height: auto; width: full;" alt="Guru & Staff">
+                                        <img src="<?= $dir ?>" alt="<?= $dir ?>" class="card-img" style="height: auto; width: full;" alt="Guru & Staff">
                                     </div>
                                 </div>
                                 <div class="row">
