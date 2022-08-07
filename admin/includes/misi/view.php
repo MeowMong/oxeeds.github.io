@@ -85,6 +85,8 @@ if (isset($_GET['delete'])) {
                                 </div>
                             </form>
                         </div>
+
+                        
                         <!-- /.card -->
                     </div>
                     <!-- /.col -->

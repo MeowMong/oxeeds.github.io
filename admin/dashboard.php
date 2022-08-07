@@ -4,7 +4,8 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <h1>Dashbord</h1>
+            <h1 class="text-center"><strong>Selamat Datang Admin !</strong></h1>
+            <h2 class="text-center">Dashbord</h2>
         </div>
     </div>
 

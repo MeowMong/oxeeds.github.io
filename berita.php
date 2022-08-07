@@ -80,7 +80,7 @@
                     } ?>
         </div>
         <!-- Pagination -->
-        <nav aria-label="Page navigation example">
+        <nav aria-label="Page navigation">
             <ul class="pagination">
                 <?php
                 for ($i = 1; $i <= $count; $i++) {
