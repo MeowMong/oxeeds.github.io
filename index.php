@@ -241,13 +241,10 @@ while ($r_carr3 = mysqli_fetch_array($q_carr3)) {
                         } else {
                             $count = ceil($count / $per_page);
 
-                            $query = query("SELECT * FROM berita
-                                            INNER JOIN category_berita ON category_berita.id_category_berita=berita.berita_category_id
-                                            ORDER BY berita.berita_date DESC
+                            $query = query("SELECT * FROM berita ORDER BY berita.berita_date DESC
                                             LIMIT $page_1, $per_page");
                             if (mysqli_num_rows($query) > 0) {
                                 while ($row = mysqli_fetch_array($query)) {
-                                    $category_name = $row['category_name'];
                                     $berita_title = $row['berita_title'];
                                     $berita_description = $row['berita_description'];
                                     $berita_date = $row['berita_date'];
