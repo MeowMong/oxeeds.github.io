@@ -31,16 +31,8 @@ if (isset($_POST['add_berita'])) {
                     <form method="post" enctype="multipart/form-data">
 
                         <div class="form-group">
-                            <select class="form-control" name="berita_category_id">
-                                <option>Pilih Kategori</option>
-                                <?php
-                                $query = query("SELECT * FROM category_berita");
-                                confirmQuery($query);
-                                while ($item = mysqli_fetch_assoc($query)) {
-                                ?>
-                                    <option value="<?php echo $item['id_category_berita'] ?>"><?php echo $item['category_name'] ?></option>
-                                <?php } ?>
-                            </select>
+                            <label for="">Kategori Berita</label>
+                            <input type="text" name="berita_category_id" class="form-control">
                         </div>
 
                         <div class="form-group">

@@ -16,7 +16,6 @@
         case 'edit':
             include 'includes/berita/edit.php';
             break;
-
         default:
         include 'includes/berita/view.php';
         break;

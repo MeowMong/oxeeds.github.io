@@ -28,8 +28,7 @@
     if (isset($_POST['cariArtikel'])) {
         $berita_title = escape($_POST['berita_title']);
 
-        $query = query("SELECT * FROM berita 
-                        INNER JOIN category_berita ON category_berita.id_category_berita = berita.berita_category_id
+        $query = query("SELECT * FROM berita.id_category_berita = berita.berita_category_id
                         WHERE berita.berita_title LIKE '%$berita_title%' OR
                         berita.berita_description LIKE '%$berita_title%' OR
                         berita.berita_author LIKE '%$berita_title%'");
@@ -72,7 +71,7 @@
     } else { ?>
         <div class="row">
             <?php
-            $query = query("SELECT * FROM berita INNER JOIN category_berita ON category_berita.id_category_berita=berita.berita_category_id");
+            $query = query("SELECT * FROM berita");
             confirmQuery($query);
             while ($row = mysqli_fetch_array($query)) {
             ?>
@@ -80,9 +79,9 @@
                 <div class="col-md-4 mb-5">
                     <!-- Blog Post -->
                     <div class="card mb-4 border-0 shadow-lg">
-                        <img class="card-img-top" src="../assets/images/berita/<?= $row['berita_image'] ?>" alt="Card image cap">
+                        <img class="card-img-top" src="../assets/images/berita/<?= $row['berita_image'] ?>" alt="Card image cap" style="width: auto; height: 400px;">
                         <div class="card-body">
-                            <span class="badge badge-primary"><?= $row['category_name'] ?></span> / <span><?= $row['berita_author'] ?></span>
+                            <span class="badge badge-primary"><?= $row['berita_category_id'] ?></span> / <span><?= $row['berita_author'] ?></span>
                             <h2 class="card-title"><?= $row['berita_title'] ?></h2>
                             <div class="btn-group" role="group">
                                 <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

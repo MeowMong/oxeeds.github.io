@@ -23,7 +23,7 @@ if (isset($_GET['id_kurikulum_sekolah'])) {
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="text-center">Update Data Kurikulum Sekolah</h1>
+                <h1 class="text-center"><strong>Update Data Kurikulum Sekolah</strong></h1>
             </div>
         </div>
     </div>

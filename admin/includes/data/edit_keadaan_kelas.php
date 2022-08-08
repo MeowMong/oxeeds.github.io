@@ -31,7 +31,7 @@ if (isset($_GET['id_keadaan_kelas'])) {
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="text-center">Update Data Keadaan Kelas</h1>
+                <h1 class="text-center"><strong>Update Data Keadaan Kelas</strong></h1>
             </div>
         </div>
     </div>

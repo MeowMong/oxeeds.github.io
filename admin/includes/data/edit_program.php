@@ -37,7 +37,7 @@ if (isset($_GET['id_program_sekolah'])) {
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="text-center">Update Data Program Sekolah</h1>
+                <h1 class="text-center"><strong>Update Data Program Sekolah</strong></h1>
             </div>
         </div>
     </div>

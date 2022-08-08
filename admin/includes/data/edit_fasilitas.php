@@ -42,7 +42,7 @@ if (isset($_GET['id_fasilitas'])) {
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="text-center">Update Data Fasilitas</h1>
+                <h1 class="text-center"><strong>Update Data Fasilitas</strong></h1>
             </div>
         </div>
     </div>
