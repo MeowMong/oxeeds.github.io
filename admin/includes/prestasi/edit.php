@@ -82,7 +82,8 @@ if (isset($_GET['id_prestasi'])) {
                             </div>
                         </div>
                         <div class=" card-footer">
-                            <button type="submit" name="update_prestasi" class="btn btn-warning btn-block">Update Data Prestasi</button>
+                            <button type="submit" name="update_prestasi" class="btn btn-warning">Update Data</button>
+                            <a href="prestasi.php" class="btn btn-secondary">Kembali</a>
                         </div>
                     </form>
                 </div>
