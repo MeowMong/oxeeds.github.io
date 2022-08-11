@@ -64,7 +64,8 @@ if (isset($_GET['id_galeri'])) {
                             </div>
                         </div>
                         <div class=" card-footer">
-                            <button type="submit" name="update_galeri" class="btn btn-warning btn-block">Update Data Galeri</button>
+                            <button type="submit" name="update_galeri" class="btn btn-warning">Update Data</button>
+                            <a href="galeri.php" class="btn btn-secondary">Kembali</a>
                         </div>
                     </form>
                 </div>
