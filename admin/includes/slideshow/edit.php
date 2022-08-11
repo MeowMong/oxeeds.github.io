@@ -52,7 +52,8 @@ if (isset($_GET['id_carr'])) {
                             <input type="text" name="isi_carr" class="form-control" value="<?= $result['isi_carr'] ?>">
                         </div>
                         <div class="form-group card-footer">
-                            <button type="submit" name="update" class="btn btn-warning btn-block">Udpdate Slideshow</button>
+                            <button type="submit" name="update" class="btn btn-warning">Udpdate Data</button>
+                            <a href="slideshow.php" class="btn btn-secondary">Kembali</a>
                         </div>
                     </form>
                 </div>
