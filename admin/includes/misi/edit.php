@@ -32,7 +32,8 @@ if (isset($_GET['id_misi'])) {
                             </div>
                         </div>
                         <div class="card-footer">
-                            <button type="submit" name="update_misi" class="btn btn-warning btn-block">Update Misi</button>
+                            <button type="submit" name="update_misi" class="btn btn-warning">Update Data</button>
+                            <a href="misi.php" class="btn btn-secondary">Kembali</a>
                         </div>
                     </form>
                 </div>
