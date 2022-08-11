@@ -72,6 +72,7 @@ if (isset($_POST['login'])) {
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Selamat Datang!</h1>
+                                        <h2 class="h4 text-gray-900 mb-4">SD N 1 Purwokerto Kulon</h2>
                                     </div>
                                     <?php if (isset($error)) : ?>
                                         <p style="color:red; font-style:italic;">Username / Password Salah!</p>
