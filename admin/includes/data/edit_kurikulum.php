@@ -49,7 +49,8 @@ if (isset($_GET['id_kurikulum_sekolah'])) {
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="submit" name="update_kurikulum_sekolah" class="btn btn-warning btn-block">Update Data Kurikulum Sekolah</button>
+                            <button type="submit" name="update_kurikulum_sekolah" class="btn btn-warning">Update Data</button>
+                            <a href="kurikulum_sekolah.php" class="btn btn-secondary">Kembali</a>
                         </div>
                     </form>
                 </div>
