@@ -34,7 +34,8 @@ if (isset($_GET['id_visi'])) {
                             <textarea name="isi_visi" cols="30" rows="10" class="form-control"><?= $result['isi_visi'] ?></textarea>
                         </div>
                         <div class="form-group card-footer">
-                            <button type="submit" name="update" class="btn btn-warning btn-block">Udpdate Visi</button>
+                            <button type="submit" name="update" class="btn btn-warning">Udpdate Data</button>
+                            <a href="visi.php" class="btn btn-secondary">Kembali</a>
                         </div>
                     </form>
                 </div>
