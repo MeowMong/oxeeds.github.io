@@ -74,7 +74,8 @@ if (isset($_GET['id_sambutan'])) {
                             <input class="form-control" type="date" name="tanggal_sambutan" value="<?= $row['tanggal_sambutan'] ?>">
                         </div>
                         <div class="form-group">
-                            <button type="submit" name="update_sambutan" class="btn btn-warning btn-block">Update Sambutan</button>
+                            <button type="submit" name="update_sambutan" class="btn btn-warning">Update Data</button>
+                            <a href="sambutan.php" class="btn btn-secondary">Kembali</a>
                         </div>
                     </form>
                 </div>
