@@ -30,7 +30,8 @@ if (isset($_GET['id_tujuan'])) {
                             <input type="text" name="isi_tujuan" class="form-control" value="<?= $result['isi_tujuan'] ?>">
                         </div>
                         <div class="form-group card-footer">
-                            <button type="submit" name="update" class="btn btn-warning btn-block">Update Tujuan</button>
+                            <button type="submit" name="update" class="btn btn-warning">Update Data</button>
+                            <a href="tujuan.php" class="btn btn-secondary">Kembali</a>
                         </div>
                     </form>
                 </div>
