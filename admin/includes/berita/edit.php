@@ -67,7 +67,8 @@ if (isset($_POST['update_artikel'])) {
                             <textarea name="berita_description" class="form-control" cols="30" rows="10"><?php echo $result['berita_description'] ?></textarea>
                         </div>
                         <div class="form-group">
-                            <button type="submit" name="update_artikel" class="btn btn-warning btn-block">Update Berita</button>
+                            <button type="submit" name="update_artikel" class="btn btn-warning">Update Data</button>
+                            <a href="berita.php" class="btn btn-secondary">Kembali</a>
                         </div>
                     </form>
                 </div>
