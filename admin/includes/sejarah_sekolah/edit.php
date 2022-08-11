@@ -50,7 +50,8 @@ if (isset($_GET['id_sejarah_sekolah'])) {
                                 <textarea class="form-control" rows="3" id="deskripsi_sejarah_sekolah" name="deskripsi_sejarah_sekolah"><?= $result['deskripsi_sejarah_sekolah'] ?></textarea>
                             </div>
                             <div class="card-footer">
-                                <button type="submit" name="update_deskripsi_sejarah" class="btn btn-warning btn-block">Update Alinea Deskripsi Sejarah</button>
+                                <button type="submit" name="update_deskripsi_sejarah" class="btn btn-warning">Update Data</button>
+                                <a href="sejarah_sekolah.php" class="btn btn-secondary">Kembali</a>
                             </div>
                         </div>
                     </form>
