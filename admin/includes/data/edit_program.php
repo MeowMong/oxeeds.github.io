@@ -67,7 +67,8 @@ if (isset($_GET['id_program_sekolah'])) {
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="submit" name="update_program_sekolah" class="btn btn-warning btn-block">Update Data Program Sekolah</button>
+                            <button type="submit" name="update_program_sekolah" class="btn btn-warning">Update Data</button>
+                            <a href="program_sekolah.php" class="btn btn-secondary">Kembali</a>
                         </div>
                     </form>
                 </div>
