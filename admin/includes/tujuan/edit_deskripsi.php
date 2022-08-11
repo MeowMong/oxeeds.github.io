@@ -31,7 +31,8 @@ if (isset($_GET['id_deskripsi_tujuan'])) {
                                 <textarea class="form-control" rows="3" id="isi_deskripsi_tujuan" name="isi_deskripsi_tujuan"><?= $result['isi_deskripsi_tujuan'] ?></textarea>
                             </div>
                             <div class="card-footer">
-                                <button type="submit" name="update_deskripsi_tujuan" class="btn btn-warning btn-block">Update Deskripsi Tujuan</button>
+                                <button type="submit" name="update_deskripsi_tujuan" class="btn btn-warning">Update Data</button>
+                                <a href="tujuan.php" class="btn btn-secondary">Kembali</a>
                             </div>
                         </div>
                     </form>
