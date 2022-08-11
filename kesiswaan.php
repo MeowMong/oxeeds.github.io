@@ -52,7 +52,7 @@ $qry_prestasi2 = mysqli_query($koneksi, "SELECT * FROM prestasi");
                     </div>
                     <div class="row">
                         <div class="col-sm pe-5">
-                            <p class="lh-lg" style="text-align: justify;"><b>Sekolah Dasar Negeri 1 Purwokerto Kulon</b> memiliki program-program yang dapat diikuti para peserta didik, yaitu sebagai berikut :</p>
+                            <p class="lh-lg" style="text-align: justify;"><b>Sekolah Dasar Negeri 1 Purwokerto Kulon</b> memiliki tata tertib yang harus dipatuhi oleh para peserta didik, yaitu sebagai berikut :</p>
                         </div>
                     </div>
                 </div>
@@ -70,13 +70,13 @@ $qry_prestasi2 = mysqli_query($koneksi, "SELECT * FROM prestasi");
                     <div class="row">
                         <div class="col-sm">
                             <?php
-                            $query   = query("SELECT * FROM misi");
+                            $query   = query("SELECT * FROM tatib_sekolah");
                             $index  = 1;
                             while ($row = mysqli_fetch_array($query)) {
                             ?>
                                 <tr>
                                     <th class="lh-lg"><?= $index++ ?>. </th>
-                                    <td class="lh-lg"><?= $row['isi_misi'] ?><br></td>
+                                    <td class="lh-lg"><?= $row['poin_tatib_sekolah'] ?><br></td>
                                 </tr>
                             <?php
                             }
@@ -164,7 +164,7 @@ $qry_prestasi2 = mysqli_query($koneksi, "SELECT * FROM prestasi");
     <!-- Akhir dari Kesiswaan -->
 
     <!-- Program & Ekstrakurikuler-->
-    <section id="kesiswaan-Program">
+    <!-- <section id="kesiswaan-Program">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -209,7 +209,7 @@ $qry_prestasi2 = mysqli_query($koneksi, "SELECT * FROM prestasi");
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Akhir dari Program -->
 
     <!-- Prestasi -->
