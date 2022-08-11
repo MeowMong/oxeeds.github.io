@@ -55,7 +55,7 @@ while ($r_carr3 = mysqli_fetch_array($q_carr3)) {
 ?>
 
 <!-- Hero Section -->
-<section id="hero" class="h-100">
+<section id="hero" class="">
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
