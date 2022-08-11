@@ -39,7 +39,8 @@ if (isset($_GET['id_ekstrakulikuler'])) {
                             </div>
                         </div>
                         <div class="card-footer">
-                            <button type="submit" name="update_ekstrakulikuler" class="btn btn-warning btn-block">Update Ekstrakulikuler</button>
+                            <button type="submit" name="update_ekstrakulikuler" class="btn btn-warning">Update Data</button>
+                            <a href="ekstrakulikuler.php" class="btn btn-secondary">Kembali</a>
                         </div>
                     </form>
                 </div>
