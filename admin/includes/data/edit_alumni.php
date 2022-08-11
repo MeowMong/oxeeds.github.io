@@ -61,7 +61,8 @@ if (isset($_GET['id_alumni'])) {
                         <!-- /.card-body -->
 
                         <div class="card-footer">
-                            <button type="submit" name="update_alumni" class="btn btn-warning btn-block">Update Data Alumni</button>
+                            <button type="submit" name="update_alumni" class="btn btn-warning">Update Data</button>
+                            <a href="alumni.php" class="btn btn-secondary">Kembali</a>
                         </div>
                     </form>
                 </div>
