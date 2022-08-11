@@ -49,7 +49,8 @@ if (isset($_GET['id_tatib_sekolah'])) {
                         <!-- /.card-body -->
 
                         <div class="card-footer">
-                            <button type="submit" name="update_tatib_sekolah" class="btn btn-warning btn-block">Update Poin Tata Tertib</button>
+                            <button type="submit" name="update_tatib_sekolah" class="btn btn-warning">Update Data</button>
+                            <a href="tatib_sekolah.php" class="btn btn-secondary">Kembali</a>
                         </div>
                     </form>
                 </div>
