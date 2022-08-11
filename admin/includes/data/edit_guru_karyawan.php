@@ -109,7 +109,8 @@ if (isset($_GET['id_guru_karyawan'])) {
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="submit" name="update_guru_karyawan" class="btn btn-warning btn-block">Update Data Guru dan Karyawan</button>
+                            <button type="submit" name="update_guru_karyawan" class="btn btn-warning">Update Data</button>
+                            <a href="guru_karyawan.php" class="btn btn-secondary">Kembali</a>
                         </div>
                     </form>
                 </div>
