@@ -58,10 +58,10 @@
                             <li><a class="dropdown-item" href="kesiswaan.php#kesiswaan-Prestasi">Prestasi</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown mx-2">
-                        <a class="nav-link dropdown-toggle <?php if (strpos($_SERVER['REQUEST_URI'], 'galeri') == TRUE) {
-                                                                echo "active border border-success rounded link-success";
-                                                            } ?>" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <!-- <li class="nav-item dropdown mx-2">
+                        <a class="nav-link dropdown-toggle <?php //if (strpos($_SERVER['REQUEST_URI'], 'galeri') == TRUE) {
+                                                                // echo "active border border-success rounded link-success";
+                                                            // } ?>" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Galeri
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
@@ -69,7 +69,7 @@
                             <li><a class="dropdown-item" href="galeri.php#galeri-Ekstrakurikuler">Ekstrakurikuler</a></li>
                             <li><a class="dropdown-item" href="galeri.php#galeri-Prestasi">Prestasi</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li class="nav-item mx-2">
                         <a class="nav-link <?php if (strpos($_SERVER['REQUEST_URI'], 'berita') == TRUE) {
                                                 echo "active border border-success rounded link-success";
