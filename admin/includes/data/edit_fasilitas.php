@@ -80,7 +80,8 @@ if (isset($_GET['id_fasilitas'])) {
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="submit" name="update_fasilitas" class="btn btn-warning btn-block">Update Fasilitas</button>
+                            <button type="submit" name="update_fasilitas" class="btn btn-warning">Update Data</button>
+                            <a href="fasilitas.php" class="btn btn-secondary">Kembali</a>
                         </div>
                     </form>
                 </div>
