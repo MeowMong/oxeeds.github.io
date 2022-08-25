@@ -16,7 +16,7 @@ function confirmQuery($result){
 
 function escape($value){
     global $koneksi;
-    return mysqli_real_escape_string($koneksi, $value);
+    return htmlspecialchars(mysqli_real_escape_string($koneksi, $value));
 }
 
 function redirect($url){
